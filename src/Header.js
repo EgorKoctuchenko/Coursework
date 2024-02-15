@@ -8,6 +8,9 @@ import magnifyingGlass from "./img/magnifying-glass-svgrepo-com.svg";
 import callIcon from "./img/icon-tel.svg";
 import Obrane from "./img/obrane.svg";
 import Korzina from "./img/korzina.svg";
+import Akcii from "./img/akcii.svg";
+import Credit from "./img/credit.svg";
+import Sale from "./img/sale.svg";
 import "./index.css";
 
 function Header() {
@@ -78,7 +81,31 @@ function Header() {
           <img src={Korzina} alt="Basket" />
         </div>
       </div>
-      <div className="h_bottom_head"></div>
+      <div className="h_bottom_head">
+        <nav className="h_nav2_1">
+          <li>
+            <img src={Akcii} alt="Likes" />
+            <h5>Акції</h5>
+          </li>
+          <li>
+            <img src={Sale} alt="Likes" />
+            <h5>Розпродаж</h5>
+          </li>
+          <li>
+            <img src={Credit} alt="Likes" />
+            <h5>Купити в кредит</h5>
+          </li>
+        </nav>
+        <nav className="h_nav2_2">
+          <li>Дитяча</li>
+          <li>Кухня</li>
+          <li>Ванна</li>
+          <li>Спальня</li>
+          <li>Передпокій</li>
+          <li>Вітальня</li>
+          <li>Офіс</li>
+        </nav>
+      </div>
     </header>
   );
 }
