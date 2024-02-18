@@ -6,10 +6,12 @@ import pisla from "./img/pislaPlata.svg";
 import ukraine from "./img/ukraine.svg";
 import kredit from "./img/Kredito.svg";
 import galochka from "./img/galochka.svg";
+import Sposobi from "./Sposobi";
+import Pitanna from "./Pitanna";
 import "./index.css";
 import foto1 from "./img/mob-oplata.png";
 
-function App() {
+function Oplata() {
   return (
     <main className="o_wrap">
       <section className="this_choice">
@@ -75,22 +77,50 @@ function App() {
           </section>
         </div>
       </article>
-      <article>
-        <section className="o_info2">
+      <article className="o_Oplati">
+        <section className="o_info2 o_info2Fix">
+          <img src={ukraine}></img>
           <div>
-            asd
-            <img src={ukraine}></img>
+            <h3>Оплата по Україні</h3>
+            <p>
+              Доставка по Україні здійснюється Новою Поштою. Ви можете оплатити
+              Ваше замовлення при отриманні післяплатою. Вартість післяплати
+              35грн +1-2% від суми. Також Ви можете оплатити Ваше замовлення на
+              карту ПриватБанку, перед відправкою замовлення Вам.
+            </p>
           </div>
         </section>
         <section className="o_info2">
           <img src={kredit}></img>
+          <div>
+            <h3>Кредит\Розстрочка</h3>
+            <p>
+              На нашій виставці, ви можете оплатити Ваше замовлення за допомогою
+              сервісів ПриватБанку "Миттєва Розстрочка" та "Оплата частинами", з
+              мінімальними відсотками.
+            </p>
+          </div>
         </section>
         <section className="o_info2">
           <img src={galochka}></img>
+          <div>
+            <h3>Передплата</h3>
+            <p>
+              У зв'язку з частими випадками замовлень "клієнтами", які не
+              збираються забирати їх керівництвом, було прийнято рішення про
+              введення, мінімальної передоплати 20% (на стандартні замовлення).
+              Залишок суми (80%) Ви оплачуєте при отриманні за фактом складання.
+              <br />
+              На нестандартні та великі замовлення передоплата 50%. На
+              нестандартні матраци передплата 100%.
+            </p>
+          </div>
         </section>
       </article>
+      <Pitanna></Pitanna>
+      <Sposobi></Sposobi>
     </main>
   );
 }
 
-export default App;
+export default Oplata;

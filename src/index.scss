@@ -233,6 +233,84 @@ header {
     }
   }
 }
+//Футер
+.f_doWrap {
+  background-color: rgb(43, 41, 41);
+  height: 510px;
+}
+.f_wrap {
+  padding: 40px 0;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 100%;
+  div {
+    h4 {
+      font-size: 2em;
+      padding-bottom: 15px;
+      font-weight: 600;
+    }
+    nav {
+      li {
+        font-size: 1.7em;
+        padding-bottom: 15px;
+      }
+    }
+  }
+}
+.f_lastDiv {
+  display: flex;
+  gap: 35px;
+  flex-direction: column;
+  &Wrap {
+    display: flex;
+    align-items: start;
+    gap: 15px;
+    font-weight: 600;
+    font-size: 2em;
+    line-height: 28px;
+    div {
+      p {
+        max-width: 200px;
+      }
+    }
+    img {
+      width: 55px;
+    }
+  }
+}
+
+.f_Seti {
+  h6 {
+    font-size: 1.7em;
+    margin-top: 45px;
+  }
+  div {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+}
+
+.f_card {
+  margin-top: 45px;
+  display: flex;
+  gap: 20px;
+}
+
+.f_downLine {
+  border: 2px solid rgb(61, 61, 61);
+  width: 100%;
+}
+
+.f_downFotter {
+  color: rgb(177, 177, 177);
+  padding: 25px;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+}
 //Главное Меню
 
 .m_wrap {
@@ -301,10 +379,6 @@ header {
   }
 }
 
-body {
-  background-color: rgb(88, 88, 88);
-}
-
 .o_PoKievy {
   margin-top: 60px;
   display: flex;
@@ -360,6 +434,496 @@ body {
   }
 }
 
-.o_info2 {
+.o_Oplati {
+  background-color: white;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 580px;
+  gap: 0px;
+  .o_info2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 20px;
+    img {
+      padding: 25px;
+      background-color: rgb(255, 188, 87);
+      border-radius: 100%;
+    }
+    div {
+      padding: 0px 0;
+      h3 {
+        margin-bottom: 10px;
+        font-size: 2.6em;
+        font-weight: 600;
+      }
+      p {
+        font-size: 1.6em;
+        line-height: 30px;
+      }
+    }
+    &Fix {
+      img {
+        padding: 25px 13px;
+      }
+    }
+  }
+}
+
+.o_pitana {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  h1 {
+    font-weight: 600;
+    font-size: 4em;
+    margin-bottom: 40px;
+  }
+  section {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    background-color: white;
+    width: 100%;
+    padding: 15px;
+    div {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      h5 {
+        font-weight: 600;
+        font-size: 1.9em;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.o_Sposobi {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+  section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    h4 {
+      font-size: 2em;
+      max-width: 150px;
+      font-weight: 600;
+    }
+  }
+}
+
+///Доставка й оплата
+.d_Dostavka {
+  display: flex;
+  align-items: center;
+  margin-top: 35px;
+  background-color: white;
+  justify-content: space-evenly;
+  height: 450px;
+  section {
+    h1 {
+      font-size: 4em;
+      font-weight: 600;
+    }
+    h3 {
+      padding: 30px 0;
+      max-width: 500px;
+      font-size: 2.6em;
+      font-weight: 600;
+      line-height: 34px;
+    }
+    h4 {
+      max-width: 450px;
+      font-size: 2em;
+      font-weight: 600;
+      line-height: 34px;
+    }
+  }
+  img {
+    width: 500px;
+  }
+}
+
+.d_poKyiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  div {
+    margin-top: 30px;
+    h1 {
+      font-size: 4em;
+      font-weight: 600;
+      max-width: 500px;
+      line-height: 48px;
+    }
+    div {
+      align-items: center;
+      display: flex;
+      gap: 20px;
+      h4 {
+        font-size: 2em;
+        max-width: 400px;
+        font-weight: 600;
+        line-height: 28px;
+      }
+    }
+    h4 {
+      font-size: 2em;
+      max-width: 500px;
+      font-weight: 600;
+      line-height: 28px;
+    }
+  }
+}
+
+.d_poUkraine {
+  margin-top: 100px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  div {
+    margin-top: 30px;
+    h1 {
+      font-size: 4em;
+      font-weight: 600;
+      max-width: 500px;
+      line-height: 48px;
+    }
+    div {
+      align-items: center;
+      display: flex;
+      gap: 20px;
+      h4 {
+        font-size: 2em;
+        max-width: 420px;
+        font-weight: 600;
+        line-height: 28px;
+      }
+    }
+    h4 {
+      font-size: 2em;
+      max-width: 500px;
+      font-weight: 600;
+      line-height: 28px;
+    }
+  }
+  .d_UkraineMap {
+    width: 650px;
+  }
+}
+.d_koloInfo {
+  position: absolute;
+  right: 550px;
+  top: 1000px;
+  div {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 40px;
+    max-width: 340px;
+    h3 {
+      text-align: center;
+      line-height: 34px;
+      font-size: 2.6em;
+      font-weight: 600;
+      color: rgb(255, 255, 255);
+    }
+    h4 {
+      text-align: center;
+      font-size: 2em;
+      line-height: 28px;
+      font-weight: 600;
+      color: rgb(255, 255, 255);
+    }
+  }
+}
+
+.d_koloInfo2 {
+  position: absolute;
+  right: 470px;
+  top: 1800px;
+  h3 {
+    position: absolute;
+    top: 135px;
+    right: 10px;
+    text-align: center;
+    line-height: 34px;
+    font-size: 2.6em;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    max-width: 400px;
+  }
+}
+
+.d_Note {
+  background-color: white;
+  padding: 100px 0 50px 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.d_akcii {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    margin-bottom: 40px;
+    font-size: 4em;
+    font-weight: 600;
+  }
+  p {
+    margin-top: 40px;
+    font-size: 1.6em;
+    line-height: 30px;
+    text-align: center;
+  }
+  .d_A-Info {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      h4 {
+        font-size: 2em;
+        font-weight: 600;
+        line-height: 28px;
+        max-width: 230px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.d_Skladanna {
+  background-color: white;
+  margin-top: 70px;
+  h1 {
+    padding-top: 70px;
+    font-size: 4em;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  ul {
+    li {
+      font-size: 1.7em;
+      padding: 15px 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .d_eqTwo {
+    background-color: rgb(248, 248, 248);
+  }
+}
+
+.d_Zanes {
+  background-color: white;
+  .d_ShapkaZanes {
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+    text-align: center;
+    background-color: rgb(83, 83, 83);
+    color: white;
+    font-size: 2em;
+    font-weight: 600;
+    padding: 15px 17px;
+    border-radius: 10px;
+  }
+  h1 {
+    padding-top: 70px;
+    font-size: 4em;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  ul {
+    li {
+      display: grid;
+      grid-template-columns: 45% 10% 45%;
+      text-align: center;
+      font-size: 1.7em;
+      padding: 15px 10px;
+      p:last-child {
+        text-align: end;
+      }
+      p:first-child {
+        text-align: start;
+      }
+    }
+  }
+  .d_InfoZanes {
+    padding: 40px 0 70px 0;
+    text-align: center;
+    font-size: 1.6em;
+    line-height: 30px;
+  }
+  .d_eqTwo {
+    background-color: rgb(248, 248, 248);
+  }
+}
+
+///Про нас
+.a_AboutUs {
+  margin-top: 30px;
+  background-color: white;
+  align-items: center;
+  height: 454px;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  img {
+    width: 600px;
+  }
+  h1 {
+    font-size: 4em;
+    font-weight: 600;
+    line-height: 48px;
+    margin-bottom: 30px;
+  }
+  h3 {
+    font-size: 2.6em;
+    font-weight: 600;
+    line-height: 34px;
+    margin-bottom: 20px;
+    max-width: 450px;
+  }
+  h4 {
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 28px;
+    max-width: 600px;
+  }
+}
+
+.a_KROVATO {
+  margin-top: 70px;
+  h1 {
+    text-align: center;
+    font-size: 4em;
+    font-weight: 600;
+    line-height: 48px;
+    margin-bottom: 40px;
+  }
+  div {
+    display: flex;
+    align-items: start;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    h3 {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 2.6em;
+      font-weight: 600;
+      max-width: 400px;
+      margin-bottom: 30px;
+    }
+    p {
+      text-align: center;
+      max-width: 400px;
+      font-size: 1.6em;
+      line-height: 30px;
+    }
+  }
+}
+
+.a_vidgyki {
+  margin: 70px 0;
   background-color: red;
+  height: 570px;
+}
+
+.a_showRoom {
+  background-color: white;
+  align-items: center;
+  height: 500px;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  img {
+    width: 600px;
+  }
+  h1 {
+    max-width: 500px;
+    font-size: 4em;
+    font-weight: 600;
+    line-height: 48px;
+    margin-bottom: 30px;
+  }
+  h3 {
+    max-width: 500px;
+    font-size: 2.6em;
+    font-weight: 600;
+    line-height: 34px;
+    margin-bottom: 20px;
+  }
+  h4 {
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 28px;
+    max-width: 600px;
+  }
+}
+///Блог
+.b_wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid red;
+    height: 475px;
+    img {
+      border-radius: 10px;
+    }
+    h3 {
+      margin: 0px 25px 0 25px;
+      font-size: 2.6em;
+      font-weight: 600;
+      line-height: 34px;
+    }
+    h5 {
+      margin: 00px 25px 25px 25px;
+      font-size: 1.9em;
+      font-weight: 600;
+      color: rgb(255, 188, 87);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}
+.b_arrow {
+  border-radius: 0px;
+}
+.b_h1 {
+  margin: 40px 0;
+  font-size: 4em;
+  font-weight: 600;
 }
