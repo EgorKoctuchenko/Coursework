@@ -13,17 +13,17 @@ import Credit from "./img/credit.svg";
 import Sale from "./img/sale.svg";
 import "./index.css";
 
-function Header() {
+function Header(props) {
   return (
     <header>
       <div className="h_upp_head">
         <nav className="h_nav1">
-          <li>Про нас</li>
-          <li>Оплата</li>
-          <li>Доставка та збірка</li>
-          <li>Відгуки</li>
-          <li>Блог</li>
-          <li>Контакти</li>
+          <li onClick={() => props.setThisPage(1)}>Про нас</li>
+          <li onClick={() => props.setThisPage(2)}>Оплата</li>
+          <li onClick={() => props.setThisPage(3)}>Доставка та збірка</li>
+          <li onClick={() => props.setThisPage(4)}>Відгуки</li>
+          <li onClick={() => props.setThisPage(5)}>Блог</li>
+          <li onClick={() => props.setThisPage(6)}>Контакти</li>
         </nav>
         <nav className="h_nav2">
           <p>Допомога і консультація:</p>

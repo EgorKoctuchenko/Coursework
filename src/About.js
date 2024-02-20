@@ -5,11 +5,14 @@ import mobAbout2 from "./img/mob-about 2.png";
 import Sposobi from "./Sposobi";
 import "./index.css";
 
-function About() {
+function About(props) {
   return (
     <main>
       <section className="this_choice">
-        Головна {" › "}{" "}
+        <span onClick={() => props.setThisPage(0)} className="golovna">
+          Головна
+        </span>{" "}
+        {" › "}
         <span style={{ color: "rgb(255, 188, 87)" }}>Про нас</span>
       </section>
       <article className="a_AboutUs">

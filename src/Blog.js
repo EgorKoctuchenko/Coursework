@@ -9,11 +9,15 @@ import Sposobi from "./Sposobi";
 import arrow from "./img/ArrowUp.svg";
 import "./index.css";
 
-function Blog() {
+function Blog(props) {
   return (
     <main>
       <section className="this_choice">
-        Головна {" › "} <span style={{ color: "rgb(255, 188, 87)" }}>Блог</span>
+        <span onClick={() => props.setThisPage(0)} className="golovna">
+          Головна
+        </span>{" "}
+        {" › "}
+        <span style={{ color: "rgb(255, 188, 87)" }}>Блог</span>
       </section>
       <h1 className="b_h1">Блог</h1>
       <article className="b_wrap">

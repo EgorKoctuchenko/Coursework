@@ -133,6 +133,9 @@ header {
     }
     .h_nav1 {
       gap: 20px;
+      li:hover {
+        text-decoration: underline;
+      }
     }
   }
   .h_down_head {
@@ -324,27 +327,218 @@ header {
     border: 1px solid purple;
   }
   .m_hotKat {
+    display: flex;
+    flex-direction: column;
     font-size: 4em;
     border: 1px solid purple;
     h1 {
       margin-bottom: 40px;
-      div {
-        section {
-          border: 1px solid black;
-          width: 250px;
-          height: 300px;
-        }
+    }
+    .m_Tovar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      flex-direction: row;
+    }
+  }
+}
+
+.m_akcii {
+  div {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    h1 {
+      font-size: 4em;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    div {
+      display: flex;
+      gap: 10px;
+      h5 {
+        font-size: 1.9em;
+        font-weight: 600;
+        color: rgb(255, 188, 87);
+      }
+    }
+  }
+  section {
+    margin-top: 45px;
+    display: flex;
+    justify-content: space-between;
+    img {
+      width: 410px;
+      height: 280px;
+      border-radius: 10px;
+    }
+  }
+}
+
+.m_blog {
+  div {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    h1 {
+      font-size: 4rem;
+      font-weight: 600;
+    }
+    div {
+      gap: 10px;
+      h5 {
+        color: rgb(255, 188, 87);
+        font-size: 1.9em;
+        font-weight: 600;
       }
     }
   }
 }
 
-//Оплата
+.m_KrovatoIs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-size: 4em;
+    font-weight: 600;
+    text-align: center;
+    max-width: 1000px;
+    line-height: 48px;
+  }
+  p {
+    font-size: 1.6em;
+    font-weight: 400;
+    line-height: 30px;
+    margin: 0 90px;
+    margin-top: 30px;
+  }
+}
+
+.m_listBlog {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+
+.m_thisBlog {
+  margin-top: 40px;
+  width: 410px;
+  height: 475px;
+  background-color: white;
+  border-radius: 10px;
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    background-color: white;
+    border-radius: 10px;
+    height: 475px;
+    img {
+      border-radius: 10px;
+    }
+    h3 {
+      margin: 0px 25px 0 25px;
+      font-size: 2.6em;
+      font-weight: 600;
+      line-height: 34px;
+    }
+    h5 {
+      margin: 00px 25px 25px 25px;
+      font-size: 1.9em;
+      font-weight: 600;
+      color: rgb(255, 188, 87);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}
+
+.m_vidgyki {
+  height: 570px;
+  background: rgb(233, 233, 233);
+  margin-bottom: 75px;
+}
+
+.m_Img {
+  border-radius: 10px;
+  width: 100%;
+  height: 220px;
+}
+
+.m_Avab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.m_Like {
+  cursor: pointer;
+}
+.m_Korz {
+  cursor: pointer;
+}
+
+.m_Price {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.m_Rozmir {
+  margin: 15px 0;
+  color: rgb(83, 83, 83);
+  font-size: 1.3rem;
+}
+
+.m_Name {
+  height: 52px;
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+
+.m_Nayav {
+  font-size: 1.3rem;
+}
+
+.m_thisTovar {
+  border-radius: 10px;
+  border: 1px solid rgb(227, 226, 226);
+  padding: 20px;
+  width: 300px;
+  height: 450px;
+  margin-bottom: 30px;
+}
+
+.m_BottomLikes {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  div {
+    display: flex;
+    gap: 10px;
+  }
+}
+
 .this_choice {
   word-spacing: 5px;
   font-size: 1.6em;
   margin-top: 15px;
+  .fixingBlogSpace {
+    word-spacing: 0px;
+  }
 }
+.golovna:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+//Оплата
+
 .o_oplata {
   margin-top: 30px;
   width: 100%;
@@ -528,7 +722,7 @@ header {
   align-items: center;
   margin-top: 35px;
   background-color: white;
-  justify-content: space-evenly;
+  justify-content: space-between;
   height: 450px;
   section {
     h1 {
@@ -897,7 +1091,6 @@ header {
     justify-content: space-between;
     background-color: white;
     border-radius: 10px;
-    border: 1px solid red;
     height: 475px;
     img {
       border-radius: 10px;
@@ -909,6 +1102,7 @@ header {
       line-height: 34px;
     }
     h5 {
+      cursor: pointer;
       margin: 00px 25px 25px 25px;
       font-size: 1.9em;
       font-weight: 600;
@@ -916,6 +1110,9 @@ header {
       display: flex;
       align-items: center;
       gap: 10px;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -926,4 +1123,266 @@ header {
   margin: 40px 0;
   font-size: 4em;
   font-weight: 600;
+}
+///Блог-Сторінки
+.b_Buttons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  button {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 8px;
+    background: rgb(255, 188, 87);
+    padding: 8px 20px;
+    color: rgb(255, 255, 255);
+    font-size: 1.9em;
+    font-weight: 400;
+  }
+}
+
+///Блог1
+
+.b1_wrap {
+  h1 {
+    margin: 40px 0;
+    text-align: center;
+    font-size: 4em;
+    font-weight: 600;
+    line-height: 48px;
+  }
+  .b1_info {
+    display: flex;
+    flex-direction: row-reverse;
+    .b1_Foto {
+      width: 500px;
+      height: 300px;
+    }
+    .fixingParag {
+      div {
+        gap: 10px;
+        display: flex;
+        align-items: start;
+        img {
+          width: 20px;
+        }
+        p {
+          transform: translateY(-4px);
+          font-size: 1.6em;
+          font-weight: 400;
+          line-height: 30px;
+          display: flex;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
+
+///Контакти
+.k_wrap {
+}
+
+.k_h1 {
+  font-size: 4em;
+  font-weight: 600;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.k_info {
+  display: flex;
+  justify-content: space-between;
+  section {
+    display: flex;
+    gap: 20px;
+    align-items: start;
+    div {
+      h6 {
+        color: rgb(177, 177, 177);
+        font-size: 1.7em;
+        margin-bottom: 5px;
+      }
+      h4 {
+        font-size: 2em;
+        font-weight: 600;
+        line-height: 28px;
+      }
+      div {
+        margin-top: 10px;
+        display: flex;
+        gap: 5px;
+      }
+    }
+  }
+}
+
+.k_adress {
+  display: flex;
+  justify-content: center;
+  margin: 70px 0 70px 0;
+}
+
+.k_map {
+  width: 530px;
+  height: 550px;
+}
+
+.k_adres {
+  width: 530px;
+  height: 550px;
+}
+
+.k_dostat {
+  background-color: white;
+  height: 610px;
+  padding: 70px 0;
+  h2 {
+    font-size: 3em;
+    font-weight: 600;
+    text-align: center;
+  }
+  section {
+    gap: 30px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    .k_first {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      div {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        p {
+          font-size: 2em;
+          font-weight: 600;
+          line-height: 28px;
+        }
+      }
+    }
+    .k_second {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      div {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        p {
+          font-size: 2em;
+          font-weight: 600;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+}
+
+.k_wrapBut {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.k_but {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 100px;
+  background-color: rgb(255, 188, 87);
+  color: white;
+  font-size: 1.9em;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.k_otpravka {
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 530px;
+  background-image: url("./img/backFone.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  section {
+    h1 {
+      font-size: 4em;
+      font-weight: 600;
+    }
+    h3 {
+      margin: 30px 0;
+      font-size: 2.6em;
+      font-weight: 600;
+      max-width: 470px;
+      line-height: 34px;
+    }
+    h2 {
+      color: rgb(255, 188, 87);
+      font-size: 3em;
+      font-weight: 600;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    input {
+      height: 50px;
+      width: 410px;
+      border: 1px solid rgb(209, 213, 213);
+      border-radius: 10px;
+      padding: 10px 20px 10px 20px;
+      font-size: 1.6em;
+    }
+    textarea {
+      height: 150px;
+      width: 410px;
+      border: 1px solid rgb(209, 213, 213);
+      border-radius: 10px;
+      padding: 10px 20px 10px 20px;
+      font-size: 1.6em;
+      resize: none;
+    }
+    .k_but2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 0px;
+      width: 240px;
+      background-color: rgb(255, 188, 87);
+      color: white;
+      font-size: 1.9em;
+      font-weight: 600;
+      border-radius: 10px;
+    }
+  }
+}
+
+///Відгуки
+.v_h1 {
+  font-size: 4em;
+  font-weight: 600;
+  margin: 40px 0;
+}
+
+.v_mode {
+  display: flex;
+  justify-content: start;
+  gap: 30px;
+  li {
+    font-size: 2em;
+    font-weight: 600;
+  }
+  margin-bottom: 40px;
 }

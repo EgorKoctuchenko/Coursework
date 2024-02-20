@@ -74,25 +74,34 @@ app.post("/api/renameData", (req, res) => {
   });
 });
 
+//Отримання даних
 app.get("/api/data", (req, res) => {
-  const query = "SELECT * FROM test";
+  const query = "SELECT * FROM tovar";
 
   pool.query(query, (err, results) => {
     if (err) {
       console.error("Ошибка выполнения SQL-запроса:", err);
       res.status(500).send("Ошибка сервера");
     } else {
-      const dataWithImageUrls = results.map((item) => ({
+      const AllData = results.map((item) => ({
         id: item.id,
+        price: item.price,
+        kolvo: item.kolvo,
         name: item.name,
-        imageUrl: item.image ? `${item.image}` : null,
+        imageUrl: item.photo ? `${item.photo}` : null,
+        virobnik: item.virobnik,
+        type: item.type,
+        korzina: item.korzina,
+        like: item.like,
+        sizes: item.sizes,
+        availability: item.availability,
       }));
-      res.json(dataWithImageUrls);
+      res.json(AllData);
     }
   });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
   console.log(`Сервер запущен на порту ${PORT}`);

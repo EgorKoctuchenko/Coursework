@@ -15,7 +15,7 @@ function Buf() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/data");
+      const response = await fetch("http://localhost:3001/api/data");
 
       if (!response.ok) {
         throw new Error(`Ошибка HTTP: ${response.status}`);
@@ -38,7 +38,7 @@ function Buf() {
       formData.append("name", "Новые данные2"); // Примерное имя для демонстрации
       formData.append("image", selectedImage); // Используйте сам файл, а не его путь
 
-      const response = await fetch("http://localhost:3000/api/addData", {
+      const response = await fetch("http://localhost:3001/api/addData", {
         method: "POST",
         body: formData,
       });
@@ -56,7 +56,7 @@ function Buf() {
 
   const handleRename = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/renameData", {
+      const response = await fetch("http://localhost:3001/api/renameData", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ function Buf() {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/deleteData", {
+      const response = await fetch("http://localhost:3001/api/deleteData", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -90,7 +90,7 @@ function Buf() {
       }
       data.map((item) => {
         item.imageUrl &&
-          console.log(item.imageUrl.replace("http://localhost:3000/", ""));
+          console.log(item.imageUrl.replace("http://localhost:3001/", ""));
       });
       console.log("Данные успешно удалены из базы данных");
       // Добавьте здесь логику для обновления данных на клиенте, если это необходимо
@@ -111,7 +111,7 @@ function Buf() {
                 className="testo"
                 style={{
                   backgroundImage: `url(${require("./Image_Storage/" +
-                    item.imageUrl.replace("http://localhost:3000", ""))})`,
+                    item.imageUrl.replace("http://localhost:3001", ""))})`,
                 }}
               />
             )}

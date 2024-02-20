@@ -12,7 +12,7 @@ import visa from "./img/ProvidedByVisa.svg";
 import mCard from "./img/ProvidedByMasterCard.svg";
 import "./index.css";
 
-function App() {
+function App(props) {
   const [thisPage, setThisPage] = useState(2);
   return (
     <footer className="f_doWrap">
@@ -42,11 +42,12 @@ function App() {
         <div>
           <h4>Інформація</h4>
           <nav>
-            <li>Про нас</li>
-            <li>Оплата</li>
-            <li>Доставка та збірка</li>
-            <li>Відгуки</li>
-            <li>Блог</li>
+            <li onClick={() => props.setThisPage(1)}>Про нас</li>
+            <li onClick={() => props.setThisPage(2)}>Оплата</li>
+            <li onClick={() => props.setThisPage(3)}>Доставка та збірка</li>
+            <li onClick={() => props.setThisPage(4)}>Відгуки</li>
+            <li onClick={() => props.setThisPage(5)}>Блог</li>
+            <li onClick={() => props.setThisPage(6)}>Контакти</li>
             <li>Мапа сайту</li>
           </nav>
         </div>

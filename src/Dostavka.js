@@ -9,11 +9,14 @@ import Sposobi from "./Sposobi";
 import Pitanna from "./Pitanna";
 import "./index.css";
 
-function Dostavka() {
+function Dostavka(props) {
   return (
     <main className="d_wrap">
       <section className="this_choice">
-        Головна {" › "}{" "}
+        <span onClick={() => props.setThisPage(0)} className="golovna">
+          Головна
+        </span>{" "}
+        {" › "}
         <span style={{ color: "rgb(255, 188, 87)" }}>Доставка та збірка</span>
       </section>
       <article className="d_Dostavka">

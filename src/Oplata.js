@@ -11,11 +11,14 @@ import Pitanna from "./Pitanna";
 import "./index.css";
 import foto1 from "./img/mob-oplata.png";
 
-function Oplata() {
+function Oplata(props) {
   return (
     <main className="o_wrap">
       <section className="this_choice">
-        Головна {" › "}{" "}
+        <span onClick={() => props.setThisPage(0)} className="golovna">
+          Головна
+        </span>{" "}
+        {" › "}
         <span style={{ color: "rgb(255, 188, 87)" }}>Оплата</span>
       </section>
       <article className="o_oplata">
