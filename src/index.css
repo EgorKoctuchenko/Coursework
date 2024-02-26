@@ -125,7 +125,7 @@ body {
 
 header {
   height: 220px;
-  border: 1px solid red;
+  border: 1px solid rgb(8, 12, 253);
 }
 header .h_upp_head {
   display: -webkit-box;
@@ -245,6 +245,7 @@ header .h_down_head .h_tel_info {
       -ms-flex-align: center;
           align-items: center;
   gap: 5px;
+  width: 150px;
 }
 header .h_down_head .h_tel_info p {
   font-size: 1.3em;
@@ -252,8 +253,69 @@ header .h_down_head .h_tel_info p {
 }
 header .h_down_head .h_tel_info h4 {
   font-weight: 600;
-  font-size: 2em;
+  font-size: 1.8em;
   letter-spacing: 0.5px;
+}
+header .h_down_head .h_tel svg {
+  cursor: pointer;
+}
+header .h_down_head .h_tel2 {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 3;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  padding: 20px;
+  gap: 10px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12);
+  background: rgb(255, 255, 255);
+  right: 427px;
+  top: 83px;
+}
+header .h_down_head .h_tel2_info {
+  margin-top: 7px;
+  margin-right: 0.5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  width: 150px;
+  margin-right: 3px;
+}
+header .h_down_head .h_tel2_info p {
+  font-size: 1.3em;
+  color: rgb(83, 83, 83);
+}
+header .h_down_head .h_tel2_info h4 {
+  font-weight: 600;
+  font-size: 1.8em;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+header .h_down_head .h_tel2_info .h_tel2_info_ZvonMe {
+  font-size: 1.6rem;
+  margin: 15px 0 0 0;
+  color: rgb(255, 188, 87);
+}
+header .h_down_head .h_tel2 .h_exit {
+  cursor: pointer;
+  margin-top: 20px;
+  margin-right: 3px;
 }
 header .h_down_head .h_likes {
   display: -webkit-box;
@@ -314,6 +376,41 @@ header .h_bottom_head .h_nav2_2 li {
       -ms-flex-align: center;
           align-items: center;
   font-weight: 600;
+}
+
+.h_Lange {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 8px;
+  position: absolute;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12);
+  background: rgb(255, 255, 255);
+  padding: 10px 5px;
+  height: 80px;
+  right: 302.5px;
+  top: 14px;
+}
+.h_Lange_L {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.h_Lange_L h5 {
+  margin-bottom: 10px;
+}
+.h_Lange svg {
+  margin-bottom: 42px;
+  cursor: pointer;
 }
 
 .f_doWrap {
@@ -513,6 +610,7 @@ header .h_bottom_head .h_nav2_2 li {
 }
 .m_blog div div h5 {
   color: rgb(255, 188, 87);
+  cursor: pointer;
   font-size: 1.9em;
   font-weight: 600;
 }
@@ -558,7 +656,7 @@ header .h_bottom_head .h_nav2_2 li {
   margin-top: 40px;
   width: 410px;
   height: 475px;
-  background-color: white;
+  background-color: rgb(51, 24, 24);
   border-radius: 10px;
 }
 .m_thisBlog div {
@@ -600,6 +698,7 @@ header .h_bottom_head .h_nav2_2 li {
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 
 .m_vidgyki {
@@ -662,7 +761,10 @@ header .h_bottom_head .h_nav2_2 li {
   padding: 20px;
   width: 300px;
   height: 450px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  -webkit-box-shadow: -3px 4px 15px 0px rgba(0, 0, 0, 0.06);
+          box-shadow: -3px 4px 15px 0px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
 }
 
 .m_BottomLikes {
@@ -1477,7 +1579,7 @@ header .h_bottom_head .h_nav2_2 li {
           justify-content: space-between;
   text-align: center;
 }
-.b_Buttons button {
+.b_Buttons .b1_isActive {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1493,6 +1595,79 @@ header .h_bottom_head .h_nav2_2 li {
   font-weight: 400;
 }
 
+.b1_noActive {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  visibility: hidden;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  border-radius: 8px;
+  background: rgb(255, 188, 87);
+  padding: 8px 20px;
+  color: rgb(255, 255, 255);
+  font-size: 1.9em;
+  font-weight: 400;
+}
+
+.b3_info {
+  gap: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.b3_info .b1_Foto {
+  width: 1100px;
+  height: 450px;
+  border-radius: 10px;
+}
+.b3_info .b1_Fotos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+  border-radius: 10px;
+}
+.b3_info .fixingParag div {
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+.b3_info .fixingParag div img {
+  width: 20px;
+}
+.b3_info .fixingParag div p {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+  font-size: 1.6em;
+  font-weight: 400;
+  line-height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
 .b1_wrap h1 {
   margin: 40px 0;
   text-align: center;
@@ -1501,6 +1676,7 @@ header .h_bottom_head .h_nav2_2 li {
   line-height: 48px;
 }
 .b1_wrap .b1_info {
+  gap: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1511,7 +1687,22 @@ header .h_bottom_head .h_nav2_2 li {
 }
 .b1_wrap .b1_info .b1_Foto {
   width: 500px;
+  border-radius: 10px;
   height: 300px;
+}
+.b1_wrap .b1_info .b1_Fotos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+  border-radius: 10px;
 }
 .b1_wrap .b1_info .fixingParag div {
   gap: 10px;
@@ -1797,4 +1988,175 @@ header .h_bottom_head .h_nav2_2 li {
 .v_mode li {
   font-size: 2em;
   font-weight: 600;
+}
+
+.kat_wrap {
+  position: absolute;
+  -webkit-filter: blur;
+          filter: blur;
+  top: 180px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.kat_wrap .kat_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 300px;
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-left: 500px;
+  padding: 10px 0;
+}
+.kat_wrap .kat_menu li {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 30px;
+}
+.kat_wrap .kat_menu li:hover {
+  background-color: rgb(255, 188, 87);
+}
+.kat_wrap .kat_menu li h4 {
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.li_h1 {
+  margin: 40px 0;
+  font-size: 4em;
+  font-weight: 600;
+}
+
+.li_tovari {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+.li_tovari .li_aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+  width: 300px;
+}
+.li_tovari .li_aside .li_zag {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid rgb(227, 226, 226);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+.li_tovari .li_aside .li_zag h5 {
+  font-size: 1.9em;
+  font-weight: 600;
+}
+.li_tovari .li_list {
+  border: 1px solid blue;
+  width: 960px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  -ms-grid-columns: 1fr 30px 1fr 30px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.li_tovari .li_list section {
+  border: 1px solid red;
+}
+.li_tovari .li_asideList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.li_tovari .li_asideList li {
+  border: 1px solid rgb(227, 226, 226);
+  font-size: 1.9em;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.li_tovari .li_asideList li .li_kateX {
+  padding: 18px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.li_tovari .li_asideList li .li_params {
+  overflow: hidden;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.li_tovari .li_asideList li .li_close {
+  height: 0px;
+  padding: 0px 15px;
+}
+.li_tovari .li_asideList li .li_open {
+  height: auto;
+  padding: 18px 15px;
+}
+
+.li_buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 40px;
+  gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.li_buttons button {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 1.7em;
+  font-weight: 400;
+  border-radius: 10px;
 }

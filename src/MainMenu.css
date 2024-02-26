@@ -1,0 +1,287 @@
+.m_wrap {
+  margin-top: 25px;
+  border: 1px solid green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 70px;
+}
+.m_wrap .m_reklama {
+  height: 420px;
+  border: 1px solid purple;
+}
+.m_wrap .m_hotKat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 4em;
+  border: 1px solid purple;
+}
+.m_wrap .m_hotKat h1 {
+  margin-bottom: 40px;
+}
+.m_wrap .m_hotKat .m_Tovar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.m_akcii div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
+.m_akcii div h1 {
+  font-size: 4em;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.m_akcii div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+.m_akcii div div h5 {
+  font-size: 1.9em;
+  font-weight: 600;
+  color: rgb(255, 188, 87);
+}
+.m_akcii section {
+  margin-top: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.m_akcii section img {
+  width: 410px;
+  height: 280px;
+  border-radius: 10px;
+}
+
+.m_blog div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
+.m_blog div h1 {
+  font-size: 4rem;
+  font-weight: 600;
+}
+.m_blog div div {
+  gap: 10px;
+}
+.m_blog div div h5 {
+  color: rgb(255, 188, 87);
+  font-size: 1.9em;
+  font-weight: 600;
+}
+
+.m_KrovatoIs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.m_KrovatoIs h1 {
+  font-size: 4em;
+  font-weight: 600;
+  text-align: center;
+  max-width: 1000px;
+  line-height: 48px;
+}
+.m_KrovatoIs p {
+  font-size: 1.6em;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 0 90px;
+  margin-top: 30px;
+}
+
+.m_listBlog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 70px;
+}
+
+.m_thisBlog {
+  margin-top: 40px;
+  width: 410px;
+  height: 475px;
+  background-color: white;
+  border-radius: 10px;
+}
+.m_thisBlog div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  background-color: white;
+  border-radius: 10px;
+  height: 475px;
+}
+.m_thisBlog div img {
+  border-radius: 10px;
+}
+.m_thisBlog div h3 {
+  margin: 0px 25px 0 25px;
+  font-size: 2.6em;
+  font-weight: 600;
+  line-height: 34px;
+}
+.m_thisBlog div h5 {
+  margin: 0px 25px 25px 25px;
+  font-size: 1.9em;
+  font-weight: 600;
+  color: rgb(255, 188, 87);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.m_vidgyki {
+  height: 570px;
+  background: rgb(233, 233, 233);
+  margin-bottom: 75px;
+}
+
+.m_Img {
+  border-radius: 10px;
+  width: 100%;
+  height: 220px;
+}
+
+.m_Avab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.m_Like {
+  cursor: pointer;
+}
+
+.m_Korz {
+  cursor: pointer;
+}
+
+.m_Price {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.m_Rozmir {
+  margin: 15px 0;
+  color: rgb(83, 83, 83);
+  font-size: 1.3rem;
+}
+
+.m_Name {
+  height: 52px;
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+
+.m_Nayav {
+  font-size: 1.3rem;
+}
+
+.m_thisTovar {
+  border-radius: 10px;
+  border: 1px solid rgb(227, 226, 226);
+  padding: 20px;
+  width: 300px;
+  height: 450px;
+  margin-bottom: 30px;
+}
+
+.m_BottomLikes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+.m_BottomLikes div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.this_choice {
+  word-spacing: 5px;
+  font-size: 1.6em;
+  margin-top: 15px;
+}
+.this_choice .fixingBlogSpace {
+  word-spacing: 0px;
+}
+
+.golovna:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

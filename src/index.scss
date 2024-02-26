@@ -107,438 +107,12 @@ body {
 }
 
 //Хедер
-header {
-  height: 220px;
-  border: 1px solid red;
-  .h_upp_head {
-    display: flex;
-    justify-content: space-between;
-    nav {
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      font-size: 1.6em;
-      color: rgb(83, 83, 83);
-      div {
-        display: flex;
-        align-items: center;
-        gap: 3px;
-        h5 {
-          font-size: 1.2em;
-        }
-      }
-    }
-    .h_nav2 {
-      gap: 15px;
-    }
-    .h_nav1 {
-      gap: 20px;
-      li:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-  .h_down_head {
-    background-color: white;
-    margin-top: 25px;
-    padding: 25px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      width: 145px;
-      height: 46px;
-      color: white;
-      background-color: rgb(255, 188, 87);
-      font-weight: 600;
-      font-size: 1.8em;
-      letter-spacing: 0.5px;
-      border-radius: 8px;
-    }
-    .h_poshyk {
-      border: 1px solid rgb(177, 177, 177);
-      width: 420px;
-      height: 50px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      input {
-        padding: 10px 15px;
-        font-size: 1.6em;
-        width: 90%;
-        height: 100%;
-        border-radius: 8px;
-      }
-    }
-    .h_tel {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      &_info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        p {
-          font-size: 1.3em;
-          color: rgb(83, 83, 83);
-        }
-        h4 {
-          font-weight: 600;
-          font-size: 2em;
-          letter-spacing: 0.5px;
-        }
-      }
-    }
-    .h_likes {
-      display: flex;
-      gap: 10px;
-    }
-  }
-  .h_bottom_head {
-    background-color: white;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    .h_nav2_1 {
-      display: flex;
-      align-items: center;
-      color: rgb(83, 83, 83);
-      display: flex;
-      font-size: 1.9em;
-      gap: 30px;
-      li {
-        gap: 5px;
-        display: flex;
-        align-items: center;
-        h5 {
-          font-weight: 600;
-        }
-      }
-    }
-    .h_nav2_2 {
-      display: flex;
-      align-items: center;
-      font-size: 1.9em;
-      color: rgb(83, 83, 83);
-      gap: 30px;
-      li {
-        display: flex;
-        align-items: center;
-        font-weight: 600;
-      }
-    }
-  }
-}
+@import "./Header.scss";
 //Футер
-.f_doWrap {
-  background-color: rgb(43, 41, 41);
-  height: 510px;
-}
-.f_wrap {
-  padding: 40px 0;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-  width: 100%;
-  div {
-    h4 {
-      font-size: 2em;
-      padding-bottom: 15px;
-      font-weight: 600;
-    }
-    nav {
-      li {
-        font-size: 1.7em;
-        padding-bottom: 15px;
-      }
-    }
-  }
-}
-.f_lastDiv {
-  display: flex;
-  gap: 35px;
-  flex-direction: column;
-  &Wrap {
-    display: flex;
-    align-items: start;
-    gap: 15px;
-    font-weight: 600;
-    font-size: 2em;
-    line-height: 28px;
-    div {
-      p {
-        max-width: 200px;
-      }
-    }
-    img {
-      width: 55px;
-    }
-  }
-}
-
-.f_Seti {
-  h6 {
-    font-size: 1.7em;
-    margin-top: 45px;
-  }
-  div {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
-  }
-}
-
-.f_card {
-  margin-top: 45px;
-  display: flex;
-  gap: 20px;
-}
-
-.f_downLine {
-  border: 2px solid rgb(61, 61, 61);
-  width: 100%;
-}
-
-.f_downFotter {
-  color: rgb(177, 177, 177);
-  padding: 25px;
-  font-size: 1.5em;
-  display: flex;
-  justify-content: center;
-}
-//Главное Меню
-
-.m_wrap {
-  margin-top: 25px;
-  border: 1px solid green;
-  display: flex;
-  flex-direction: column;
-  gap: 70px;
-  .m_reklama {
-    height: 420px;
-    border: 1px solid purple;
-  }
-  .m_hotKat {
-    display: flex;
-    flex-direction: column;
-    font-size: 4em;
-    border: 1px solid purple;
-    h1 {
-      margin-bottom: 40px;
-    }
-    .m_Tovar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      width: 100%;
-      flex-direction: row;
-    }
-  }
-}
-
-.m_akcii {
-  div {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    h1 {
-      font-size: 4em;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-    div {
-      display: flex;
-      gap: 10px;
-      h5 {
-        font-size: 1.9em;
-        font-weight: 600;
-        color: rgb(255, 188, 87);
-      }
-    }
-  }
-  section {
-    margin-top: 45px;
-    display: flex;
-    justify-content: space-between;
-    img {
-      width: 410px;
-      height: 280px;
-      border-radius: 10px;
-    }
-  }
-}
-
-.m_blog {
-  div {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    h1 {
-      font-size: 4rem;
-      font-weight: 600;
-    }
-    div {
-      gap: 10px;
-      h5 {
-        color: rgb(255, 188, 87);
-        font-size: 1.9em;
-        font-weight: 600;
-      }
-    }
-  }
-}
-
-.m_KrovatoIs {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  h1 {
-    font-size: 4em;
-    font-weight: 600;
-    text-align: center;
-    max-width: 1000px;
-    line-height: 48px;
-  }
-  p {
-    font-size: 1.6em;
-    font-weight: 400;
-    line-height: 30px;
-    margin: 0 90px;
-    margin-top: 30px;
-  }
-}
-
-.m_listBlog {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 70px;
-}
-
-.m_thisBlog {
-  margin-top: 40px;
-  width: 410px;
-  height: 475px;
-  background-color: white;
-  border-radius: 10px;
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    background-color: white;
-    border-radius: 10px;
-    height: 475px;
-    img {
-      border-radius: 10px;
-    }
-    h3 {
-      margin: 0px 25px 0 25px;
-      font-size: 2.6em;
-      font-weight: 600;
-      line-height: 34px;
-    }
-    h5 {
-      margin: 00px 25px 25px 25px;
-      font-size: 1.9em;
-      font-weight: 600;
-      color: rgb(255, 188, 87);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-  }
-}
-
-.m_vidgyki {
-  height: 570px;
-  background: rgb(233, 233, 233);
-  margin-bottom: 75px;
-}
-
-.m_Img {
-  border-radius: 10px;
-  width: 100%;
-  height: 220px;
-}
-
-.m_Avab {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.m_Like {
-  cursor: pointer;
-}
-.m_Korz {
-  cursor: pointer;
-}
-
-.m_Price {
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.m_Rozmir {
-  margin: 15px 0;
-  color: rgb(83, 83, 83);
-  font-size: 1.3rem;
-}
-
-.m_Name {
-  height: 52px;
-  font-size: 1.9rem;
-  font-weight: 600;
-  line-height: 24px;
-  margin-bottom: 15px;
-}
-
-.m_Nayav {
-  font-size: 1.3rem;
-}
-
-.m_thisTovar {
-  border-radius: 10px;
-  border: 1px solid rgb(227, 226, 226);
-  padding: 20px;
-  width: 300px;
-  height: 450px;
-  margin-bottom: 30px;
-}
-
-.m_BottomLikes {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  div {
-    display: flex;
-    gap: 10px;
-  }
-}
-
-.this_choice {
-  word-spacing: 5px;
-  font-size: 1.6em;
-  margin-top: 15px;
-  .fixingBlogSpace {
-    word-spacing: 0px;
-  }
-}
-.golovna:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
+@import "./Footer.scss";
+//Головне меню
+@import "./MainMenu.scss";
 //Оплата
-
 .o_oplata {
   margin-top: 30px;
   width: 100%;
@@ -1130,7 +704,7 @@ header {
   display: flex;
   justify-content: space-between;
   text-align: center;
-  button {
+  .b1_isActive {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -1143,7 +717,57 @@ header {
   }
 }
 
-///Блог1
+.b1_noActive {
+  display: flex;
+  visibility: hidden;
+  align-items: center;
+  gap: 20px;
+  border-radius: 8px;
+  background: rgb(255, 188, 87);
+  padding: 8px 20px;
+  color: rgb(255, 255, 255);
+  font-size: 1.9em;
+  font-weight: 400;
+}
+
+///Блог (окремі частини)
+
+.b3_info {
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .b1_Foto {
+    width: 1100px;
+    height: 450px;
+    border-radius: 10px;
+  }
+  .b1_Fotos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 10px;
+  }
+  .fixingParag {
+    div {
+      gap: 10px;
+      display: flex;
+      align-items: start;
+      img {
+        width: 20px;
+      }
+      p {
+        transform: translateY(-4px);
+        font-size: 1.6em;
+        font-weight: 400;
+        line-height: 30px;
+        display: flex;
+        gap: 10px;
+      }
+    }
+  }
+}
 
 .b1_wrap {
   h1 {
@@ -1154,11 +778,20 @@ header {
     line-height: 48px;
   }
   .b1_info {
+    gap: 30px;
     display: flex;
     flex-direction: row-reverse;
     .b1_Foto {
       width: 500px;
+      border-radius: 10px;
       height: 300px;
+    }
+    .b1_Fotos {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      border-radius: 10px;
     }
     .fixingParag {
       div {
@@ -1385,4 +1018,126 @@ header {
     font-weight: 600;
   }
   margin-bottom: 40px;
+}
+
+//Категорії
+.kat_wrap {
+  position: absolute;
+  filter: blur;
+  top: 180px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  .kat_menu {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-left: 500px;
+    padding: 10px 0;
+    li {
+      cursor: pointer;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      padding: 15px 30px;
+      &:hover {
+        background-color: rgb(255, 188, 87);
+      }
+      h4 {
+        font-size: 2em;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+//Лист Товарів
+.li_h1 {
+  margin: 40px 0;
+  font-size: 4em;
+  font-weight: 600;
+}
+.li_tovari {
+  display: flex;
+  gap: 30px;
+  .li_aside {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 300px;
+    .li_zag {
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px 10px 0 0;
+      border: 1px solid rgb(227, 226, 226);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      h5 {
+        font-size: 1.9em;
+        font-weight: 600;
+      }
+    }
+  }
+  .li_list {
+    border: 1px solid blue;
+    width: 960px;
+    display: grid;
+    justify-content: center;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+    section {
+      border: 1px solid red;
+    }
+  }
+  .li_asideList {
+    display: flex;
+    flex-direction: column;
+    li {
+      border: 1px solid rgb(227, 226, 226);
+      font-size: 1.9em;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      .li_kateX {
+        padding: 18px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .li_params {
+        overflow: hidden;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+      }
+      .li_close {
+        height: 0px;
+        padding: 0px 15px;
+      }
+      .li_open {
+        height: auto;
+        padding: 18px 15px;
+      }
+    }
+  }
+}
+
+.li_buttons {
+  display: flex;
+  margin-top: 40px;
+  gap: 10px;
+  justify-content: center;
+  button {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.7em;
+    font-weight: 400;
+    border-radius: 10px;
+  }
 }

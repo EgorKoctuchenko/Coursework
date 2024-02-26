@@ -24,42 +24,42 @@ function Blog(props) {
         <section>
           <img src={blog1}></img>
           <h3>Новий дизайн. Чи підійде вам новий стиль?</h3>
-          <h5>
+          <h5 onClick={() => props.setThisPage(101)}>
             Детальніше <img className="b_arrow" src={arrow}></img>
           </h5>
         </section>
         <section>
           <img src={blog2}></img>
           <h3>Диван ваших мрій. Чи потрібен він вам?</h3>
-          <h5>
+          <h5 onClick={() => props.setThisPage(102)}>
             Детальніше <img className="b_arrow" src={arrow}></img>
           </h5>
         </section>
         <section>
           <img src={blog3}></img>
-          <h3>Естетика. Чи підійде вам додаткові елементи?</h3>
-          <h5>
+          <h3>Естетика. Чи підійдуть вам додаткові елементи?</h3>
+          <h5 onClick={() => props.setThisPage(103)}>
             Детальніше <img className="b_arrow" src={arrow}></img>
           </h5>
         </section>
         <section>
           <img src={blog4}></img>
           <h3>Стільці для вітальні. Як правильно вибрати?</h3>
-          <h5>
+          <h5 onClick={() => props.setThisPage(104)}>
             Детальніше <img className="b_arrow" src={arrow}></img>
           </h5>
         </section>
         <section>
           <img src={blog5}></img>
           <h3>Що краще вибрати для кухні – стільці чи кухонний куточок?</h3>
-          <h5>
+          <h5 onClick={() => props.setThisPage(105)}>
             Детальніше <img className="b_arrow" src={arrow}></img>
           </h5>
         </section>
         <section>
           <img src={blog6}></img>
           <h3>Оформлення вітальні. Які м'які меблі краще вибрати?</h3>
-          <h5>
+          <h5 onClick={() => props.setThisPage(106)}>
             Детальніше <img className="b_arrow" src={arrow}></img>
           </h5>
         </section>

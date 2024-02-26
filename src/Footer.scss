@@ -1,0 +1,78 @@
+//Футер
+.f_doWrap {
+  background-color: rgb(43, 41, 41);
+  height: 510px;
+}
+.f_wrap {
+  padding: 40px 0;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 100%;
+  div {
+    h4 {
+      font-size: 2em;
+      padding-bottom: 15px;
+      font-weight: 600;
+    }
+    nav {
+      li {
+        font-size: 1.7em;
+        padding-bottom: 15px;
+      }
+    }
+  }
+}
+.f_lastDiv {
+  display: flex;
+  gap: 35px;
+  flex-direction: column;
+  &Wrap {
+    display: flex;
+    align-items: start;
+    gap: 15px;
+    font-weight: 600;
+    font-size: 2em;
+    line-height: 28px;
+    div {
+      p {
+        max-width: 200px;
+      }
+    }
+    img {
+      width: 55px;
+    }
+  }
+}
+
+.f_Seti {
+  h6 {
+    font-size: 1.7em;
+    margin-top: 45px;
+  }
+  div {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+}
+
+.f_card {
+  margin-top: 45px;
+  display: flex;
+  gap: 20px;
+}
+
+.f_downLine {
+  border: 2px solid rgb(61, 61, 61);
+  width: 100%;
+}
+
+.f_downFotter {
+  color: rgb(177, 177, 177);
+  padding: 25px;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+}

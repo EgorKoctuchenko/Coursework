@@ -1,0 +1,92 @@
+.f_doWrap {
+  background-color: rgb(43, 41, 41);
+  height: 510px;
+}
+
+.f_wrap {
+  padding: 40px 0;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 50px;
+  width: 100%;
+}
+.f_wrap div h4 {
+  font-size: 2em;
+  padding-bottom: 15px;
+  font-weight: 600;
+}
+.f_wrap div nav li {
+  font-size: 1.7em;
+  padding-bottom: 15px;
+}
+
+.f_lastDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 35px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.f_lastDivWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 15px;
+  font-weight: 600;
+  font-size: 2em;
+  line-height: 28px;
+}
+.f_lastDivWrap div p {
+  max-width: 200px;
+}
+.f_lastDivWrap img {
+  width: 55px;
+}
+
+.f_Seti h6 {
+  font-size: 1.7em;
+  margin-top: 45px;
+}
+.f_Seti div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.f_card {
+  margin-top: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.f_downLine {
+  border: 2px solid rgb(61, 61, 61);
+  width: 100%;
+}
+
+.f_downFotter {
+  color: rgb(177, 177, 177);
+  padding: 25px;
+  font-size: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}

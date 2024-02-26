@@ -13,7 +13,7 @@ function App(props) {
           Головна
         </span>{" "}
         {" › "}{" "}
-        <span onClick={() => props.setThisPage(0)} className="golovna">
+        <span onClick={() => props.setThisPage(5)} className="golovna">
           Блог
         </span>
         {" › "}{" "}
@@ -85,12 +85,30 @@ function App(props) {
         </div>
       </article>
       <div className="b_Buttons">
-        <button>
-          <img src={LeftA}></img>Попередня стаття
-        </button>
-        <button>
-          Попередня стаття <img src={RightA}></img>
-        </button>
+        {props.isPage !== 101 ? (
+          <button
+            className="b1_isActive"
+            onClick={() => props.setThisPage(props.isPage - 1)}
+          >
+            <img src={LeftA}></img>Попередня стаття
+          </button>
+        ) : (
+          <button className="b1_noActive">
+            <img src={LeftA}></img>Попередня стаття
+          </button>
+        )}
+        {props.isPage !== 106 ? (
+          <button
+            className="b1_isActive"
+            onClick={() => props.setThisPage(props.isPage + 1)}
+          >
+            Наступна стаття <img src={RightA}></img>
+          </button>
+        ) : (
+          <button className="b1_noActive">
+            Наступна стаття<img src={RightA}></img>
+          </button>
+        )}
       </div>
     </main>
   );

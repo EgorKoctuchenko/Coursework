@@ -14,7 +14,7 @@ import Sposobi from "./Sposobi";
 import arrowUp from "./img/ArrowUp.svg";
 import "./index.css";
 
-function MainMenu() {
+function MainMenu(props) {
   const [data, setData] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -109,7 +109,7 @@ function MainMenu() {
         <div>
           <h1>Свіжі статті та останні новини</h1>
           <div>
-            <h5>Читать блог</h5>
+            <h5 onClick={() => props.setThisPage(5)}>Читать блог</h5>
             <img src={arrowUp}></img>
           </div>
         </div>
@@ -118,7 +118,7 @@ function MainMenu() {
             <div>
               <img src={blog1}></img>
               <h3>Новий дизайн. Чи підійде вам новий стиль?</h3>
-              <h5>
+              <h5 onClick={() => props.setThisPage(101)}>
                 Детальніше <img className="b_arrow" src={arrowUp}></img>
               </h5>
             </div>
@@ -127,7 +127,7 @@ function MainMenu() {
             <div>
               <img src={blog2}></img>
               <h3>Диван ваших мрій. Чи потрібен він вам?</h3>
-              <h5>
+              <h5 onClick={() => props.setThisPage(102)}>
                 Детальніше <img className="b_arrow" src={arrowUp}></img>
               </h5>
             </div>
@@ -135,8 +135,8 @@ function MainMenu() {
           <section className="m_thisBlog">
             <div>
               <img src={blog3}></img>
-              <h3>Естетика. Чи підійде вам додаткові елементи?</h3>
-              <h5>
+              <h3>Естетика. Чи підійдуть вам додаткові елементи?</h3>
+              <h5 onClick={() => props.setThisPage(103)}>
                 Детальніше <img className="b_arrow" src={arrowUp}></img>
               </h5>
             </div>

@@ -1,0 +1,247 @@
+header {
+  height: 220px;
+  border: 1px solid red;
+}
+header .h_upp_head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+header .h_upp_head nav {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.6em;
+  color: rgb(83, 83, 83);
+}
+header .h_upp_head nav div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3px;
+}
+header .h_upp_head nav div h5 {
+  font-size: 1.2em;
+}
+header .h_upp_head .h_nav2 {
+  gap: 15px;
+}
+header .h_upp_head .h_nav1 {
+  gap: 20px;
+}
+header .h_upp_head .h_nav1 li:hover {
+  text-decoration: underline;
+}
+header .h_down_head {
+  background-color: white;
+  margin-top: 25px;
+  padding: 25px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 30px;
+}
+header .h_down_head button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 5px;
+  width: 145px;
+  height: 46px;
+  color: white;
+  background-color: rgb(255, 188, 87);
+  font-weight: 600;
+  font-size: 1.8em;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+}
+header .h_down_head .h_poshyk {
+  border: 1px solid rgb(177, 177, 177);
+  width: 420px;
+  height: 50px;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header .h_down_head .h_poshyk input {
+  padding: 10px 15px;
+  font-size: 1.6em;
+  width: 90%;
+  height: 100%;
+  border-radius: 8px;
+}
+header .h_down_head .h_tel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+header .h_down_head .h_tel_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  width: 150px;
+}
+header .h_down_head .h_tel_info p {
+  font-size: 1.3em;
+  color: rgb(83, 83, 83);
+}
+header .h_down_head .h_tel_info h4 {
+  font-weight: 600;
+  font-size: 1.8em;
+  letter-spacing: 0.5px;
+}
+header .h_down_head .h_tel2 {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 3;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  padding: 20px;
+  gap: 10px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12);
+  background: rgb(255, 255, 255);
+  right: 427px;
+  top: 83px;
+}
+header .h_down_head .h_tel2_info {
+  margin-top: 7px;
+  margin-right: 0.5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  width: 150px;
+}
+header .h_down_head .h_tel2_info p {
+  font-size: 1.3em;
+  color: rgb(83, 83, 83);
+}
+header .h_down_head .h_tel2_info h4 {
+  font-weight: 600;
+  font-size: 1.8em;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+header .h_down_head .h_tel2_info .h_tel2_info_ZvonMe {
+  font-size: 1.6rem;
+  margin: 15px 0 0 0;
+}
+header .h_down_head .h_tel2 svg {
+  margin-top: 17px;
+}
+header .h_down_head .h_likes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+header .h_bottom_head {
+  background-color: white;
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+header .h_bottom_head .h_nav2_1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: rgb(83, 83, 83);
+  display: flex;
+  font-size: 1.9em;
+  gap: 30px;
+}
+header .h_bottom_head .h_nav2_1 li {
+  gap: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header .h_bottom_head .h_nav2_1 li h5 {
+  font-weight: 600;
+}
+header .h_bottom_head .h_nav2_2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.9em;
+  color: rgb(83, 83, 83);
+  gap: 30px;
+}
+header .h_bottom_head .h_nav2_2 li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+}
