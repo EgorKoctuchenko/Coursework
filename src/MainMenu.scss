@@ -2,19 +2,16 @@
 
 .m_wrap {
   margin-top: 25px;
-  border: 1px solid green;
   display: flex;
   flex-direction: column;
   gap: 70px;
   .m_reklama {
     height: 420px;
-    border: 1px solid purple;
   }
   .m_hotKat {
     display: flex;
     flex-direction: column;
     font-size: 4em;
-    border: 1px solid purple;
     h1 {
       margin-bottom: 40px;
     }

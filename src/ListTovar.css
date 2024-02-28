@@ -1,0 +1,122 @@
+.li_h1 {
+  margin: 40px 0;
+  font-size: 4em;
+  font-weight: 600;
+}
+
+.li_tovari {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+.li_tovari .li_aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+  width: 300px;
+}
+.li_tovari .li_aside .li_zag {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid rgb(227, 226, 226);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+.li_tovari .li_aside .li_zag h5 {
+  font-size: 1.9em;
+  font-weight: 600;
+}
+.li_tovari .li_list {
+  width: 960px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  -ms-grid-columns: 1fr 30px 1fr 30px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.li_tovari .li_asideList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.li_tovari .li_asideList li {
+  border: 1px solid rgb(227, 226, 226);
+  font-size: 1.9em;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.li_tovari .li_asideList li .li_kateX {
+  padding: 18px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.li_tovari .li_asideList li .li_params {
+  overflow: hidden;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.li_tovari .li_asideList li .li_close {
+  height: 0px;
+  padding: 0px 15px;
+}
+.li_tovari .li_asideList li .li_open {
+  height: auto;
+  padding: 18px 15px;
+}
+
+.li_buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 40px;
+  gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.li_buttons button {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 1.7em;
+  font-weight: 400;
+  border-radius: 10px;
+}

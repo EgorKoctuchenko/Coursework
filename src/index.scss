@@ -93,7 +93,7 @@ body {
   font-family: "Proxima-Nova", "Arial", sans-serif;
 }
 
-///Главная страница
+///Головна сторінка
 .wrap {
   border: 2px solid blue;
   display: flex;
@@ -112,1032 +112,172 @@ body {
 @import "./Footer.scss";
 //Головне меню
 @import "./MainMenu.scss";
+//Про Нас
+@import "./AboutUs.scss";
 //Оплата
-.o_oplata {
-  margin-top: 30px;
+@import "./Oplata.scss";
+///Доставка
+@import "./Dostavka.scss";
+//Відгуки
+@import "./Vidgyki.scss";
+//Блог + окремі блок-сторінки
+@import "./Blogs.scss";
+//Контакти
+@import "./Kont.scss";
+//Категорії
+@import "./Kategorii.scss";
+//Лист Товарів
+@import "./ListTovar.scss";
+
+//Обраний товар
+.it_line {
   width: 100%;
-  height: 454px;
-  background-color: white;
+  height: 2px;
+  background-color: rgb(197, 197, 197);
+  margin: 20px 0;
+}
+
+.it_buy {
+  margin-top: 30px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  img {
-    width: 50%;
-    height: auto;
+  justify-content: space-between;
+  &_kolvo {
+    border: 1px solid rgb(177, 177, 177);
+    padding: 13px 20px;
+    display: flex;
+    font-size: 2em;
+    gap: 15px;
+    font-weight: 600;
+    line-height: 28px;
+    background: rgb(248, 248, 248);
+    width: 110px;
+    justify-content: center;
+    border-radius: 10px;
+    p {
+      cursor: pointer;
+    }
   }
-  section {
+  button {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 208px;
+    height: 50px;
+    border-radius: 10px;
+    background: rgb(255, 188, 87);
+    font-size: 1.9em;
+    font-weight: 600;
+    color: white;
+  }
+}
+
+.it_upp {
+  align-items: center;
+  margin-top: 30px;
+  gap: 30px;
+  display: flex;
+  &_foto {
+    border-radius: 10px;
+    width: 630px;
+    height: 540px;
+  }
+  &_right {
+    width: 48%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    line-height: 34px;
     h1 {
       font-size: 4em;
       font-weight: 600;
+      line-height: 48px;
     }
-    h3 {
-      font-size: 2.6em;
-      max-width: 500px;
-      font-weight: 600;
+    &_line {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      h6 {
+        margin-top: 5px;
+        font-size: 1.3rem;
+        font-weight: 400;
+      }
     }
-    h4 {
-      font-size: 2em;
-      max-width: 445px;
-      font-weight: 600;
+    &_btm {
+      background-color: white;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      &1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2 {
+          font-size: 3em;
+          font-weight: 600;
+        }
+        &_like {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          h5 {
+            font-size: 1.9em;
+            font-weight: 600;
+          }
+        }
+      }
+      &2 {
+        h2 {
+          font-size: 3em;
+          text-align: center;
+          font-weight: 600;
+          margin-bottom: 40px;
+        }
+        div {
+          margin-top: 10px;
+          background-color: rgb(248, 248, 248);
+          padding: 10px 10px;
+          border-radius: 10px;
+          display: flex;
+          justify-content: space-between;
+          h5 {
+            font-size: 1.7em;
+            font-weight: 600;
+          }
+        }
+      }
     }
   }
 }
 
-.o_PoKievy {
+.it_middle {
   margin-top: 60px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  h1 {
-    font-size: 4em;
-    font-weight: 600;
-  }
-  div {
+  justify-content: space-between;
+  section {
     display: flex;
-    justify-content: space-between;
-  }
-  .o_info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    div {
-      margin-top: 40px;
-      padding: 25px;
-      background-color: rgb(255, 188, 87);
-      border-radius: 100%;
-    }
-    h3 {
-      font-size: 2.6em;
-      font-weight: 600;
-      line-height: 34px;
-      margin: 10px 0;
-    }
-    p {
-      max-width: 500px;
-      text-align: center;
-      font-size: 1.6em;
-      font-weight: 400;
-      line-height: 30px;
-    }
-    &Fix1 {
-      div {
-        padding: 0px 0px;
-      }
-    }
-    &Fix2 {
-      div {
-        padding: 23.7px 28px;
-      }
-    }
-    &Fix3 {
-      div {
-        padding: 27px 28px;
-      }
-    }
-  }
-}
-
-.o_Oplati {
-  background-color: white;
-  margin-top: 70px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 580px;
-  gap: 0px;
-  .o_info2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
     gap: 20px;
-    img {
-      padding: 25px;
-      background-color: rgb(255, 188, 87);
-      border-radius: 100%;
-    }
-    div {
-      padding: 0px 0;
-      h3 {
-        margin-bottom: 10px;
-        font-size: 2.6em;
-        font-weight: 600;
-      }
-      p {
-        font-size: 1.6em;
-        line-height: 30px;
-      }
-    }
-    &Fix {
-      img {
-        padding: 25px 13px;
-      }
-    }
-  }
-}
-
-.o_pitana {
-  margin-top: 70px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: center;
-  h1 {
-    font-weight: 600;
-    font-size: 4em;
-    margin-bottom: 40px;
-  }
-  section {
-    display: flex;
     align-items: center;
-    border-radius: 8px;
-    background-color: white;
-    width: 100%;
-    padding: 15px;
-    div {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: start;
-      h5 {
-        font-weight: 600;
-        font-size: 1.9em;
-        margin-left: 20px;
-      }
-    }
-  }
-}
-
-.o_Sposobi {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 70px;
-  section {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    h4 {
-      font-size: 2em;
-      max-width: 150px;
-      font-weight: 600;
-    }
-  }
-}
-
-///Доставка й оплата
-.d_Dostavka {
-  display: flex;
-  align-items: center;
-  margin-top: 35px;
-  background-color: white;
-  justify-content: space-between;
-  height: 450px;
-  section {
-    h1 {
-      font-size: 4em;
-      font-weight: 600;
-    }
-    h3 {
-      padding: 30px 0;
-      max-width: 500px;
-      font-size: 2.6em;
-      font-weight: 600;
-      line-height: 34px;
-    }
-    h4 {
-      max-width: 450px;
-      font-size: 2em;
-      font-weight: 600;
-      line-height: 34px;
-    }
-  }
-  img {
-    width: 500px;
-  }
-}
-
-.d_poKyiv {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  div {
-    margin-top: 30px;
-    h1 {
-      font-size: 4em;
-      font-weight: 600;
-      max-width: 500px;
-      line-height: 48px;
-    }
-    div {
-      align-items: center;
-      display: flex;
-      gap: 20px;
-      h4 {
-        font-size: 2em;
-        max-width: 400px;
-        font-weight: 600;
-        line-height: 28px;
-      }
-    }
-    h4 {
-      font-size: 2em;
-      max-width: 500px;
-      font-weight: 600;
-      line-height: 28px;
-    }
-  }
-}
-
-.d_poUkraine {
-  margin-top: 100px;
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  div {
-    margin-top: 30px;
-    h1 {
-      font-size: 4em;
-      font-weight: 600;
-      max-width: 500px;
-      line-height: 48px;
-    }
-    div {
-      align-items: center;
-      display: flex;
-      gap: 20px;
-      h4 {
-        font-size: 2em;
-        max-width: 420px;
-        font-weight: 600;
-        line-height: 28px;
-      }
-    }
-    h4 {
-      font-size: 2em;
-      max-width: 500px;
-      font-weight: 600;
-      line-height: 28px;
-    }
-  }
-  .d_UkraineMap {
-    width: 650px;
-  }
-}
-.d_koloInfo {
-  position: absolute;
-  right: 550px;
-  top: 1000px;
-  div {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    right: 40px;
-    max-width: 340px;
-    h3 {
-      text-align: center;
-      line-height: 34px;
-      font-size: 2.6em;
-      font-weight: 600;
-      color: rgb(255, 255, 255);
-    }
-    h4 {
-      text-align: center;
-      font-size: 2em;
-      line-height: 28px;
-      font-weight: 600;
-      color: rgb(255, 255, 255);
-    }
-  }
-}
-
-.d_koloInfo2 {
-  position: absolute;
-  right: 470px;
-  top: 1800px;
-  h3 {
-    position: absolute;
-    top: 135px;
-    right: 10px;
-    text-align: center;
-    line-height: 34px;
-    font-size: 2.6em;
-    font-weight: 600;
-    color: rgb(255, 255, 255);
-    max-width: 400px;
-  }
-}
-
-.d_Note {
-  background-color: white;
-  padding: 100px 0 50px 0;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 30px;
-}
-
-.d_akcii {
-  margin-top: 70px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  h1 {
-    margin-bottom: 40px;
-    font-size: 4em;
-    font-weight: 600;
-  }
-  p {
-    margin-top: 40px;
-    font-size: 1.6em;
-    line-height: 30px;
-    text-align: center;
-  }
-  .d_A-Info {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
     div {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 20px;
+      gap: 5px;
       h4 {
         font-size: 2em;
         font-weight: 600;
-        line-height: 28px;
-        max-width: 230px;
-        text-align: center;
-      }
-    }
-  }
-}
-
-.d_Skladanna {
-  background-color: white;
-  margin-top: 70px;
-  h1 {
-    padding-top: 70px;
-    font-size: 4em;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  ul {
-    li {
-      font-size: 1.7em;
-      padding: 15px 10px;
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-  .d_eqTwo {
-    background-color: rgb(248, 248, 248);
-  }
-}
-
-.d_Zanes {
-  background-color: white;
-  .d_ShapkaZanes {
-    display: grid;
-    grid-template-columns: 45% 10% 45%;
-    text-align: center;
-    background-color: rgb(83, 83, 83);
-    color: white;
-    font-size: 2em;
-    font-weight: 600;
-    padding: 15px 17px;
-    border-radius: 10px;
-  }
-  h1 {
-    padding-top: 70px;
-    font-size: 4em;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  ul {
-    li {
-      display: grid;
-      grid-template-columns: 45% 10% 45%;
-      text-align: center;
-      font-size: 1.7em;
-      padding: 15px 10px;
-      p:last-child {
-        text-align: end;
-      }
-      p:first-child {
-        text-align: start;
-      }
-    }
-  }
-  .d_InfoZanes {
-    padding: 40px 0 70px 0;
-    text-align: center;
-    font-size: 1.6em;
-    line-height: 30px;
-  }
-  .d_eqTwo {
-    background-color: rgb(248, 248, 248);
-  }
-}
-
-///Про нас
-.a_AboutUs {
-  margin-top: 30px;
-  background-color: white;
-  align-items: center;
-  height: 454px;
-  border: 1px solid red;
-  display: flex;
-  justify-content: space-between;
-  img {
-    width: 600px;
-  }
-  h1 {
-    font-size: 4em;
-    font-weight: 600;
-    line-height: 48px;
-    margin-bottom: 30px;
-  }
-  h3 {
-    font-size: 2.6em;
-    font-weight: 600;
-    line-height: 34px;
-    margin-bottom: 20px;
-    max-width: 450px;
-  }
-  h4 {
-    font-size: 2em;
-    font-weight: 600;
-    line-height: 28px;
-    max-width: 600px;
-  }
-}
-
-.a_KROVATO {
-  margin-top: 70px;
-  h1 {
-    text-align: center;
-    font-size: 4em;
-    font-weight: 600;
-    line-height: 48px;
-    margin-bottom: 40px;
-  }
-  div {
-    display: flex;
-    align-items: start;
-  }
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-    h3 {
-      margin-top: 30px;
-      text-align: center;
-      font-size: 2.6em;
-      font-weight: 600;
-      max-width: 400px;
-      margin-bottom: 30px;
-    }
-    p {
-      text-align: center;
-      max-width: 400px;
-      font-size: 1.6em;
-      line-height: 30px;
-    }
-  }
-}
-
-.a_vidgyki {
-  margin: 70px 0;
-  background-color: red;
-  height: 570px;
-}
-
-.a_showRoom {
-  background-color: white;
-  align-items: center;
-  height: 500px;
-  border: 1px solid red;
-  display: flex;
-  justify-content: space-between;
-  img {
-    width: 600px;
-  }
-  h1 {
-    max-width: 500px;
-    font-size: 4em;
-    font-weight: 600;
-    line-height: 48px;
-    margin-bottom: 30px;
-  }
-  h3 {
-    max-width: 500px;
-    font-size: 2.6em;
-    font-weight: 600;
-    line-height: 34px;
-    margin-bottom: 20px;
-  }
-  h4 {
-    font-size: 2em;
-    font-weight: 600;
-    line-height: 28px;
-    max-width: 600px;
-  }
-}
-///Блог
-.b_wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 30px;
-  section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: white;
-    border-radius: 10px;
-    height: 475px;
-    img {
-      border-radius: 10px;
-    }
-    h3 {
-      margin: 0px 25px 0 25px;
-      font-size: 2.6em;
-      font-weight: 600;
-      line-height: 34px;
-    }
-    h5 {
-      cursor: pointer;
-      margin: 00px 25px 25px 25px;
-      font-size: 1.9em;
-      font-weight: 600;
-      color: rgb(255, 188, 87);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-.b_arrow {
-  border-radius: 0px;
-}
-.b_h1 {
-  margin: 40px 0;
-  font-size: 4em;
-  font-weight: 600;
-}
-///Блог-Сторінки
-.b_Buttons {
-  margin-top: 40px;
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  .b1_isActive {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    border-radius: 8px;
-    background: rgb(255, 188, 87);
-    padding: 8px 20px;
-    color: rgb(255, 255, 255);
-    font-size: 1.9em;
-    font-weight: 400;
-  }
-}
-
-.b1_noActive {
-  display: flex;
-  visibility: hidden;
-  align-items: center;
-  gap: 20px;
-  border-radius: 8px;
-  background: rgb(255, 188, 87);
-  padding: 8px 20px;
-  color: rgb(255, 255, 255);
-  font-size: 1.9em;
-  font-weight: 400;
-}
-
-///Блог (окремі частини)
-
-.b3_info {
-  gap: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .b1_Foto {
-    width: 1100px;
-    height: 450px;
-    border-radius: 10px;
-  }
-  .b1_Fotos {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 10px;
-    border-radius: 10px;
-  }
-  .fixingParag {
-    div {
-      gap: 10px;
-      display: flex;
-      align-items: start;
-      img {
-        width: 20px;
       }
       p {
-        transform: translateY(-4px);
-        font-size: 1.6em;
+        font-size: 1.5em;
         font-weight: 400;
-        line-height: 30px;
-        display: flex;
-        gap: 10px;
+        line-height: 22px;
+        max-width: 200px;
       }
     }
   }
-}
-
-.b1_wrap {
-  h1 {
-    margin: 40px 0;
-    text-align: center;
-    font-size: 4em;
-    font-weight: 600;
-    line-height: 48px;
-  }
-  .b1_info {
-    gap: 30px;
-    display: flex;
-    flex-direction: row-reverse;
-    .b1_Foto {
-      width: 500px;
-      border-radius: 10px;
-      height: 300px;
-    }
-    .b1_Fotos {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 10px;
-      border-radius: 10px;
-    }
-    .fixingParag {
-      div {
-        gap: 10px;
-        display: flex;
-        align-items: start;
-        img {
-          width: 20px;
-        }
-        p {
-          transform: translateY(-4px);
-          font-size: 1.6em;
-          font-weight: 400;
-          line-height: 30px;
-          display: flex;
-          gap: 10px;
-        }
-      }
-    }
-  }
-}
-
-///Контакти
-.k_wrap {
 }
 
 .k_h1 {
   font-size: 4em;
   font-weight: 600;
-  margin: 40px 0;
-  text-align: center;
-}
-
-.k_info {
-  display: flex;
-  justify-content: space-between;
-  section {
-    display: flex;
-    gap: 20px;
-    align-items: start;
-    div {
-      h6 {
-        color: rgb(177, 177, 177);
-        font-size: 1.7em;
-        margin-bottom: 5px;
-      }
-      h4 {
-        font-size: 2em;
-        font-weight: 600;
-        line-height: 28px;
-      }
-      div {
-        margin-top: 10px;
-        display: flex;
-        gap: 5px;
-      }
-    }
-  }
-}
-
-.k_adress {
-  display: flex;
-  justify-content: center;
-  margin: 70px 0 70px 0;
-}
-
-.k_map {
-  width: 530px;
-  height: 550px;
-}
-
-.k_adres {
-  width: 530px;
-  height: 550px;
-}
-
-.k_dostat {
-  background-color: white;
-  height: 610px;
-  padding: 70px 0;
-  h2 {
-    font-size: 3em;
-    font-weight: 600;
-    text-align: center;
-  }
-  section {
-    gap: 30px;
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
-    .k_first {
-      max-width: 600px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      div {
-        display: flex;
-        align-items: center;
-        gap: 25px;
-        p {
-          font-size: 2em;
-          font-weight: 600;
-          line-height: 28px;
-        }
-      }
-    }
-    .k_second {
-      max-width: 600px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      div {
-        display: flex;
-        align-items: center;
-        gap: 25px;
-        p {
-          font-size: 2em;
-          font-weight: 600;
-          line-height: 28px;
-        }
-      }
-    }
-  }
-}
-
-.k_wrapBut {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.k_but {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 13px 100px;
-  background-color: rgb(255, 188, 87);
-  color: white;
-  font-size: 1.9em;
-  font-weight: 600;
-  border-radius: 10px;
-  margin-top: 40px;
-}
-
-.k_otpravka {
-  margin-top: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 530px;
-  background-image: url("./img/backFone.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 50% 50%;
-  section {
-    h1 {
-      font-size: 4em;
-      font-weight: 600;
-    }
-    h3 {
-      margin: 30px 0;
-      font-size: 2.6em;
-      font-weight: 600;
-      max-width: 470px;
-      line-height: 34px;
-    }
-    h2 {
-      color: rgb(255, 188, 87);
-      font-size: 3em;
-      font-weight: 600;
-    }
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    input {
-      height: 50px;
-      width: 410px;
-      border: 1px solid rgb(209, 213, 213);
-      border-radius: 10px;
-      padding: 10px 20px 10px 20px;
-      font-size: 1.6em;
-    }
-    textarea {
-      height: 150px;
-      width: 410px;
-      border: 1px solid rgb(209, 213, 213);
-      border-radius: 10px;
-      padding: 10px 20px 10px 20px;
-      font-size: 1.6em;
-      resize: none;
-    }
-    .k_but2 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 13px 0px;
-      width: 240px;
-      background-color: rgb(255, 188, 87);
-      color: white;
-      font-size: 1.9em;
-      font-weight: 600;
-      border-radius: 10px;
-    }
-  }
-}
-
-///Відгуки
-.v_h1 {
-  font-size: 4em;
-  font-weight: 600;
-  margin: 40px 0;
-}
-
-.v_mode {
-  display: flex;
-  justify-content: start;
-  gap: 30px;
-  li {
-    font-size: 2em;
-    font-weight: 600;
-  }
-  margin-bottom: 40px;
-}
-
-//Категорії
-.kat_wrap {
-  position: absolute;
-  filter: blur;
-  top: 180px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  .kat_menu {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    background-color: white;
-    border-radius: 8px;
-    margin-top: 10px;
-    margin-left: 500px;
-    padding: 10px 0;
-    li {
-      cursor: pointer;
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      padding: 15px 30px;
-      &:hover {
-        background-color: rgb(255, 188, 87);
-      }
-      h4 {
-        font-size: 2em;
-        font-weight: 600;
-      }
-    }
-  }
-}
-
-//Лист Товарів
-.li_h1 {
-  margin: 40px 0;
-  font-size: 4em;
-  font-weight: 600;
-}
-.li_tovari {
-  display: flex;
-  gap: 30px;
-  .li_aside {
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    width: 300px;
-    .li_zag {
-      padding: 20px;
-      background-color: white;
-      border-radius: 10px 10px 0 0;
-      border: 1px solid rgb(227, 226, 226);
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      h5 {
-        font-size: 1.9em;
-        font-weight: 600;
-      }
-    }
-  }
-  .li_list {
-    border: 1px solid blue;
-    width: 960px;
-    display: grid;
-    justify-content: center;
-    gap: 30px;
-    grid-template-columns: 1fr 1fr 1fr;
-    section {
-      border: 1px solid red;
-    }
-  }
-  .li_asideList {
-    display: flex;
-    flex-direction: column;
-    li {
-      border: 1px solid rgb(227, 226, 226);
-      font-size: 1.9em;
-      font-weight: 600;
-      display: flex;
-      flex-direction: column;
-      .li_kateX {
-        padding: 18px 15px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .li_params {
-        overflow: hidden;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-      }
-      .li_close {
-        height: 0px;
-        padding: 0px 15px;
-      }
-      .li_open {
-        height: auto;
-        padding: 18px 15px;
-      }
-    }
-  }
-}
-
-.li_buttons {
-  display: flex;
-  margin-top: 40px;
-  gap: 10px;
-  justify-content: center;
-  button {
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    font-size: 1.7em;
-    font-weight: 400;
-    border-radius: 10px;
-  }
 }

@@ -7,6 +7,10 @@ import stilci from "./img/stilci.svg";
 import "./index.css";
 
 function Kategorii(props) {
+  const handleCateg = () => {
+    props.setCateg((prevCat) => !prevCat);
+  };
+
   return (
     <main className="kat_wrap">
       <ul className="kat_menu">
@@ -14,6 +18,7 @@ function Kategorii(props) {
           onClick={() => {
             props.setTypee("Ліжко");
             props.setThisPage(7);
+            handleCateg();
           }}
         >
           <img src={lizhka} />
@@ -23,6 +28,7 @@ function Kategorii(props) {
           onClick={() => {
             props.setTypee("Матрац");
             props.setThisPage(7);
+            handleCateg();
           }}
         >
           <img src={matrac} />
@@ -32,6 +38,7 @@ function Kategorii(props) {
           onClick={() => {
             props.setTypee("Комод");
             props.setThisPage(7);
+            handleCateg();
           }}
         >
           <img src={komod} />
@@ -41,6 +48,7 @@ function Kategorii(props) {
           onClick={() => {
             props.setTypee("М'які меблі");
             props.setThisPage(7);
+            handleCateg();
           }}
         >
           <img src={mm} />
@@ -50,6 +58,7 @@ function Kategorii(props) {
           onClick={() => {
             props.setTypee("Стільці");
             props.setThisPage(7);
+            handleCateg();
           }}
         >
           <img src={stilci} />

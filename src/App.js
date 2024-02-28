@@ -11,6 +11,8 @@ import Kontakti from "./Kontakti";
 import Vidgyki from "./Vidgyki";
 import Kategorii from "./Kategorii";
 import ListTovar from "./ListTovar";
+import InfoTovar from "./InfoTovar";
+import Koshik from "./Koshik";
 import Blog1 from "./Blogs/Blog1";
 import Blog2 from "./Blogs/Blog2";
 import Blog3 from "./Blogs/Blog3";
@@ -20,13 +22,42 @@ import Blog6 from "./Blogs/Blog6";
 import Buf from "./Buf";
 
 function App() {
-  const [thisPage, setThisPage] = useState(0);
+  const [thisPage, setThisPage] = useState(9);
   const [Categ, setCateg] = useState(false);
   const [typee, setTypee] = useState("Ліжко");
+  const [infoMassiv, setInfoMassiv] = useState([]);
 
   const handlePageChange = (numb) => {
     window.scrollTo(0, 0);
     setThisPage(numb);
+  };
+
+  const handleInfoMassiv = (
+    id,
+    price,
+    kolvo,
+    name,
+    photo,
+    virobnik,
+    type,
+    korzina,
+    like,
+    sizes,
+    availability
+  ) => {
+    setInfoMassiv([
+      id,
+      price,
+      kolvo,
+      name,
+      photo,
+      virobnik,
+      type,
+      korzina,
+      like,
+      sizes,
+      availability,
+    ]);
   };
   return (
     <div className="wrap">
@@ -38,12 +69,18 @@ function App() {
         ></Header>
         {Categ === true && (
           <Kategorii
+            setCateg={setCateg}
             setTypee={setTypee}
             setThisPage={handlePageChange}
           ></Kategorii>
         )}
         {thisPage === 200 && <Buf />}
-        {thisPage === 0 && <MainMenu setThisPage={handlePageChange}></MainMenu>}
+        {thisPage === 0 && (
+          <MainMenu
+            handleInfoMassiv={handleInfoMassiv}
+            setThisPage={handlePageChange}
+          ></MainMenu>
+        )}
         {thisPage === 1 && <About setThisPage={handlePageChange}></About>}
         {thisPage === 2 && <Oplata setThisPage={handlePageChange}></Oplata>}
         {thisPage === 3 && <Dostavka setThisPage={handlePageChange}></Dostavka>}
@@ -51,8 +88,20 @@ function App() {
         {thisPage === 5 && <Blog setThisPage={handlePageChange}></Blog>}
         {thisPage === 6 && <Kontakti setThisPage={handlePageChange}></Kontakti>}
         {thisPage === 7 && (
-          <ListTovar typee={typee} setThisPage={handlePageChange}></ListTovar>
+          <ListTovar
+            typee={typee}
+            setThisPage={handlePageChange}
+            handleInfoMassiv={handleInfoMassiv}
+          ></ListTovar>
         )}
+        {thisPage === 8 && (
+          <InfoTovar
+            infoMassiv={infoMassiv}
+            setTypee={setTypee}
+            setThisPage={setThisPage}
+          ></InfoTovar>
+        )}
+        {thisPage === 9 && <Koshik setThisPage={handlePageChange}></Koshik>}
         {thisPage === 101 && (
           <Blog1 setThisPage={handlePageChange} isPage={thisPage}></Blog1>
         )}
@@ -71,7 +120,11 @@ function App() {
         {thisPage === 106 && (
           <Blog6 setThisPage={handlePageChange} isPage={thisPage}></Blog6>
         )}
-        <Footer setThisPage={handlePageChange}></Footer>
+        <Footer
+          setCateg={setCateg}
+          setTypee={setTypee}
+          setThisPage={handlePageChange}
+        ></Footer>
       </div>
     </div>
   );

@@ -14,6 +14,7 @@ import "./index.css";
 
 function App(props) {
   const [thisPage, setThisPage] = useState(2);
+
   return (
     <footer className="f_doWrap">
       <div className="f_wrap">
@@ -54,16 +55,46 @@ function App(props) {
         <div>
           <h4>Категорії</h4>
           <nav>
-            <li>Ліжка</li>
-            <li>Матраци</li>
-            <li>М'яки меблі</li>
-            <li>Шафи</li>
-            <li>Комоди</li>
-            <li>Тумби</li>
-            <li>Столи</li>
-            <li>Стільці</li>
-            <li>Меблеві стіни</li>
-            <li>Кухні</li>
+            <li
+              onClick={() => {
+                props.setTypee("Ліжко");
+                props.setThisPage(7);
+              }}
+            >
+              Ліжка
+            </li>
+            <li
+              onClick={() => {
+                props.setTypee("Матрац");
+                props.setThisPage(7);
+              }}
+            >
+              Матраци
+            </li>
+            <li
+              onClick={() => {
+                props.setTypee("М'які меблі");
+                props.setThisPage(7);
+              }}
+            >
+              М'яки меблі
+            </li>
+            <li
+              onClick={() => {
+                props.setTypee("Комод");
+                props.setThisPage(7);
+              }}
+            >
+              Комоди
+            </li>
+            <li
+              onClick={() => {
+                props.setTypee("Стільці");
+                props.setThisPage(7);
+              }}
+            >
+              Стільці
+            </li>
           </nav>
         </div>
         <div>

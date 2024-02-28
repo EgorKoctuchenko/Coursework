@@ -1,0 +1,187 @@
+///Контакти
+.k_wrap {
+}
+
+.k_h1 {
+  font-size: 4em;
+  font-weight: 600;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.k_info {
+  display: flex;
+  justify-content: space-between;
+  section {
+    display: flex;
+    gap: 20px;
+    align-items: start;
+    div {
+      h6 {
+        color: rgb(177, 177, 177);
+        font-size: 1.7em;
+        margin-bottom: 5px;
+      }
+      h4 {
+        font-size: 2em;
+        font-weight: 600;
+        line-height: 28px;
+      }
+      div {
+        margin-top: 10px;
+        display: flex;
+        gap: 5px;
+      }
+    }
+  }
+}
+
+.k_adress {
+  display: flex;
+  justify-content: center;
+  margin: 70px 0 70px 0;
+}
+
+.k_map {
+  width: 530px;
+  height: 550px;
+}
+
+.k_adres {
+  width: 530px;
+  height: 550px;
+}
+
+.k_dostat {
+  background-color: white;
+  height: 610px;
+  padding: 70px 0;
+  h2 {
+    font-size: 3em;
+    font-weight: 600;
+    text-align: center;
+  }
+  section {
+    gap: 30px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    .k_first {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      div {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        p {
+          font-size: 2em;
+          font-weight: 600;
+          line-height: 28px;
+        }
+      }
+    }
+    .k_second {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      div {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        p {
+          font-size: 2em;
+          font-weight: 600;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+}
+
+.k_wrapBut {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.k_but {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 100px;
+  background-color: rgb(255, 188, 87);
+  color: white;
+  font-size: 1.9em;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.k_otpravka {
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 530px;
+  background-image: url("./img/backFone.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  section {
+    h1 {
+      font-size: 4em;
+      font-weight: 600;
+    }
+    h3 {
+      margin: 30px 0;
+      font-size: 2.6em;
+      font-weight: 600;
+      max-width: 470px;
+      line-height: 34px;
+    }
+    h2 {
+      color: rgb(255, 188, 87);
+      font-size: 3em;
+      font-weight: 600;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    input {
+      height: 50px;
+      width: 410px;
+      border: 1px solid rgb(209, 213, 213);
+      border-radius: 10px;
+      padding: 10px 20px 10px 20px;
+      font-size: 1.6em;
+    }
+    textarea {
+      height: 150px;
+      width: 410px;
+      border: 1px solid rgb(209, 213, 213);
+      border-radius: 10px;
+      padding: 10px 20px 10px 20px;
+      font-size: 1.6em;
+      resize: none;
+    }
+    .k_but2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 0px;
+      width: 240px;
+      background-color: rgb(255, 188, 87);
+      color: white;
+      font-size: 1.9em;
+      font-weight: 600;
+      border-radius: 10px;
+    }
+  }
+}

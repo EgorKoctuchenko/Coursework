@@ -16,6 +16,31 @@ function ListTovar(props) {
     fetchData();
   }, []);
 
+  const handleIsLike = async (id, currentLike) => {
+    try {
+      const newLike = currentLike === "0" ? "1" : "0"; // Переключаем лайк
+      const response = await fetch("http://localhost:3001/api/renameData", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id, newLike }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+      }
+
+      // Обновляем данные после успешного обновления столбца "like" в базе данных
+      const updatedDataResponse = await fetch("http://localhost:3001/api/data");
+      const updatedData = await updatedDataResponse.json();
+      setData(updatedData);
+      console.log("YES");
+    } catch (error) {
+      console.error("Ошибка при запросе:", error.message);
+    }
+  };
+
   //Отримання даних з MySQl
   const fetchData = async () => {
     try {
@@ -52,7 +77,7 @@ function ListTovar(props) {
     setIsRozmir((prevRozmir) => !prevRozmir);
   };
 
-  // Получить текущие товары на странице
+  // Отримати дані (вірні дані)
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
@@ -61,6 +86,8 @@ function ListTovar(props) {
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const filteredData = data.filter((item) => item.type === props.typee);
 
   return (
     <main className="">
@@ -210,7 +237,26 @@ function ListTovar(props) {
             .filter((item) => item.type === props.typee)
             .slice(indexOfFirstItem, indexOfLastItem)
             .map((item) => (
-              <section key={item.id} className="m_thisTovar">
+              <section
+                key={item.id}
+                className="m_thisTovar"
+                onClick={() => {
+                  props.setThisPage(8);
+                  props.handleInfoMassiv(
+                    item.id,
+                    item.price,
+                    item.kolvo,
+                    item.name,
+                    item.photo,
+                    item.virobnik,
+                    item.type,
+                    item.korzina,
+                    item.like,
+                    item.sizes,
+                    item.availability
+                  );
+                }}
+              >
                 {item.imageUrl && (
                   <img
                     className="m_Img"
@@ -218,7 +264,7 @@ function ListTovar(props) {
                       item.imageUrl.replace("http://localhost:3001", ""))}
                   />
                 )}
-                <p className="m_Rozmir">{item.sizes}</p>
+                <p className="m_Rozmir">Розміри: {item.sizes}</p>
                 <h5 className="m_Name">{item.name}</h5>
                 {item.availability === "В наявності" ? (
                   <div className="m_Avab">
@@ -235,7 +281,11 @@ function ListTovar(props) {
                   <p className="m_Price">{item.price.toLocaleString()} грн.</p>
                   <div>
                     {item.like === "0" ? (
-                      <img className="m_Like" src={like2}></img>
+                      <img
+                        className="m_Like"
+                        src={like2}
+                        onClick={() => handleIsLike(item.id, item.like)}
+                      ></img>
                     ) : (
                       <img className="m_Like" src={like}></img>
                     )}
@@ -248,10 +298,10 @@ function ListTovar(props) {
       </div>
       <ul className="li_buttons">
         <button onClick={() => paginate(currentPage - 1)}>{" < "}</button>
-        {data.length > itemsPerPage && (
+        {filteredData.length > itemsPerPage && (
           <>
             {Array.from(
-              { length: Math.ceil(data.length / itemsPerPage) },
+              { length: Math.ceil(filteredData.length / itemsPerPage) },
               (_, i) => (
                 <button key={i} onClick={() => paginate(i + 1)}>
                   {i + 1}

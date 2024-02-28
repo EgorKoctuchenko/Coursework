@@ -51,10 +51,29 @@ function MainMenu(props) {
     <main className="m_wrap">
       <article className="m_reklama"></article>
       <article className="m_hotKat">
-        <h1>Популярні категорії</h1>
+        <h1>Популярні товари</h1>
         <div className="m_Tovar">
-          {data.map((item) => (
-            <section key={item.id} className="m_thisTovar">
+          {data.slice(0, 8).map((item) => (
+            <section
+              key={item.id}
+              className="m_thisTovar"
+              onClick={() => {
+                props.setThisPage(8);
+                props.handleInfoMassiv(
+                  item.id,
+                  item.price,
+                  item.kolvo,
+                  item.name,
+                  item.photo,
+                  item.virobnik,
+                  item.type,
+                  item.korzina,
+                  item.like,
+                  item.sizes,
+                  item.availability
+                );
+              }}
+            >
               {item.imageUrl && (
                 <img
                   className="m_Img"

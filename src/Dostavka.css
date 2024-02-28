@@ -1,0 +1,308 @@
+.d_Dostavka {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 35px;
+  background-color: white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 450px;
+}
+.d_Dostavka section h1 {
+  font-size: 4em;
+  font-weight: 600;
+}
+.d_Dostavka section h3 {
+  padding: 30px 0;
+  max-width: 500px;
+  font-size: 2.6em;
+  font-weight: 600;
+  line-height: 34px;
+}
+.d_Dostavka section h4 {
+  max-width: 450px;
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 34px;
+}
+.d_Dostavka img {
+  width: 500px;
+}
+
+.d_poKyiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.d_poKyiv div {
+  margin-top: 30px;
+}
+.d_poKyiv div h1 {
+  font-size: 4em;
+  font-weight: 600;
+  max-width: 500px;
+  line-height: 48px;
+}
+.d_poKyiv div div {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+.d_poKyiv div div h4 {
+  font-size: 2em;
+  max-width: 400px;
+  font-weight: 600;
+  line-height: 28px;
+}
+.d_poKyiv div h4 {
+  font-size: 2em;
+  max-width: 500px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.d_poUkraine {
+  margin-top: 100px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.d_poUkraine div {
+  margin-top: 30px;
+}
+.d_poUkraine div h1 {
+  font-size: 4em;
+  font-weight: 600;
+  max-width: 500px;
+  line-height: 48px;
+}
+.d_poUkraine div div {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+.d_poUkraine div div h4 {
+  font-size: 2em;
+  max-width: 420px;
+  font-weight: 600;
+  line-height: 28px;
+}
+.d_poUkraine div h4 {
+  font-size: 2em;
+  max-width: 500px;
+  font-weight: 600;
+  line-height: 28px;
+}
+.d_poUkraine .d_UkraineMap {
+  width: 650px;
+}
+
+.d_koloInfo {
+  position: absolute;
+  right: 550px;
+  top: 1000px;
+}
+.d_koloInfo div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 80px;
+  right: 40px;
+  max-width: 340px;
+}
+.d_koloInfo div h3 {
+  text-align: center;
+  line-height: 34px;
+  font-size: 2.6em;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+.d_koloInfo div h4 {
+  text-align: center;
+  font-size: 2em;
+  line-height: 28px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+
+.d_koloInfo2 {
+  position: absolute;
+  right: 470px;
+  top: 1800px;
+}
+.d_koloInfo2 h3 {
+  position: absolute;
+  top: 135px;
+  right: 10px;
+  text-align: center;
+  line-height: 34px;
+  font-size: 2.6em;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  max-width: 400px;
+}
+
+.d_Note {
+  background-color: white;
+  padding: 100px 0 50px 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.d_akcii {
+  margin-top: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.d_akcii h1 {
+  margin-bottom: 40px;
+  font-size: 4em;
+  font-weight: 600;
+}
+.d_akcii p {
+  margin-top: 40px;
+  font-size: 1.6em;
+  line-height: 30px;
+  text-align: center;
+}
+.d_akcii .d_A-Info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 30px;
+}
+.d_akcii .d_A-Info div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+.d_akcii .d_A-Info div h4 {
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 28px;
+  max-width: 230px;
+  text-align: center;
+}
+
+.d_Skladanna {
+  background-color: white;
+  margin-top: 70px;
+}
+.d_Skladanna h1 {
+  padding-top: 70px;
+  font-size: 4em;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.d_Skladanna ul li {
+  font-size: 1.7em;
+  padding: 15px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.d_Skladanna .d_eqTwo {
+  background-color: rgb(248, 248, 248);
+}
+
+.d_Zanes {
+  background-color: white;
+}
+.d_Zanes .d_ShapkaZanes {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 45% 10% 45%;
+  grid-template-columns: 45% 10% 45%;
+  text-align: center;
+  background-color: rgb(83, 83, 83);
+  color: white;
+  font-size: 2em;
+  font-weight: 600;
+  padding: 15px 17px;
+  border-radius: 10px;
+}
+.d_Zanes h1 {
+  padding-top: 70px;
+  font-size: 4em;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.d_Zanes ul li {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 45% 10% 45%;
+  grid-template-columns: 45% 10% 45%;
+  text-align: center;
+  font-size: 1.7em;
+  padding: 15px 10px;
+}
+.d_Zanes ul li p:last-child {
+  text-align: end;
+}
+.d_Zanes ul li p:first-child {
+  text-align: start;
+}
+.d_Zanes .d_InfoZanes {
+  padding: 40px 0 70px 0;
+  text-align: center;
+  font-size: 1.6em;
+  line-height: 30px;
+}
+.d_Zanes .d_eqTwo {
+  background-color: rgb(248, 248, 248);
+}

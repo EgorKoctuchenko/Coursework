@@ -61,9 +61,9 @@ app.post("/api/deleteData", (req, res) => {
 
 // Обработка POST-запроса для переименования данных в базе данных
 app.post("/api/renameData", (req, res) => {
-  const { id, newName } = req.body;
-  const query = "UPDATE test SET name = ? WHERE id = ?";
-  pool.query(query, [newName, id], (err, results) => {
+  const { id, newLike } = req.body;
+  const query = "UPDATE tovar SET like = ? WHERE id = ?";
+  pool.query(query, [newLike, id], (err, results) => {
     if (err) {
       console.error("Ошибка выполнения SQL-запроса:", err);
       res.status(500).send("Ошибка сервера");
@@ -74,7 +74,7 @@ app.post("/api/renameData", (req, res) => {
   });
 });
 
-//Отримання даних
+//Отримання даних для товарів
 app.get("/api/data", (req, res) => {
   const query = "SELECT * FROM tovar";
 
@@ -97,6 +97,28 @@ app.get("/api/data", (req, res) => {
         availability: item.availability,
       }));
       res.json(AllData);
+    }
+  });
+});
+
+//Отримання даних для відгуків
+app.get("/api/vidg", (req, res) => {
+  const query = "SELECT * FROM vidgyk";
+
+  pool.query(query, (err, results) => {
+    if (err) {
+      console.error("Ошибка выполнения SQL-запроса:", err);
+      res.status(500).send("Ошибка сервера");
+    } else {
+      const AllVigk = results.map((item_vid) => ({
+        idvid: item_vid.idvid,
+        fio: item_vid.fio,
+        datakom: item_vid.datakom,
+        komment: item_vid.komment,
+        grade: item_vid.grade,
+        vidg_type: item_vid.vidg_type,
+      }));
+      res.json(AllVigk);
     }
   });
 });

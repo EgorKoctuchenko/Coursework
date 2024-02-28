@@ -1,0 +1,129 @@
+.a_AboutUs {
+  margin-top: 30px;
+  background-color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 454px;
+  border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.a_AboutUs img {
+  width: 600px;
+}
+.a_AboutUs h1 {
+  font-size: 4em;
+  font-weight: 600;
+  line-height: 48px;
+  margin-bottom: 30px;
+}
+.a_AboutUs h3 {
+  font-size: 2.6em;
+  font-weight: 600;
+  line-height: 34px;
+  margin-bottom: 20px;
+  max-width: 450px;
+}
+.a_AboutUs h4 {
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 28px;
+  max-width: 600px;
+}
+
+.a_KROVATO {
+  margin-top: 70px;
+}
+.a_KROVATO h1 {
+  text-align: center;
+  font-size: 4em;
+  font-weight: 600;
+  line-height: 48px;
+  margin-bottom: 40px;
+}
+.a_KROVATO div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+.a_KROVATO section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+.a_KROVATO section h3 {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 2.6em;
+  font-weight: 600;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+.a_KROVATO section p {
+  text-align: center;
+  max-width: 400px;
+  font-size: 1.6em;
+  line-height: 30px;
+}
+
+.a_vidgyki {
+  margin: 70px 0;
+  background-color: red;
+  height: 570px;
+}
+
+.a_showRoom {
+  background-color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 500px;
+  border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.a_showRoom img {
+  width: 600px;
+}
+.a_showRoom h1 {
+  max-width: 500px;
+  font-size: 4em;
+  font-weight: 600;
+  line-height: 48px;
+  margin-bottom: 30px;
+}
+.a_showRoom h3 {
+  max-width: 500px;
+  font-size: 2.6em;
+  font-weight: 600;
+  line-height: 34px;
+  margin-bottom: 20px;
+}
+.a_showRoom h4 {
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 28px;
+  max-width: 600px;
+}
