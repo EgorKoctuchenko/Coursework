@@ -27,21 +27,49 @@ const pool = mysql.createPool({
 
 const path = require("path");
 
-// Обработка POST-запроса для добавления данных в базу данных
-app.post("/api/addData", upload.single("image"), (req, res) => {
-  const { id, name } = req.body;
-  const imagePath = req.file ? `${req.file.filename}` : null; // Путь к загруженному изображению
+// POST-запит для додаваня даних у бд
+app.post("/api/addOrder", (req, res) => {
+  const {
+    id_zamov,
+    fio,
+    email,
+    tel,
+    dostavka,
+    sposobOplata,
+    comment,
+    tovar,
+    inshaLudina,
+    price,
+  } = req.body;
 
-  const query = "INSERT INTO test (id, name, image) VALUES (?, ?, ?)";
-  pool.query(query, [id, name, imagePath], (err, results) => {
-    if (err) {
-      console.error("Ошибка выполнения SQL-запроса:", err);
-      res.status(500).send("Ошибка сервера");
-    } else {
-      console.log("Данные успешно добавлены в базу данных");
-      res.status(200).send("Данные успешно добавлены в базу данных");
+  // Далее выполните операцию вставки данных в вашу базу данных
+  // Пример:
+  const query =
+    "INSERT INTO zamov (id_zamov, fio, email, tel, dostavka, sposobOplata, comment, tovar, inshaLudina, price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+  pool.query(
+    query,
+    [
+      id_zamov,
+      fio,
+      email,
+      tel,
+      dostavka,
+      sposobOplata,
+      comment,
+      tovar,
+      inshaLudina,
+      price,
+    ],
+    (err, results) => {
+      if (err) {
+        console.error("Ошибка выполнения SQL-запроса:", err);
+        res.status(500).send("Ошибка сервера");
+      } else {
+        console.log("Данные успешно добавлены в базу данных");
+        res.status(200).send("Данные успешно добавлены в базу данных");
+      }
     }
-  });
+  );
 });
 
 // Обработка POST-запроса для удаление данных в базу данных

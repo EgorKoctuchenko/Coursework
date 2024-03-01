@@ -145,7 +145,11 @@ function Header(props) {
 
         <div className="h_likes">
           <img src={Obrane} alt="Likes" />
-          <img src={Korzina} alt="Basket" />
+          <img
+            src={Korzina}
+            alt="Basket"
+            onClick={() => props.setThisPage(9)}
+          />
         </div>
       </div>
       <div className="h_bottom_head">

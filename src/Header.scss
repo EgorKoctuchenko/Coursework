@@ -1,7 +1,6 @@
 //Хедер
 header {
   height: 220px;
-  border: 1px solid rgb(8, 12, 253);
   .h_upp_head {
     display: flex;
     justify-content: space-between;
@@ -140,6 +139,9 @@ header {
     .h_likes {
       display: flex;
       gap: 10px;
+      img {
+        cursor: pointer;
+      }
     }
   }
 
@@ -159,6 +161,7 @@ header {
         gap: 5px;
         display: flex;
         align-items: center;
+
         h5 {
           font-weight: 600;
         }

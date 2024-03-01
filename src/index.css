@@ -125,7 +125,6 @@ body {
 
 header {
   height: 220px;
-  border: 1px solid rgb(8, 12, 253);
 }
 header .h_upp_head {
   display: -webkit-box;
@@ -323,6 +322,9 @@ header .h_down_head .h_likes {
   display: flex;
   gap: 10px;
 }
+header .h_down_head .h_likes img {
+  cursor: pointer;
+}
 header .h_bottom_head {
   background-color: white;
   padding: 10px 0;
@@ -519,6 +521,60 @@ header .h_bottom_head .h_nav2_2 li {
 }
 .m_wrap .m_reklama {
   height: 420px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-animation: 0.4s;
+          animation: 0.4s;
+}
+.m_wrap .m_reklama .m_Reklama2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+.m_wrap .m_reklama .m_Righty {
+  cursor: pointer;
+  top: 420px;
+  right: 330px;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  z-index: 5;
+}
+.m_wrap .m_reklama .m_Lefty {
+  cursor: pointer;
+  top: 420px;
+  left: 330px;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  z-index: 5;
+}
+.m_wrap .m_reklama .m_elipse {
+  top: 640px;
+  left: 920px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+  position: absolute;
+}
+.m_wrap .m_reklama .m_elipse li {
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  padding: 3px;
+}
+.m_wrap .m_reklama .m_elipse li div {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
 }
 .m_wrap .m_hotKat {
   display: -webkit-box;
@@ -793,6 +849,119 @@ header .h_bottom_head .h_nav2_2 li {
 
 .golovna:hover {
   text-decoration: underline;
+  cursor: pointer;
+}
+
+.m_vidgyki {
+  padding: 30px;
+  overflow-x: scroll;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
+.m_vidgyki .v_thisComment {
+  height: 370px;
+  width: 450px;
+  margin-top: 40px;
+  background-color: white;
+  padding: 30px;
+  border: 1px solid rgb(227, 226, 226);
+  border-radius: 10px;
+  -webkit-box-shadow: -3px 4px 15px 0px rgba(0, 0, 0, 0.06);
+          box-shadow: -3px 4px 15px 0px rgba(0, 0, 0, 0.06);
+}
+.m_vidgyki .v_thisComment .v_up {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.m_vidgyki .v_thisComment .v_up_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+.m_vidgyki .v_thisComment .v_up_left h6 {
+  font-size: 1.7em;
+}
+.m_vidgyki .v_thisComment .v_up_right {
+  width: 230px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.m_vidgyki .v_thisComment .v_up_right h6 {
+  font-size: 1.7em;
+}
+.m_vidgyki .v_thisComment .v_up_right_grade {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2px;
+}
+.m_vidgyki .v_thisComment .v_middle {
+  margin-top: 30px;
+  font-size: 1.6em;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.m_conteinerH {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
+
+.m_h1Vid {
+  font-size: 4em;
+  font-weight: 600;
+}
+
+.m_daliVid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+.m_daliVid img {
+  border-radius: 10px;
+}
+.m_daliVid h5 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: rgb(255, 188, 87);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
   cursor: pointer;
 }
 
@@ -2569,6 +2738,195 @@ header .h_bottom_head .h_nav2_2 li {
 }
 
 .k_h1 {
+  margin: 30px 0 40px 0;
+  text-align: start;
   font-size: 4em;
   font-weight: 600;
+}
+
+.k_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+.k_content .k_right {
+  background-color: white;
+  border: 1px solid blue;
+  width: 37%;
+}
+
+.k_form {
+  width: 63%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.k_form .k_sec1 {
+  padding: 30px;
+  background-color: white;
+}
+.k_form .k_sec1_head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+.k_form .k_sec1_head h3 {
+  font-size: 2.6em;
+  font-weight: 600;
+}
+.k_form .k_sec1_cont {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 25px;
+}
+.k_form .k_sec1_cont input {
+  border: 1px solid rgb(209, 213, 213);
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  width: 325px;
+  height: 50px;
+  padding: 10px 20px 10px 20px;
+  font-size: 1.6em;
+}
+.k_form .k_sec1_insha {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.6em;
+  gap: 10px;
+}
+.k_form .k_sec1_insha input {
+  width: 20px;
+  height: 20px;
+}
+.k_form .k_sec2 {
+  padding: 30px;
+  background-color: white;
+}
+.k_form .k_sec2_head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+.k_form .k_sec2_head h3 {
+  font-size: 2.6em;
+  font-weight: 600;
+}
+.k_form .k_sec2_metodDost {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.k_form .k_sec2_metodDost section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  width: 210px;
+  height: 140px;
+  border: 3px solid rgb(248, 248, 248);
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+}
+.k_form .k_sec2_metodDost section h5 {
+  font-size: 1.6em;
+}
+.k_form .k_sec2_metodDost section h6 {
+  font-size: 1.5em;
+  color: rgb(83, 83, 83);
+}
+.k_form .k_sec3 {
+  background-color: white;
+  padding: 30px;
+}
+.k_form .k_sec3_head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+.k_form .k_sec3_head h3 {
+  font-size: 2.6em;
+  font-weight: 600;
+}
+.k_form .k_sec3 .k_oplata_card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.7em;
+  gap: 10px;
+  margin-top: 30px;
+}
+.k_form .k_sec3 .k_oplata_card .k_checkCard {
+  border-radius: 50%;
+}
+.k_form .k_sec4 {
+  background-color: white;
+  padding: 30px;
+}
+.k_form .k_sec4_head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+.k_form .k_sec4_head h3 {
+  font-size: 2.6em;
+  font-weight: 600;
+}
+.k_form .k_sec4_area {
+  margin-top: 30px;
+  font-size: 1.6em;
+  width: 680px;
+  height: 150px;
+  border: 1px solid rgb(209, 213, 213);
+  border-radius: 8px;
+  background: rgb(255, 255, 255);
+  padding: 10px 20px 10px 20px;
+  resize: none;
 }

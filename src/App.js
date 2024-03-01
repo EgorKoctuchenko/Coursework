@@ -22,7 +22,7 @@ import Blog6 from "./Blogs/Blog6";
 import Buf from "./Buf";
 
 function App() {
-  const [thisPage, setThisPage] = useState(9);
+  const [thisPage, setThisPage] = useState(0);
   const [Categ, setCateg] = useState(false);
   const [typee, setTypee] = useState("Ліжко");
   const [infoMassiv, setInfoMassiv] = useState([]);

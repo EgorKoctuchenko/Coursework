@@ -12,11 +12,36 @@ import blog2 from "./img/blog2.png";
 import blog3 from "./img/blog3.png";
 import Sposobi from "./Sposobi";
 import arrowUp from "./img/ArrowUp.svg";
+import rek1 from "./img/reklama1.png";
+import rek2 from "./img/reklama2.png";
+import rek3 from "./img/reklama3.png";
+import rek4 from "./img/reklama4.png";
+import rek5 from "./img/reklama5.png";
+import arLeft from "./img/ArLefr2.svg";
+import arRight from "./img/ArRight.svg";
+import UserPh from "./img/userPhoto.svg";
+import StarFill from "./img/StarFill.svg";
+import StarNoFill from "./img/StarNoFill.svg";
 import "./index.css";
 
 function MainMenu(props) {
+  const [Coef, setCoef] = useState(0);
   const [data, setData] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleCoef = (method) => {
+    if (method === 1) {
+      setCoef((prevCoef) => {
+        const newCoef = prevCoef + 1;
+        return newCoef === 5 ? 0 : newCoef;
+      });
+    } else {
+      setCoef((prevCoef) => {
+        const newCoef = prevCoef - 1;
+        return newCoef === -1 ? 4 : newCoef;
+      });
+    }
+  };
 
   //Оновлення даних
   useEffect(() => {
@@ -47,9 +72,118 @@ function MainMenu(props) {
     }
   };
 
+  const fetchData2 = async () => {
+    try {
+      const response = await fetch("http://localhost:3001/api/vidg");
+
+      if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+      }
+
+      const jsonVidg = await response.json();
+
+      console.log(jsonVidg);
+      setVidg(jsonVidg);
+    } catch (error) {
+      console.error("Ошибка при запросе:", error.message);
+    }
+  };
+  const [vidg, setVidg] = useState([]);
+  useEffect(() => {
+    fetchData2();
+  }, []);
+
   return (
     <main className="m_wrap">
-      <article className="m_reklama"></article>
+      <article className="m_reklama">
+        <img
+          className="m_Lefty"
+          src={arLeft}
+          onClick={() => handleCoef(0)}
+        ></img>
+        <img
+          className="m_Reklama2"
+          style={{
+            transform: `translateX(${Coef * -1290}px)`,
+            transition: "transform 0.4s ease-in-out",
+          }}
+          src={rek1}
+        ></img>
+        <img
+          className="m_Reklama2"
+          style={{
+            transform: `translateX(${Coef * -1290}px)`,
+            transition: "transform 0.4s ease-in-out",
+          }}
+          src={rek2}
+        ></img>
+        <img
+          className="m_Reklama2"
+          style={{
+            transform: `translateX(${Coef * -1290}px)`,
+            transition: "transform 0.4s ease-in-out",
+          }}
+          src={rek3}
+        ></img>
+        <img
+          className="m_Reklama2"
+          style={{
+            transform: `translateX(${Coef * -1290}px)`,
+            transition: "transform 0.4s ease-in-out",
+          }}
+          src={rek4}
+        ></img>
+        <img
+          className="m_Reklama2"
+          style={{
+            transform: `translateX(${Coef * -1290}px)`,
+            transition: "transform 0.4s ease-in-out",
+          }}
+          src={rek5}
+        ></img>
+        <img
+          className="m_Righty"
+          src={arRight}
+          onClick={() => handleCoef(1)}
+        ></img>
+        <ul className="m_elipse">
+          <li>
+            <div
+              style={{
+                backgroundColor: Coef === 0 ? `rgb(255, 188, 87)` : "white",
+              }}
+            ></div>
+          </li>
+          <li>
+            <div
+              style={{
+                backgroundColor: Coef === 1 ? `rgb(255, 188, 87)` : "white",
+              }}
+            ></div>
+          </li>
+          <li>
+            <div
+              style={{
+                backgroundColor: Coef === 2 ? `rgb(255, 188, 87)` : "white",
+              }}
+            ></div>
+          </li>
+          <li>
+            <div
+              style={{
+                backgroundColor: Coef === 3 ? `rgb(255, 188, 87)` : "white",
+              }}
+            ></div>
+          </li>
+          <li>
+            <div
+              style={{
+                backgroundColor: Coef === 4 ? `rgb(255, 188, 87)` : "white",
+              }}
+            ></div>
+          </li>
+        </ul>
+      </article>
       <article className="m_hotKat">
         <h1>Популярні товари</h1>
         <div className="m_Tovar">
@@ -123,7 +257,37 @@ function MainMenu(props) {
           <img src={akcii3}></img>
         </section>
       </article>
-      <article className="m_vidgyki"></article>
+      <div className="m_conteinerH">
+        <h1 className="m_h1Vid">Відгуки</h1>
+        <div className="m_daliVid" onClick={() => props.setThisPage(4)}>
+          <h5>Дивитись усі</h5>
+          <img src={arrowUp}></img>
+        </div>
+      </div>
+      <article className="m_vidgyki">
+        {vidg.slice(0, 9).map((item) => (
+          <section key={item.id} className="v_thisComment">
+            <div className="v_up">
+              <div className="v_up_left">
+                <img src={UserPh} />
+                <h6>{item.fio}</h6>
+              </div>
+              <div className="v_up_right">
+                <div className="v_up_right_grade">
+                  {Array.from({ length: item.grade }, (_, i) => (
+                    <img key={i} src={StarFill} />
+                  ))}
+                  {Array.from({ length: 5 - item.grade }, (_, i) => (
+                    <img key={i} src={StarNoFill} />
+                  ))}
+                </div>
+                <h6>{item.datakom.slice(0, 10)}</h6>
+              </div>
+            </div>
+            <p className="v_middle">{item.komment}</p>
+          </section>
+        ))}
+      </article>
       <article className="m_blog">
         <div>
           <h1>Свіжі статті та останні новини</h1>
