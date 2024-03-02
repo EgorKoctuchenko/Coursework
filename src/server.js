@@ -88,10 +88,25 @@ app.post("/api/deleteData", (req, res) => {
 });
 
 // Обработка POST-запроса для переименования данных в базе данных
+//Лайк
 app.post("/api/renameData", (req, res) => {
-  const { id, newLike } = req.body;
-  const query = "UPDATE tovar SET like = ? WHERE id = ?";
-  pool.query(query, [newLike, id], (err, results) => {
+  const { name, newLike } = req.body;
+  const query = "UPDATE tovar SET `like` = ? WHERE name = ?";
+  pool.query(query, [newLike, name], (err, results) => {
+    if (err) {
+      console.error("Ошибка выполнения SQL-запроса:", err);
+      res.status(500).send("Ошибка сервера");
+    } else {
+      console.log("Данные успешно переименованы в базе данных");
+      res.status(200).send("Данные успешно переименованы в базе данных");
+    }
+  });
+});
+//Корзина
+app.post("/api/renameData", (req, res) => {
+  const { name, newLike } = req.body;
+  const query = "UPDATE tovar SET `like` = ? WHERE name = ?";
+  pool.query(query, [newLike, name], (err, results) => {
     if (err) {
       console.error("Ошибка выполнения SQL-запроса:", err);
       res.status(500).send("Ошибка сервера");

@@ -13,6 +13,7 @@ import Kategorii from "./Kategorii";
 import ListTovar from "./ListTovar";
 import InfoTovar from "./InfoTovar";
 import Koshik from "./Koshik";
+import Likes from "./Likes";
 import Blog1 from "./Blogs/Blog1";
 import Blog2 from "./Blogs/Blog2";
 import Blog3 from "./Blogs/Blog3";
@@ -22,8 +23,9 @@ import Blog6 from "./Blogs/Blog6";
 import Buf from "./Buf";
 
 function App() {
-  const [thisPage, setThisPage] = useState(0);
+  const [thisPage, setThisPage] = useState(7);
   const [Categ, setCateg] = useState(false);
+  const [Likese, setLikese] = useState(false);
   const [typee, setTypee] = useState("Ліжко");
   const [infoMassiv, setInfoMassiv] = useState([]);
 
@@ -63,6 +65,7 @@ function App() {
     <div className="wrap">
       <div className="wrap_2">
         <Header
+          setLikese={setLikese}
           setThisPage={setThisPage}
           setCateg={setCateg}
           Categ={Categ}
@@ -102,6 +105,13 @@ function App() {
           ></InfoTovar>
         )}
         {thisPage === 9 && <Koshik setThisPage={handlePageChange}></Koshik>}
+        {Likese === true && (
+          <Likes
+            handleInfoMassiv={handleInfoMassiv}
+            setLikese={setLikese}
+            setThisPage={handlePageChange}
+          ></Likes>
+        )}
         {thisPage === 101 && (
           <Blog1 setThisPage={handlePageChange} isPage={thisPage}></Blog1>
         )}

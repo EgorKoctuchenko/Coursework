@@ -144,7 +144,7 @@ function Header(props) {
         )}
 
         <div className="h_likes">
-          <img src={Obrane} alt="Likes" />
+          <img onClick={() => props.setLikese(true)} src={Obrane} alt="Likes" />
           <img
             src={Korzina}
             alt="Basket"

@@ -352,7 +352,8 @@ body {
       margin-top: 30px;
       display: flex;
       justify-content: space-between;
-      section {
+      &_Dost {
+        cursor: pointer;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -419,5 +420,99 @@ body {
       padding: 10px 20px 10px 20px;
       resize: none;
     }
+  }
+}
+
+.k_selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 210px;
+  height: 140px;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  h5 {
+    font-size: 1.6em;
+  }
+  h6 {
+    font-size: 1.5em;
+    color: rgb(83, 83, 83);
+  }
+  border: 3px solid rgb(255, 188, 87);
+}
+
+.k_upp {
+  h3 {
+    font-weight: 600;
+    font-size: 2em;
+  }
+}
+
+///
+///
+.like_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  .like_menu {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 800px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+  }
+}
+
+.like_wrapTovars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: scroll;
+}
+
+.like_wrapTovar {
+  border: 1px solid rgb(227, 226, 226);
+  box-shadow: -3px 4px 15px 0px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.like_thisTovar {
+  display: flex;
+  gap: 30px;
+  .like_Img {
+    border-radius: 10px;
+    width: 250px;
+    height: 200px;
+  }
+}
+
+.like_ObraneMenu {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h3 {
+    font-weight: 600;
+    font-size: 2em;
+  }
+  .like_Exit {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: end;
+    cursor: pointer;
   }
 }

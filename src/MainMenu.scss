@@ -236,21 +236,29 @@
 }
 
 .m_thisTovar {
+  display: flex;
+  flex-direction: column;
   border-radius: 10px;
   border: 1px solid rgb(227, 226, 226);
   padding: 20px;
   width: 300px;
-  height: 450px;
+  height: auto;
   margin-bottom: 25px;
   box-shadow: -3px 4px 15px 0px rgba(0, 0, 0, 0.06);
   cursor: pointer;
+  .li_linee {
+    border: 1px solid rgb(255, 188, 87);
+    margin-bottom: 10px;
+  }
 }
 
 .m_BottomLikes {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: end;
   div {
+    position: relative;
     display: flex;
     gap: 10px;
   }
@@ -349,3 +357,5 @@
     cursor: pointer;
   }
 }
+
+///

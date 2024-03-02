@@ -809,18 +809,30 @@ header .h_bottom_head .h_nav2_2 li {
 }
 
 .m_thisTovar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border-radius: 10px;
   border: 1px solid rgb(227, 226, 226);
   padding: 20px;
   width: 300px;
-  height: 450px;
+  height: auto;
   margin-bottom: 25px;
   -webkit-box-shadow: -3px 4px 15px 0px rgba(0, 0, 0, 0.06);
           box-shadow: -3px 4px 15px 0px rgba(0, 0, 0, 0.06);
   cursor: pointer;
 }
+.m_thisTovar .li_linee {
+  border: 1px solid rgb(255, 188, 87);
+  margin-bottom: 10px;
+}
 
 .m_BottomLikes {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -832,6 +844,7 @@ header .h_bottom_head .h_nav2_2 li {
           align-items: end;
 }
 .m_BottomLikes div {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2843,7 +2856,8 @@ header .h_bottom_head .h_nav2_2 li {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.k_form .k_sec2_metodDost section {
+.k_form .k_sec2_metodDost_Dost {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2864,10 +2878,10 @@ header .h_bottom_head .h_nav2_2 li {
   border-radius: 10px;
   background: rgb(255, 255, 255);
 }
-.k_form .k_sec2_metodDost section h5 {
+.k_form .k_sec2_metodDost_Dost h5 {
   font-size: 1.6em;
 }
-.k_form .k_sec2_metodDost section h6 {
+.k_form .k_sec2_metodDost_Dost h6 {
   font-size: 1.5em;
   color: rgb(83, 83, 83);
 }
@@ -2929,4 +2943,133 @@ header .h_bottom_head .h_nav2_2 li {
   background: rgb(255, 255, 255);
   padding: 10px 20px 10px 20px;
   resize: none;
+}
+
+.k_selected {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  width: 210px;
+  height: 140px;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  border: 3px solid rgb(255, 188, 87);
+}
+.k_selected h5 {
+  font-size: 1.6em;
+}
+.k_selected h6 {
+  font-size: 1.5em;
+  color: rgb(83, 83, 83);
+}
+
+.k_upp h3 {
+  font-weight: 600;
+  font-size: 2em;
+}
+
+.like_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+.like_wrap .like_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 600px;
+  height: 800px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.like_wrapTovars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  overflow-y: scroll;
+}
+
+.like_wrapTovar {
+  border: 1px solid rgb(227, 226, 226);
+  -webkit-box-shadow: -3px 4px 15px 0px rgba(0, 0, 0, 0.06);
+          box-shadow: -3px 4px 15px 0px rgba(0, 0, 0, 0.06);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.like_thisTovar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+.like_thisTovar .like_Img {
+  border-radius: 10px;
+  width: 250px;
+  height: 200px;
+}
+
+.like_ObraneMenu {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.like_ObraneMenu h3 {
+  font-weight: 600;
+  font-size: 2em;
+}
+.like_ObraneMenu .like_Exit {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: end;
+  cursor: pointer;
 }

@@ -23,6 +23,33 @@ function InfoTovar(props) {
 
   const [allKolvo, setAllKolvo] = useState(1);
 
+  //Для лайку
+  const handleIsLike = async (name, currentLike) => {
+    console.log("asdasd = " + name);
+    try {
+      const response = await fetch("http://localhost:3001/api/renameData", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          newLike: currentLike === 0 ? 1 : 0,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+      }
+
+      console.log("Данные успешно переименованы в базе данных");
+      fetchData();
+      // Добавьте здесь логику для обновления данных на клиенте, если это необходимо
+    } catch (error) {
+      console.error("Ошибка при отправке запроса:", error.message);
+    }
+  };
+
   const handlePlusKolvo = () => {
     allKolvo === props.infoMassiv[2]
       ? setAllKolvo(allKolvo)
@@ -101,14 +128,26 @@ function InfoTovar(props) {
           <div className="it_upp_right_btm">
             <div className="it_upp_right_btm1">
               <h2>{props.infoMassiv[1].toLocaleString()} грн.</h2>
-              <div className="it_upp_right_btm1_like">
-                {props.infoMassiv[8] === "0" ? (
-                  <img className="m_Like" src={like2}></img>
-                ) : (
-                  <img className="m_Like" src={like}></img>
-                )}
-                <h5>В обране</h5>
-              </div>
+              {data
+                .filter((item) => item.name === props.infoMassiv[3])
+                .map((item) => (
+                  <div className="it_upp_right_btm1_like">
+                    {item.like === 0 ? (
+                      <img
+                        className="m_Like"
+                        src={like}
+                        onClick={() => handleIsLike(item.name, item.like)}
+                      ></img>
+                    ) : (
+                      <img
+                        className="m_Like"
+                        src={like2}
+                        onClick={() => handleIsLike(item.name, item.like)}
+                      ></img>
+                    )}
+                    <h5>В обране</h5>
+                  </div>
+                ))}
             </div>
             <div className="it_line"></div>
             <div className="it_upp_right_btm2">
