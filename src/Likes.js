@@ -4,6 +4,7 @@ import NoAv from "./img/NoAv.svg";
 import korzina from "./img/korzina.svg";
 import like from "./img/obrane.svg";
 import like2 from "./img/obrane2.svg";
+import korzina2 from "./img/Korzina2.svg";
 import "./index.css";
 
 function Likes(props) {
@@ -24,6 +25,33 @@ function Likes(props) {
         body: JSON.stringify({
           name: name,
           newLike: currentLike === 0 ? 1 : 0,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+      }
+
+      console.log("Данные успешно переименованы в базе данных");
+      fetchData();
+      // Добавьте здесь логику для обновления данных на клиенте, если это необходимо
+    } catch (error) {
+      console.error("Ошибка при отправке запроса:", error.message);
+    }
+  };
+
+  //Для корзині
+  const handleIsKorzina = async (name, currentKorz) => {
+    console.log("asdasd = " + name);
+    try {
+      const response = await fetch("http://localhost:3001/api/renameKorzina", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          newKorzina: currentKorz === 0 ? 1 : 0,
         }),
       });
 
@@ -154,7 +182,17 @@ function Likes(props) {
                             onClick={() => handleIsLike(item.name, item.like)}
                           ></img>
                         )}
-                        <img className="m_Korz" src={korzina}></img>
+                        {item.korzina === 0 ? (
+                          <img
+                            className="m_Korz"
+                            src={korzina}
+                            onClick={() =>
+                              handleIsKorzina(item.name, item.korzina)
+                            }
+                          ></img>
+                        ) : (
+                          <img className="m_Korz" src={korzina2}></img>
+                        )}
                       </div>
                     </div>
                   </div>

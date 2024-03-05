@@ -1,13 +1,21 @@
 //Футер
 .f_doWrap {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   background-color: rgb(43, 41, 41);
-  height: 510px;
+  height: auto;
 }
 .f_wrap {
+  padding: 0 40px;
   padding: 40px 0;
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 50px;
   margin-top: 50px;
   width: 100%;
   div {
@@ -75,4 +83,107 @@
   font-size: 1.5em;
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 1100px) {
+  .f_wrap {
+    div {
+      h4 {
+        font-size: 1.6em;
+      }
+      nav {
+        li {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+  .f_lastDiv {
+    &Wrap {
+      font-size: 1.5em;
+      div {
+        p {
+          max-width: 200px;
+        }
+      }
+      img {
+        width: 45px;
+      }
+    }
+  }
+  .f_Seti {
+    h6 {
+      font-size: 1.5em;
+    }
+  }
+}
+@media (max-width: 800px) {
+  .f_doWrap {
+    height: auto;
+  }
+  .f_wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      h4 {
+        width: 100%;
+        padding: 20px 0 20px 0px;
+        background-color: rgba(0, 0, 0, 0.4);
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        height: 100%;
+        text-align: center;
+        li {
+          font-size: 2.3em;
+          padding-bottom: 0px;
+        }
+      }
+    }
+    .f_upping {
+      .f_Seti {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        div {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+        h6 {
+          font-size: 2em;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .f_lastDivWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      display: none;
+    }
+    div {
+      line-height: 35px;
+      p {
+        text-align: center;
+        font-size: 1.4em;
+      }
+    }
+  }
+  .f_downFotter {
+    text-align: center;
+  }
 }

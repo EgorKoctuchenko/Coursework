@@ -13,6 +13,7 @@ import Akcii from "./img/akcii.svg";
 import Credit from "./img/credit.svg";
 import Sale from "./img/sale.svg";
 import Krest from "./img/Krest.svg";
+import burgerMenu from "./img/BurgerMenu.svg";
 import "./index.css";
 
 function Header(props) {
@@ -33,14 +34,20 @@ function Header(props) {
   return (
     <header>
       <div className="h_upp_head">
-        <nav className="h_nav1">
-          <li onClick={() => props.setThisPage(1)}>Про нас</li>
-          <li onClick={() => props.setThisPage(2)}>Оплата</li>
-          <li onClick={() => props.setThisPage(3)}>Доставка та збірка</li>
-          <li onClick={() => props.setThisPage(4)}>Відгуки</li>
-          <li onClick={() => props.setThisPage(5)}>Блог</li>
-          <li onClick={() => props.setThisPage(6)}>Контакти</li>
-        </nav>
+        {!props.isSmallScreen ? (
+          <nav className="h_nav1">
+            <li onClick={() => props.setThisPage(1)}>Про нас</li>
+            <li onClick={() => props.setThisPage(2)}>Оплата</li>
+            <li onClick={() => props.setThisPage(3)}>Доставка та збірка</li>
+            <li onClick={() => props.setThisPage(4)}>Відгуки</li>
+            <li onClick={() => props.setThisPage(5)}>Блог</li>
+            <li onClick={() => props.setThisPage(6)}>Контакти</li>
+          </nav>
+        ) : (
+          <nav className="h_nav1">
+            <img src={burgerMenu} alt="Viber" />
+          </nav>
+        )}
         <nav className="h_nav2">
           <p>Допомога і консультація:</p>
           <img src={whatsapp} alt="WhatsApp" />
@@ -86,14 +93,14 @@ function Header(props) {
         </nav>
       </div>
       <div className="h_down_head">
-        <img src={logo} alt="logo" />
+        <img className="h_logotip" src={logo} alt="logo" />
         {props.Categ === false ? (
-          <button onClick={handleCateg}>
+          <button onClick={handleCateg} className="h_katalog">
             <img src={catalog} />
             Каталог
           </button>
         ) : (
-          <button onClick={handleCateg}>
+          <button onClick={handleCateg} className="h_katalog">
             <img src={catalogClose} />
             Каталог
           </button>
@@ -105,12 +112,13 @@ function Header(props) {
           <img src={magnifyingGlass} alt="Logo" />
         </div>
         <div className="h_tel">
-          <img src={callIcon} alt="Telephone" />
-          <div className="h_tel_info">
+          <img onClick={handleTels} src={callIcon} alt="Telephone" />
+          <div onClick={handleTels} className="h_tel_info">
             <p>Щодня з 9:00 до 18:00</p>
             <h4>067 929-45-45</h4>
           </div>
           <svg
+            className="h_bufAr"
             onClick={handleTels}
             width="16"
             height="16"
@@ -152,31 +160,20 @@ function Header(props) {
           />
         </div>
       </div>
-      <div className="h_bottom_head">
-        <nav className="h_nav2_1">
-          <li>
-            <img src={Akcii} alt="Likes" />
-            <h5>Акції</h5>
-          </li>
-          <li>
-            <img src={Sale} alt="Likes" />
-            <h5>Розпродаж</h5>
-          </li>
-          <li>
-            <img src={Credit} alt="Likes" />
-            <h5>Купити в кредит</h5>
-          </li>
-        </nav>
-        <nav className="h_nav2_2">
-          <li>Дитяча</li>
-          <li>Кухня</li>
-          <li>Ванна</li>
-          <li>Спальня</li>
-          <li>Передпокій</li>
-          <li>Вітальня</li>
-          <li>Офіс</li>
-        </nav>
-      </div>
+      <nav className="h_nav2_1">
+        <li>
+          <img src={Akcii} alt="Likes" />
+          <h5>Акції</h5>
+        </li>
+        <li>
+          <img src={Sale} alt="Likes" />
+          <h5>Розпродаж</h5>
+        </li>
+        <li>
+          <img src={Credit} alt="Likes" />
+          <h5>Купити в кредит</h5>
+        </li>
+      </nav>
     </header>
   );
 }

@@ -23,7 +23,24 @@ import Blog6 from "./Blogs/Blog6";
 import Buf from "./Buf";
 
 function App() {
-  const [thisPage, setThisPage] = useState(7);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 800);
+    };
+
+    // Устанавливаем начальное состояние и добавляем слушатель событий для изменения размера окна
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    // Удаляем слушатель событий при размонтировании компонента
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  ///
+
+  const [thisPage, setThisPage] = useState(0);
   const [Categ, setCateg] = useState(false);
   const [Likese, setLikese] = useState(false);
   const [typee, setTypee] = useState("Ліжко");
@@ -69,6 +86,7 @@ function App() {
           setThisPage={setThisPage}
           setCateg={setCateg}
           Categ={Categ}
+          isSmallScreen={isSmallScreen}
         ></Header>
         {Categ === true && (
           <Kategorii
@@ -86,7 +104,12 @@ function App() {
         )}
         {thisPage === 1 && <About setThisPage={handlePageChange}></About>}
         {thisPage === 2 && <Oplata setThisPage={handlePageChange}></Oplata>}
-        {thisPage === 3 && <Dostavka setThisPage={handlePageChange}></Dostavka>}
+        {thisPage === 3 && (
+          <Dostavka
+            isSmallScreen={isSmallScreen}
+            setThisPage={handlePageChange}
+          ></Dostavka>
+        )}
         {thisPage === 4 && <Vidgyki setThisPage={handlePageChange}></Vidgyki>}
         {thisPage === 5 && <Blog setThisPage={handlePageChange}></Blog>}
         {thisPage === 6 && <Kontakti setThisPage={handlePageChange}></Kontakti>}

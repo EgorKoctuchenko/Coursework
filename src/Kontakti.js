@@ -138,7 +138,7 @@ function Kontakti(props) {
         <div className="k_wrapBut">
           <button className="k_but">
             <img src={karta2} />
-            Прогласти маршрут
+            Прокласти маршрут
           </button>
         </div>
       </article>

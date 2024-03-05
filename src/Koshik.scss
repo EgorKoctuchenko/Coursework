@@ -1,0 +1,240 @@
+//Кошик
+
+.k_h1 {
+  margin: 30px 0 40px 0;
+  text-align: start;
+  font-size: 4em;
+  font-weight: 600;
+}
+.k_content {
+  display: flex;
+  gap: 30px;
+  .k_right {
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    width: 37%;
+    height: 1040px;
+  }
+}
+
+.k_lastBottom {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  h3 {
+    font-size: 2.6em;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  .k_infor {
+    margin-bottom: 20px;
+    display: flex;
+    font-size: 1.6em;
+    justify-content: space-between;
+  }
+}
+
+.k_butPost {
+  background: rgb(255, 188, 87);
+  width: 100%;
+  padding: 8px 30px 8px 30px;
+  border-radius: 10px;
+  color: white;
+  margin-top: 30px;
+  height: 50px;
+  font-size: 1.9em;
+  font-weight: 600;
+}
+
+.k_form {
+  width: 63%;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  .k_sec1 {
+    border-radius: 10px;
+    padding: 30px;
+    background-color: white;
+    &_head {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      h3 {
+        font-size: 2.6em;
+        font-weight: 600;
+      }
+    }
+    &_cont {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      input {
+        border: 1px solid rgb(209, 213, 213);
+        border-radius: 10px;
+        background: rgb(255, 255, 255);
+        width: 325px;
+        height: 50px;
+        padding: 10px 20px 10px 20px;
+        font-size: 1.6em;
+      }
+    }
+    &_insha {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      font-size: 1.6em;
+      gap: 10px;
+      input {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .k_sec2 {
+    border-radius: 10px;
+    padding: 30px;
+    background-color: white;
+    &_head {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      h3 {
+        font-size: 2.6em;
+        font-weight: 600;
+      }
+    }
+    &_metodDost {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      &_Dost {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 210px;
+        height: 140px;
+        border: 3px solid rgb(248, 248, 248);
+        border-radius: 10px;
+        background: rgb(255, 255, 255);
+        h5 {
+          font-size: 1.6em;
+        }
+        h6 {
+          font-size: 1.5em;
+          color: rgb(83, 83, 83);
+        }
+      }
+    }
+  }
+  .k_sec3 {
+    border-radius: 10px;
+    background-color: white;
+    padding: 30px;
+    &_head {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      h3 {
+        font-size: 2.6em;
+        font-weight: 600;
+      }
+    }
+    .k_oplata_card {
+      display: flex;
+      align-items: center;
+      font-size: 1.7em;
+      gap: 10px;
+      margin-top: 30px;
+      .k_checkCard {
+        border-radius: 50%;
+      }
+    }
+  }
+  .k_sec4 {
+    border-radius: 10px;
+    background-color: white;
+    padding: 30px;
+    &_head {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      h3 {
+        font-size: 2.6em;
+        font-weight: 600;
+      }
+    }
+    &_area {
+      margin-top: 30px;
+      font-size: 1.6em;
+      width: 680px;
+      height: 150px;
+      border: 1px solid rgb(209, 213, 213);
+      border-radius: 8px;
+      background: rgb(255, 255, 255);
+      padding: 10px 20px 10px 20px;
+      resize: none;
+    }
+  }
+}
+
+.k_selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 210px;
+  height: 140px;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  h5 {
+    font-size: 1.6em;
+  }
+  h6 {
+    font-size: 1.5em;
+    color: rgb(83, 83, 83);
+  }
+  border: 3px solid rgb(255, 188, 87);
+}
+
+.k_upp {
+  h3 {
+    font-weight: 600;
+    font-size: 2em;
+  }
+}
+
+.k_bottom {
+  overflow-y: scroll;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 650px;
+  gap: 20px;
+  .k_Img {
+    width: 150px;
+    height: 100px;
+    border-radius: 10px;
+  }
+  .k_thisTovar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .k_exit {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(255, 188, 87);
+    border-radius: 50%;
+    font-size: 2em;
+    padding: 0px 5px;
+    margin-bottom: 140px;
+  }
+}

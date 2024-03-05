@@ -7,7 +7,7 @@ import "./index.css";
 
 function About(props) {
   return (
-    <main>
+    <main className="about_wrap">
       <section className="this_choice">
         <span onClick={() => props.setThisPage(0)} className="golovna">
           Головна
@@ -73,7 +73,6 @@ function About(props) {
           </section>
         </div>
       </article>
-      <article className="a_vidgyki"></article>
       <article className="a_showRoom">
         <div>
           <h1>Запрошуємо Вас відвідати наш Шоу-рум</h1>

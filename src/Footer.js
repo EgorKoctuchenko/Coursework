@@ -18,7 +18,7 @@ function App(props) {
   return (
     <footer className="f_doWrap">
       <div className="f_wrap">
-        <div>
+        <div className="f_upping">
           <img src={logo} alt="logo" />
           <div className="f_Seti">
             <h6>Приєднуйтесь:</h6>
@@ -49,7 +49,7 @@ function App(props) {
             <li onClick={() => props.setThisPage(4)}>Відгуки</li>
             <li onClick={() => props.setThisPage(5)}>Блог</li>
             <li onClick={() => props.setThisPage(6)}>Контакти</li>
-            <li>Мапа сайту</li>
+            <li>Політика конфіденційності</li>
           </nav>
         </div>
         <div>
@@ -97,19 +97,9 @@ function App(props) {
             </li>
           </nav>
         </div>
-        <div>
-          <h4>Клієнтам</h4>
-          <nav>
-            <li>Акції</li>
-            <li>Розпродаж</li>
-            <li>Купити в кредит</li>
-            <li>Обмін і повернення товару</li>
-            <li>Часто задавані питання</li>
-            <li>Умови покупки</li>
-            <li>Політика конфіденційності</li>
-          </nav>
-        </div>
+
         <div className="f_lastDiv">
+          <h4>Зв'язок</h4>
           <div className="f_lastDivWrap">
             <img src={callPhone} />
             <div>

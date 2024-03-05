@@ -103,10 +103,10 @@ app.post("/api/renameData", (req, res) => {
   });
 });
 //Корзина
-app.post("/api/renameData", (req, res) => {
-  const { name, newLike } = req.body;
-  const query = "UPDATE tovar SET `like` = ? WHERE name = ?";
-  pool.query(query, [newLike, name], (err, results) => {
+app.post("/api/renameKorzina", (req, res) => {
+  const { name, newKorzina } = req.body;
+  const query = "UPDATE tovar SET `korzina` = ? WHERE name = ?";
+  pool.query(query, [newKorzina, name], (err, results) => {
     if (err) {
       console.error("Ошибка выполнения SQL-запроса:", err);
       res.status(500).send("Ошибка сервера");

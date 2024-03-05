@@ -50,6 +50,33 @@ function InfoTovar(props) {
     }
   };
 
+  //Для корзині
+  const handleIsKorzina = async (name, currentKorz) => {
+    console.log("asdasd = " + name);
+    try {
+      const response = await fetch("http://localhost:3001/api/renameKorzina", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          newKorzina: currentKorz === 0 ? 1 : 1,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+      }
+
+      console.log("Данные успешно переименованы в базе данных");
+      fetchData();
+      // Добавьте здесь логику для обновления данных на клиенте, если это необходимо
+    } catch (error) {
+      console.error("Ошибка при отправке запроса:", error.message);
+    }
+  };
+
   const handlePlusKolvo = () => {
     allKolvo === props.infoMassiv[2]
       ? setAllKolvo(allKolvo)
@@ -179,10 +206,16 @@ function InfoTovar(props) {
                 <h5>{allKolvo}</h5>
                 <p onClick={handlePlusKolvo}>+</p>
               </div>
-              <button>
-                <img src={Korzinka}></img>
-                Купити
-              </button>
+              {data
+                .filter((item) => item.name === props.infoMassiv[3])
+                .map((item) => (
+                  <button
+                    onClick={() => handleIsKorzina(item.name, item.korzina)}
+                  >
+                    <img src={Korzinka}></img>
+                    {item.korzina === 0 ? "Купити" : "У корзині"}
+                  </button>
+                ))}
             </div>
           </div>
         </section>

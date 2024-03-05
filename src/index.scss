@@ -102,7 +102,10 @@ body {
   justify-content: center;
   width: 100%;
   &_2 {
-    width: 1290px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -128,391 +131,123 @@ body {
 @import "./Kategorii.scss";
 //Лист Товарів
 @import "./ListTovar.scss";
-
 //Обраний товар
-.it_line {
-  width: 100%;
-  height: 2px;
-  background-color: rgb(197, 197, 197);
-  margin: 20px 0;
+@import "./InfoTovar.scss";
+//Кошик
+@import "./Koshik.scss";
+//Обрані товари
+@import "./Obrane.scss";
+
+.this_choice {
+  padding-left: 10%;
 }
 
-.it_buy {
-  margin-top: 30px;
+.o_Sposobi {
+  padding: 0 20px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  &_kolvo {
-    border: 1px solid rgb(177, 177, 177);
-    padding: 13px 20px;
-    display: flex;
-    font-size: 2em;
-    gap: 15px;
-    font-weight: 600;
-    line-height: 28px;
-    background: rgb(248, 248, 248);
-    width: 110px;
-    justify-content: center;
-    border-radius: 10px;
-    p {
-      cursor: pointer;
-    }
-  }
-  button {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    justify-content: center;
-    width: 208px;
-    height: 50px;
-    border-radius: 10px;
-    background: rgb(255, 188, 87);
-    font-size: 1.9em;
-    font-weight: 600;
-    color: white;
-  }
-}
-
-.it_upp {
-  align-items: center;
-  margin-top: 30px;
+  margin-top: 70px;
   gap: 30px;
-  display: flex;
-  &_foto {
-    border-radius: 10px;
-    width: 630px;
-    height: 540px;
-  }
-  &_right {
-    width: 48%;
-    display: flex;
-    flex-direction: column;
-    h1 {
-      font-size: 4em;
-      font-weight: 600;
-      line-height: 48px;
-    }
-    &_line {
-      margin-top: 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      h6 {
-        margin-top: 5px;
-        font-size: 1.3rem;
-        font-weight: 400;
-      }
-    }
-    &_btm {
-      background-color: white;
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      &1 {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        h2 {
-          font-size: 3em;
-          font-weight: 600;
-        }
-        &_like {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          h5 {
-            font-size: 1.9em;
-            font-weight: 600;
-          }
-        }
-      }
-      &2 {
-        h2 {
-          font-size: 3em;
-          text-align: center;
-          font-weight: 600;
-          margin-bottom: 40px;
-        }
-        div {
-          margin-top: 10px;
-          background-color: rgb(248, 248, 248);
-          padding: 10px 10px;
-          border-radius: 10px;
-          display: flex;
-          justify-content: space-between;
-          h5 {
-            font-size: 1.7em;
-            font-weight: 600;
-          }
-        }
-      }
-    }
-  }
-}
-
-.it_middle {
-  margin-top: 60px;
-  display: flex;
-  justify-content: space-between;
   section {
     display: flex;
-    gap: 20px;
     align-items: center;
+    gap: 20px;
+    h4 {
+      font-size: 2em;
+      max-width: 150px;
+      font-weight: 600;
+    }
+  }
+}
+
+.o_pitana {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  h1 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 4em;
+    margin-bottom: 40px;
+  }
+  section {
+    padding: 0 180px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    background-color: white;
+    width: 100%;
+    padding: 15px;
     div {
+      width: 100%;
       display: flex;
-      flex-direction: column;
-      gap: 5px;
+      align-items: center;
+      justify-content: start;
+      h5 {
+        font-weight: 600;
+        font-size: 1.9em;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .this_choice {
+    padding-left: 50px;
+    font-size: 1.6rem;
+  }
+  .o_Sposobi {
+    flex-wrap: wrap;
+    gap: 30px;
+    section {
+      width: 45%;
+      display: flex;
+      align-items: center;
+      gap: 20px;
       h4 {
         font-size: 2em;
+        max-width: 150px;
         font-weight: 600;
-      }
-      p {
-        font-size: 1.5em;
-        font-weight: 400;
-        line-height: 22px;
-        max-width: 200px;
       }
     }
   }
 }
-//Кошик
-.k_h1 {
-  margin: 30px 0 40px 0;
-  text-align: start;
-  font-size: 4em;
-  font-weight: 600;
-}
-.k_content {
-  display: flex;
-  gap: 30px;
-  .k_right {
-    background-color: white;
-    border: 1px solid blue;
-    width: 37%;
-  }
-}
-.k_form {
-  width: 63%;
-  display: flex;
-  gap: 5px;
-  flex-direction: column;
-  .k_sec1 {
-    padding: 30px;
-    background-color: white;
-    &_head {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      h3 {
-        font-size: 2.6em;
-        font-weight: 600;
-      }
-    }
-    &_cont {
-      margin-top: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      input {
-        border: 1px solid rgb(209, 213, 213);
-        border-radius: 10px;
-        background: rgb(255, 255, 255);
-        width: 325px;
-        height: 50px;
-        padding: 10px 20px 10px 20px;
-        font-size: 1.6em;
-      }
-    }
-    &_insha {
-      margin-top: 20px;
-      display: flex;
-      align-items: center;
-      font-size: 1.6em;
-      gap: 10px;
-      input {
-        width: 20px;
-        height: 20px;
-      }
-    }
-  }
-  .k_sec2 {
-    padding: 30px;
-    background-color: white;
-    &_head {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      h3 {
-        font-size: 2.6em;
-        font-weight: 600;
-      }
-    }
-    &_metodDost {
-      margin-top: 30px;
-      display: flex;
-      justify-content: space-between;
-      &_Dost {
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        width: 210px;
-        height: 140px;
-        border: 3px solid rgb(248, 248, 248);
-        border-radius: 10px;
-        background: rgb(255, 255, 255);
+@media (max-width: 600px) {
+  .o_pitana {
+    section {
+      div {
         h5 {
           font-size: 1.6em;
         }
-        h6 {
-          font-size: 1.5em;
-          color: rgb(83, 83, 83);
-        }
       }
     }
   }
-  .k_sec3 {
-    background-color: white;
-    padding: 30px;
-    &_head {
+  .this_choice {
+    gap: 10px;
+    text-align: center;
+    padding-left: 0px;
+  }
+  .o_Sposobi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    gap: 30px;
+    section {
+      width: auto;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 15px;
-      h3 {
-        font-size: 2.6em;
+      text-align: center;
+      gap: 20px;
+      h4 {
+        font-size: 1.6em;
+        max-width: 150px;
         font-weight: 600;
       }
     }
-    .k_oplata_card {
-      display: flex;
-      align-items: center;
-      font-size: 1.7em;
-      gap: 10px;
-      margin-top: 30px;
-      .k_checkCard {
-        border-radius: 50%;
-      }
-    }
-  }
-  .k_sec4 {
-    background-color: white;
-    padding: 30px;
-    &_head {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      h3 {
-        font-size: 2.6em;
-        font-weight: 600;
-      }
-    }
-    &_area {
-      margin-top: 30px;
-      font-size: 1.6em;
-      width: 680px;
-      height: 150px;
-      border: 1px solid rgb(209, 213, 213);
-      border-radius: 8px;
-      background: rgb(255, 255, 255);
-      padding: 10px 20px 10px 20px;
-      resize: none;
-    }
-  }
-}
-
-.k_selected {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 210px;
-  height: 140px;
-  border-radius: 10px;
-  background: rgb(255, 255, 255);
-  h5 {
-    font-size: 1.6em;
-  }
-  h6 {
-    font-size: 1.5em;
-    color: rgb(83, 83, 83);
-  }
-  border: 3px solid rgb(255, 188, 87);
-}
-
-.k_upp {
-  h3 {
-    font-weight: 600;
-    font-size: 2em;
-  }
-}
-
-///
-///
-.like_wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 10;
-  .like_menu {
-    display: flex;
-    flex-direction: column;
-    width: 600px;
-    height: 800px;
-    background-color: white;
-    border-radius: 10px;
-    padding: 30px;
-  }
-}
-
-.like_wrapTovars {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  overflow-y: scroll;
-}
-
-.like_wrapTovar {
-  border: 1px solid rgb(227, 226, 226);
-  box-shadow: -3px 4px 15px 0px rgba(0, 0, 0, 0.06);
-  display: flex;
-  flex-direction: row;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.like_thisTovar {
-  display: flex;
-  gap: 30px;
-  .like_Img {
-    border-radius: 10px;
-    width: 250px;
-    height: 200px;
-  }
-}
-
-.like_ObraneMenu {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  h3 {
-    font-weight: 600;
-    font-size: 2em;
-  }
-  .like_Exit {
-    font-size: 2rem;
-    font-weight: 800;
-    text-align: end;
-    cursor: pointer;
   }
 }

@@ -1,10 +1,14 @@
 //Доставка
+.d_wrap {
+  width: 100%;
+}
+
 .d_Dostavka {
   display: flex;
   align-items: center;
   margin-top: 35px;
   background-color: white;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 450px;
   section {
     h1 {
@@ -32,7 +36,7 @@
 
 .d_poKyiv {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   div {
     margin-top: 30px;
@@ -66,7 +70,7 @@
   margin-top: 100px;
   background-color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   div {
     margin-top: 30px;
@@ -98,54 +102,13 @@
     width: 650px;
   }
 }
-.d_koloInfo {
-  position: absolute;
-  right: 550px;
-  top: 1000px;
-  div {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    right: 40px;
-    max-width: 340px;
-    h3 {
-      text-align: center;
-      line-height: 34px;
-      font-size: 2.6em;
-      font-weight: 600;
-      color: rgb(255, 255, 255);
-    }
-    h4 {
-      text-align: center;
-      font-size: 2em;
-      line-height: 28px;
-      font-weight: 600;
-      color: rgb(255, 255, 255);
-    }
-  }
-}
-
-.d_koloInfo2 {
-  position: absolute;
-  right: 470px;
-  top: 1800px;
-  h3 {
-    position: absolute;
-    top: 135px;
-    right: 10px;
-    text-align: center;
-    line-height: 34px;
-    font-size: 2.6em;
-    font-weight: 600;
-    color: rgb(255, 255, 255);
-    max-width: 400px;
-  }
-}
 
 .d_Note {
+  display: flex;
+  justify-content: center;
   background-color: white;
-  padding: 100px 0 50px 0;
+  padding: 70px 180px 50px 180px;
+  width: 100%;
   font-size: 16px;
   font-weight: 400;
   line-height: 30px;
@@ -162,6 +125,7 @@
     font-weight: 600;
   }
   p {
+    max-width: 1500px;
     margin-top: 40px;
     font-size: 1.6em;
     line-height: 30px;
@@ -199,10 +163,11 @@
   }
   ul {
     li {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       font-size: 1.7em;
       padding: 15px 10px;
-      display: flex;
-      justify-content: space-between;
+      text-align: center;
     }
   }
   .d_eqTwo {
@@ -237,21 +202,204 @@
       text-align: center;
       font-size: 1.7em;
       padding: 15px 10px;
-      p:last-child {
-        text-align: end;
-      }
-      p:first-child {
-        text-align: start;
-      }
     }
   }
   .d_InfoZanes {
-    padding: 40px 0 70px 0;
+    padding: 40px 180px 70px 180px;
     text-align: center;
     font-size: 1.6em;
     line-height: 30px;
   }
   .d_eqTwo {
     background-color: rgb(248, 248, 248);
+  }
+}
+
+@media (max-width: 1100px) {
+  .d_Dostavka {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 30px 0;
+    font-size: 0.85em;
+    text-align: center;
+  }
+
+  .d_Note {
+    padding: 70px 30px 50px 30px;
+  }
+  .d_poUkraine {
+    height: auto;
+    flex-direction: column;
+
+    div {
+      h1 {
+        text-align: center;
+      }
+      .d_h4Text {
+        text-align: center;
+      }
+    }
+    .d_UkraineMap {
+      margin-top: 30px;
+      width: 80%;
+    }
+  }
+  .d_poKyiv {
+    display: flex;
+    flex-direction: column;
+    div {
+      h1 {
+        font-size: 4em;
+        font-weight: 600;
+        max-width: 500px;
+        line-height: 48px;
+      }
+      div {
+        align-items: center;
+        display: flex;
+        gap: 20px;
+        h4 {
+          font-size: 2em;
+          max-width: 400px;
+          font-weight: 600;
+          line-height: 28px;
+        }
+      }
+      h4 {
+        font-size: 2em;
+        max-width: 500px;
+        font-weight: 600;
+        line-height: 28px;
+      }
+    }
+    .d_imgKyiv {
+      margin-top: 40px;
+      width: 60%;
+    }
+  }
+
+  .d_Zanes {
+    .d_ShapkaZanes {
+      display: grid;
+      grid-template-columns: 45% 10% 45%;
+      text-align: center;
+      background-color: rgb(83, 83, 83);
+      color: white;
+      font-size: 1.6em;
+      font-weight: 600;
+      padding: 15px 17px;
+      border-radius: 10px;
+    }
+    h1 {
+      padding-top: 70px;
+      font-size: 4em;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    ul {
+      li {
+        display: grid;
+        grid-template-columns: 45% 10% 45%;
+        text-align: center;
+        font-size: 1.5em;
+        padding: 15px 10px;
+      }
+    }
+    .d_InfoZanes {
+      padding: 40px 20px 70px 20px;
+      text-align: center;
+      font-size: 1.6em;
+      line-height: 30px;
+    }
+    .d_eqTwo {
+      background-color: rgb(248, 248, 248);
+    }
+  }
+
+  .d_akcii {
+    font-size: 0.9em;
+    .d_A-Info {
+      flex-wrap: wrap;
+      justify-content: center;
+      h4 {
+        font-size: 1.5rem;
+      }
+    }
+    p {
+      max-width: 1500px;
+      margin-top: 40px;
+      padding: 0 30px;
+      font-size: 1.6em;
+      line-height: 30px;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .d_wrap {
+    font-size: 0.85em;
+  }
+  .d_Dostavka {
+    img {
+      width: 50%;
+    }
+  }
+  .d_Skladanna {
+    background-color: white;
+    ul {
+      li {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        p {
+          padding-bottom: 10px;
+          border-bottom: 2px dotted rgb(83, 83, 83);
+        }
+      }
+    }
+  }
+  .d_Zanes {
+    .d_zanecH2 {
+      font-size: 2.6em;
+      text-align: center;
+      font-weight: 600;
+      margin: 30px 0;
+    }
+    .d_ShapkaZanes {
+    }
+    h1 {
+      padding-top: 70px;
+      font-size: 4em;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    ul {
+      li {
+        font-size: 1.9em;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        p:first-child {
+          padding-bottom: 10px;
+          border-bottom: 2px dotted rgb(83, 83, 83);
+        }
+        p:last-child {
+          margin-top: 10px;
+        }
+      }
+    }
+    .d_InfoZanes {
+      padding: 40px 30px 70px 30px;
+      text-align: center;
+      font-size: 1.6em;
+      line-height: 30px;
+    }
+    .d_eqTwo {
+      background-color: rgb(248, 248, 248);
+    }
   }
 }

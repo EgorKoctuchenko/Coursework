@@ -6,6 +6,8 @@ import kyrier from "./img/Kyrier.svg";
 import Galochka from "./img/Galochka4.svg";
 import Oplata from "./img/SposibOplati.svg";
 import KomZam from "./img/KomZamov.svg";
+import YesAv from "./img/YesAv.svg";
+import NoAv from "./img/NoAv.svg";
 import Sposobi from "./Sposobi";
 import "./index.css";
 
@@ -22,6 +24,19 @@ function Koshik(props) {
     inshaLudina: "",
     price: 0,
   });
+
+  //Обчислення суми
+  const summing = () => {
+    const totalPrice = data.reduce((acc, item) => {
+      if (item.korzina === 1) {
+        return acc + item.price;
+      }
+      return acc;
+    }, 0);
+
+    return totalPrice;
+  };
+
   // Стейтмент для кожного інпута
   const [fio2, setFio] = useState("");
   const [tel2, setTel] = useState("");
@@ -135,6 +150,33 @@ function Koshik(props) {
       console.error("Ошибка при запросе:", error.message);
     }
   };
+  //Зміна даних щодо корзини (якщо прибрали)
+  const handleIsKorzina = async (name, currentKorz) => {
+    console.log("asdasd = " + name);
+    try {
+      const response = await fetch("http://localhost:3001/api/renameKorzina", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          newKorzina: currentKorz === 0 ? 1 : 0,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+      }
+
+      console.log("Данные успешно переименованы в базе данных");
+      fetchData();
+      // Добавьте здесь логику для обновления данных на клиенте, если это необходимо
+    } catch (error) {
+      console.error("Ошибка при отправке запроса:", error.message);
+    }
+  };
+
   return (
     <main className="k_wrap">
       <section className="this_choice">
@@ -286,12 +328,118 @@ function Koshik(props) {
               onChange={handleCommentChange}
             ></textarea>
           </section>
-          <button type="submit">asdasdasdasd</button>
         </form>
         <section className="k_right">
           <div className="k_upp">
-            <h3>Кошик: {data.filter((item) => item.korzina === 1).length}</h3>
+            <h3>
+              Кошик:{" "}
+              <span style={{ color: "rgb(255, 188, 87)" }}>
+                {data.filter((item) => item.korzina === 1).length}
+              </span>
+            </h3>
           </div>
+          <div className="k_bottom">
+            {data
+              .filter((item) => item.korzina === 1)
+              .map((item) => (
+                <div className="like_wrapTovar">
+                  <section key={item.id} className="k_thisTovar">
+                    {item.imageUrl && (
+                      <img
+                        className="k_Img"
+                        onClick={() => {
+                          props.setLikese(false);
+                          props.setThisPage(8);
+                          props.handleInfoMassiv(
+                            item.id,
+                            item.price,
+                            item.kolvo,
+                            item.name,
+                            item.photo,
+                            item.virobnik,
+                            item.type,
+                            item.korzina,
+                            item.like,
+                            item.sizes,
+                            item.availability
+                          );
+                        }}
+                        src={require("./Image_Storage/" +
+                          item.imageUrl.replace("http://localhost:3001", ""))}
+                      />
+                    )}
+                    <div>
+                      <div
+                        onClick={() => {
+                          props.setLikese(false);
+                          props.setThisPage(8);
+                          props.handleInfoMassiv(
+                            item.id,
+                            item.price,
+                            item.kolvo,
+                            item.name,
+                            item.photo,
+                            item.virobnik,
+                            item.type,
+                            item.korzina,
+                            item.like,
+                            item.sizes,
+                            item.availability
+                          );
+                        }}
+                      >
+                        <p className="m_Rozmir">Розміри: {item.sizes}</p>
+                        <h5 className="m_Name">{item.name}</h5>
+                        {item.availability === "В наявності" ? (
+                          <div className="m_Avab">
+                            <img src={YesAv}></img>
+                            <p className="m_Nayav">В наявності</p>
+                          </div>
+                        ) : (
+                          <div className="m_Avab">
+                            <img src={NoAv}></img>
+                            <p className="m_Nayav">Немає в наявності</p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="li_linee"></div>
+                      <div className="m_BottomLikes">
+                        <p className="m_Price">
+                          {item.price.toLocaleString()} грн.
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className="k_exit"
+                      onClick={() => handleIsKorzina(item.name, item.korzina)}
+                    >
+                      x
+                    </div>
+                  </section>
+                </div>
+              ))}
+          </div>
+          <div className="k_lastBottom">
+            <h3>Разом:</h3>
+            <div className="k_infor">
+              <p>
+                {data.filter((item) => item.korzina === 1).length} товари на
+                суму:
+              </p>
+              <p>{summing().toLocaleString()} грн.</p>
+            </div>
+            <div className="k_infor">
+              <p>Вартість доставки:</p>
+              <p>За тарифами оператора</p>
+            </div>
+            <div className="k_infor">
+              <p>До оплати:</p>
+              <p>{summing().toLocaleString()} грн.</p>
+            </div>
+          </div>
+          <button className="k_butPost" type="submit">
+            ОФОРМИТИ ЗАМОВЛЕННЯ
+          </button>
         </section>
       </article>
 

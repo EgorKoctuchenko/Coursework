@@ -1,8 +1,17 @@
 //Хедер
 header {
-  height: 220px;
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
   .h_upp_head {
+    text-align: center;
+    width: 100%;
     display: flex;
+    gap: 50px;
     justify-content: space-between;
     nav {
       margin-top: 10px;
@@ -30,19 +39,21 @@ header {
     }
   }
   .h_down_head {
+    width: 100%;
     background-color: white;
     margin-top: 25px;
     padding: 25px 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 30px;
     button {
+      padding: 0 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 5px;
-      width: 145px;
+      width: 130px;
       height: 46px;
       color: white;
       background-color: rgb(255, 188, 87);
@@ -53,7 +64,8 @@ header {
     }
     .h_poshyk {
       border: 1px solid rgb(177, 177, 177);
-      width: 420px;
+      max-width: 400px;
+      width: 100%;
       height: 50px;
       border-radius: 8px;
       display: flex;
@@ -145,37 +157,23 @@ header {
     }
   }
 
-  .h_bottom_head {
+  .h_nav2_1 {
+    width: 100%;
     background-color: white;
-    padding: 10px 0;
     display: flex;
-    justify-content: space-between;
-    .h_nav2_1 {
+    align-items: center;
+    justify-content: space-evenly;
+    color: rgb(83, 83, 83);
+    display: flex;
+    font-size: 1.9em;
+    gap: 30px;
+    padding-bottom: 20px;
+    li {
+      gap: 5px;
       display: flex;
       align-items: center;
-      color: rgb(83, 83, 83);
-      display: flex;
-      font-size: 1.9em;
-      gap: 30px;
-      li {
-        gap: 5px;
-        display: flex;
-        align-items: center;
 
-        h5 {
-          font-weight: 600;
-        }
-      }
-    }
-    .h_nav2_2 {
-      display: flex;
-      align-items: center;
-      font-size: 1.9em;
-      color: rgb(83, 83, 83);
-      gap: 30px;
-      li {
-        display: flex;
-        align-items: center;
+      h5 {
         font-weight: 600;
       }
     }
@@ -205,4 +203,127 @@ header {
   }
   right: 302.5px;
   top: 14px;
+}
+
+@media (max-width: 1100px) {
+  header {
+    font-size: 0.95em;
+    .h_upp_head {
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .h_nav2 {
+      p {
+        display: none;
+      }
+    }
+    .h_likes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      img {
+        cursor: pointer;
+      }
+    }
+    .h_down_head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-evenly;
+      .h_logotip {
+        padding: 0 20px;
+        width: 100%;
+        order: -1;
+      }
+      .h_poshyk {
+        margin: 0 20px;
+        order: 1;
+        max-width: 750px;
+        width: 100%;
+        gap: 0px;
+      }
+      .h_tel {
+        order: 2;
+      }
+      .h_likes {
+        order: 2;
+      }
+      .h_katalog {
+        order: 2;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .h_nav2 {
+    img {
+      margin-left: 15px;
+    }
+    div {
+      display: none;
+      h5 {
+        display: none;
+      }
+      svg {
+        display: none;
+      }
+    }
+  }
+  header {
+    .h_down_head {
+      .h_likes {
+        display: flex;
+        gap: 70px;
+      }
+    }
+  }
+  .h_nav2_1 {
+    display: none;
+    li {
+      display: none;
+      h5 {
+        display: none;
+      }
+      img {
+        display: none;
+      }
+    }
+  }
+  .h_down_head {
+    display: flex;
+    align-items: center;
+    .h_katalog {
+      height: 60px;
+      width: 85%;
+    }
+    .h_likes {
+      display: flex;
+      justify-content: space-around;
+      gap: 30px;
+    }
+    .h_tel {
+      width: auto;
+      display: flex;
+      justify-content: center;
+      img {
+      }
+      .h_tel_info {
+        width: 170px;
+        font-size: 1.1em;
+      }
+      svg {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .h_nav2 {
+    img {
+      display: none;
+    }
+  }
 }

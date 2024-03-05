@@ -21,6 +21,7 @@ import arLeft from "./img/ArLefr2.svg";
 import arRight from "./img/ArRight.svg";
 import UserPh from "./img/userPhoto.svg";
 import StarFill from "./img/StarFill.svg";
+import korzina2 from "./img/Korzina2.svg";
 import StarNoFill from "./img/StarNoFill.svg";
 import "./index.css";
 
@@ -40,6 +41,59 @@ function MainMenu(props) {
         const newCoef = prevCoef - 1;
         return newCoef === -1 ? 4 : newCoef;
       });
+    }
+  };
+
+  //Для лайков
+  const handleIsLike = async (name, currentLike) => {
+    console.log("asdasd = " + name);
+    try {
+      const response = await fetch("http://localhost:3001/api/renameData", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          newLike: currentLike === 0 ? 1 : 0,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+      }
+
+      console.log("Данные успешно переименованы в базе данных");
+      fetchData();
+      // Добавьте здесь логику для обновления данных на клиенте, если это необходимо
+    } catch (error) {
+      console.error("Ошибка при отправке запроса:", error.message);
+    }
+  };
+  //Для корзині
+  const handleIsKorzina = async (name, currentKorz) => {
+    console.log("asdasd = " + name);
+    try {
+      const response = await fetch("http://localhost:3001/api/renameKorzina", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          newKorzina: currentKorz === 0 ? 1 : 0,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+      }
+
+      console.log("Данные успешно переименованы в базе данных");
+      fetchData();
+      // Добавьте здесь логику для обновления данных на клиенте, если это необходимо
+    } catch (error) {
+      console.error("Ошибка при отправке запроса:", error.message);
     }
   };
 
@@ -188,58 +242,77 @@ function MainMenu(props) {
         <h1>Популярні товари</h1>
         <div className="m_Tovar">
           {data.slice(0, 8).map((item) => (
-            <section
-              key={item.id}
-              className="m_thisTovar"
-              onClick={() => {
-                props.setThisPage(8);
-                props.handleInfoMassiv(
-                  item.id,
-                  item.price,
-                  item.kolvo,
-                  item.name,
-                  item.photo,
-                  item.virobnik,
-                  item.type,
-                  item.korzina,
-                  item.like,
-                  item.sizes,
-                  item.availability
-                );
-              }}
-            >
-              {item.imageUrl && (
-                <img
-                  className="m_Img"
-                  src={require("./Image_Storage/" +
-                    item.imageUrl.replace("http://localhost:3001", ""))}
-                />
-              )}
-              <p className="m_Rozmir">{item.sizes}</p>
-              <h5 className="m_Name">{item.name}</h5>
-              {item.availability === "В наявності" ? (
-                <div className="m_Avab">
-                  <img src={YesAv}></img>
-                  <p className="m_Nayav">В наявності</p>
-                </div>
-              ) : (
-                <div className="m_Avab">
-                  <img src={NoAv}></img>
-                  <p className="m_Nayav">Немає в наявності</p>
-                </div>
-              )}
-              <div className="m_BottomLikes">
-                <p className="m_Price">{item.price.toLocaleString()} грн.</p>
-                <div>
-                  {item.like === "0" ? (
-                    <img className="m_Like" src={like2}></img>
-                  ) : (
-                    <img className="m_Like" src={like}></img>
+            <div className="li_wrapTovar">
+              <section key={item.id} className="m_thisTovar">
+                <div
+                  onClick={() => {
+                    props.setThisPage(8);
+                    props.handleInfoMassiv(
+                      item.id,
+                      item.price,
+                      item.kolvo,
+                      item.name,
+                      item.photo,
+                      item.virobnik,
+                      item.type,
+                      item.korzina,
+                      item.like,
+                      item.sizes,
+                      item.availability
+                    );
+                  }}
+                >
+                  {item.imageUrl && (
+                    <img
+                      className="m_Img"
+                      src={require("./Image_Storage/" +
+                        item.imageUrl.replace("http://localhost:3001", ""))}
+                    />
                   )}
-                  <img className="m_Korz" src={korzina}></img>
+                  <p className="m_Rozmir">Розміри: {item.sizes}</p>
+                  <h5 className="m_Name">{item.name}</h5>
+                  {item.availability === "В наявності" ? (
+                    <div className="m_Avab">
+                      <img src={YesAv}></img>
+                      <p className="m_Nayav">В наявності</p>
+                    </div>
+                  ) : (
+                    <div className="m_Avab">
+                      <img src={NoAv}></img>
+                      <p className="m_Nayav">Немає в наявності</p>
+                    </div>
+                  )}
                 </div>
-              </div>
-            </section>
+                <div className="li_linee"></div>
+                <div className="m_BottomLikes">
+                  <p className="m_Price">{item.price.toLocaleString()} грн.</p>
+                  <div>
+                    {item.like === 0 ? (
+                      <img
+                        className="m_Like"
+                        src={like}
+                        onClick={() => handleIsLike(item.name, item.like)}
+                      ></img>
+                    ) : (
+                      <img
+                        className="m_Like"
+                        src={like2}
+                        onClick={() => handleIsLike(item.name, item.like)}
+                      ></img>
+                    )}
+                    {item.korzina === 0 ? (
+                      <img
+                        className="m_Korz"
+                        src={korzina}
+                        onClick={() => handleIsKorzina(item.name, item.korzina)}
+                      ></img>
+                    ) : (
+                      <img className="m_Korz" src={korzina2}></img>
+                    )}
+                  </div>
+                </div>
+              </section>
+            </div>
           ))}
         </div>
       </article>

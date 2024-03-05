@@ -1,8 +1,11 @@
 ///Контакти
 .k_wrap {
+  width: 100%;
 }
 
 .k_h1 {
+  display: flex;
+  justify-content: center;
   font-size: 4em;
   font-weight: 600;
   margin: 40px 0;
@@ -10,9 +13,12 @@
 }
 
 .k_info {
+  padding: 0 30px 0 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   section {
+    margin-bottom: 30px;
     display: flex;
     gap: 20px;
     align-items: start;
@@ -43,13 +49,17 @@
 }
 
 .k_map {
-  width: 530px;
-  height: 550px;
+  max-width: 530px;
+  width: 100%;
+  height: auto;
+  padding: 0 30px 0 0;
 }
 
 .k_adres {
-  width: 530px;
-  height: 550px;
+  max-width: 530px;
+  width: 100%;
+  height: auto;
+  padding: 0 0px 0 30px;
 }
 
 .k_dostat {
@@ -62,10 +72,11 @@
     text-align: center;
   }
   section {
+    padding: 0 30px 0 30px;
     gap: 30px;
     margin-top: 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     .k_first {
       max-width: 600px;
       display: flex;
@@ -121,10 +132,11 @@
 }
 
 .k_otpravka {
+  padding: 0 30px 0 30px;
   margin-top: 70px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
   height: 530px;
   background-image: url("./img/backFone.png");
@@ -182,6 +194,154 @@
       font-size: 1.9em;
       font-weight: 600;
       border-radius: 10px;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .k_dostat {
+    height: auto;
+    h2 {
+      font-size: 2.5em;
+    }
+    section {
+      .k_first {
+        div {
+          p {
+            font-size: 1.6em;
+          }
+        }
+      }
+      .k_second {
+        div {
+          p {
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+  }
+  .k_map {
+    width: 50vw;
+    height: auto;
+    padding: 0 30px 0 0;
+  }
+
+  .k_adres {
+    width: 50vw;
+    height: auto;
+    padding: 0 0px 0 30px;
+  }
+  .k_otpravka {
+    section {
+      h1 {
+        font-size: 3.4em;
+      }
+      h3 {
+        font-size: 2.2em;
+      }
+      h2 {
+        font-size: 2.5em;
+      }
+    }
+    form {
+      input {
+        font-size: 1.5em;
+      }
+      textarea {
+        font-size: 1.5em;
+      }
+      .k_but2 {
+        font-size: 1.7em;
+      }
+    }
+  }
+}
+@media (max-width: 800px) {
+  .k_adress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .k_map {
+    width: 70vw;
+  }
+
+  .k_adres {
+    width: 70vw;
+  }
+  .k_dostat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    section {
+      flex-direction: column;
+      gap: 15px;
+      .k_first {
+        gap: 15px;
+      }
+      .k_second {
+        gap: 15px;
+      }
+    }
+  }
+  .k_otpravka {
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    section {
+      margin-bottom: 50px;
+    }
+    form {
+      .k_but2 {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .k_info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .k_but {
+    width: 100%;
+    justify-content: center;
+  }
+  .k_wrapBut {
+    padding: 0 30px;
+  }
+  .k_otpravka {
+    form {
+      width: 100%;
+      input {
+        width: 100%;
+      }
+      textarea {
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 350px) {
+  .k_info {
+    section {
+      div {
+        h6 {
+          font-size: 1.4em;
+        }
+        h4 {
+          font-size: 1.6em;
+        }
+        div {
+          flex-wrap: wrap;
+        }
+      }
     }
   }
 }
