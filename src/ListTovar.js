@@ -12,10 +12,43 @@ import "./index.css";
 
 function ListTovar(props) {
   const [data, setData] = useState([]);
+  const [minPrice, setMinPrice] = useState(Number.MAX_VALUE);
+  const [maxPrice, setMaxPrice] = useState(0);
+  const [avabStatus, setAvabStatus] = useState("В наявності");
+  const [virobS, setVirobS] = useState("");
 
   useEffect(() => {
     fetchData();
   }, []);
+
+  const handleVirobn = (bufVirob) => {
+    setVirobS(bufVirob);
+    console.log("1" + bufVirob + "2");
+  };
+
+  const handleAvab = () => {
+    if (avabStatus === "В наявності") {
+      setAvabStatus("Немає в наявності");
+    } else {
+      setAvabStatus("В наявності");
+    }
+  };
+
+  //Для виробників
+  const extractUniqueVirobniks = () => {
+    const virobniks = new Set(); // Используем Set для хранения уникальных значений
+
+    data.forEach((item) => {
+      if (item.type === props.typee) {
+        // Проверяем, чтобы производитель был нужного типа
+        virobniks.add(item.virobnik); // Добавляем производителя в Set
+      }
+    });
+
+    return Array.from(virobniks); // Преобразуем Set в массив и возвращаем
+  };
+
+  const allVirobniks = extractUniqueVirobniks();
 
   //Для лайков
   const handleIsLike = async (name, currentLike) => {
@@ -82,7 +115,33 @@ function ListTovar(props) {
       const jsonData = await response.json();
 
       console.log(jsonData);
-      setData(jsonData);
+      if (minPrice >= 99999 && maxPrice <= 1) {
+        setData(jsonData);
+      } else {
+        setData(
+          jsonData.filter(
+            (item) =>
+              item.type === props.typee &&
+              item.price >= minPrice &&
+              item.price <= maxPrice
+          )
+        );
+      }
+      // Найти минимальную цену из данных
+      let min = Number.MAX_VALUE;
+      let max = Number.MIN_VALUE;
+      jsonData
+        .filter((item) => item.type === props.typee)
+        .forEach((item) => {
+          if (item.price < min) {
+            min = item.price;
+          }
+          if (item.price > max) {
+            max = item.price;
+          }
+        });
+      setMinPrice(min);
+      setMaxPrice(max);
     } catch (error) {
       console.error("Ошибка при запросе:", error.message);
     }
@@ -116,6 +175,9 @@ function ListTovar(props) {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  const filteredDataByMinPrice = data.filter(
+    (item) => item.type === props.typee && item.price >= minPrice
+  );
   const filteredData = data.filter((item) => item.type === props.typee);
 
   return (
@@ -142,7 +204,7 @@ function ListTovar(props) {
                   <img src={ArBt} />
                 </div>
                 <div className="li_params li_close">
-                  asd
+                  Оберіть ціну
                   <br />
                   <br />
                   <br />
@@ -157,12 +219,19 @@ function ListTovar(props) {
                   <img src={Krest} />
                 </div>
                 <div className="li_params li_open">
-                  asd
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  asd
+                  Оберіть ціну
+                  <div className="li_cenaNum">
+                    <input
+                      onChange={(e) => setMinPrice(parseInt(e.target.value))}
+                      type="number"
+                      placeholder={minPrice}
+                    ></input>
+                    <input
+                      onChange={(e) => setMaxPrice(parseInt(e.target.value))}
+                      type="number"
+                      placeholder={maxPrice}
+                    ></input>
+                  </div>
                 </div>
               </li>
             )}
@@ -187,13 +256,9 @@ function ListTovar(props) {
                   Наявність
                   <img src={Krest} />
                 </div>
-                <div className="li_params li_open">
-                  asd
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  asd
+                <div className="li_open li_fixinga">
+                  Немає у наявності{" "}
+                  <input onChange={(e) => handleAvab()} type="checkbox"></input>
                 </div>
               </li>
             )}
@@ -219,51 +284,28 @@ function ListTovar(props) {
                   <img src={Krest} />
                 </div>
                 <div className="li_params li_open">
-                  asd
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  asd
-                </div>
-              </li>
-            )}
-            {isRozmir === false ? (
-              <li>
-                <div className="li_kateX" onClick={handleRozmir}>
-                  Розміри
-                  <img src={ArBt} />
-                </div>
-                <div className="li_params li_close">
-                  asd
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  asd
-                </div>
-              </li>
-            ) : (
-              <li>
-                <div className="li_kateX" onClick={handleRozmir}>
-                  Розміри
-                  <img src={Krest} />
-                </div>
-                <div className="li_params li_open">
-                  asd
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  asd
+                  Оберіть виробника
+                  <div className="li_forVirob">
+                    {allVirobniks.map((virobnik, index) => (
+                      <div onClick={() => handleVirobn(virobnik)} key={index}>
+                        {virobnik}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </li>
             )}
           </ul>
+          <button onClick={() => fetchData()} className="li_but">
+            Фільтрувати
+          </button>
         </aside>
         <article className="li_list">
           {data
             .filter((item) => item.type === props.typee)
+            .filter((item) => item.price >= minPrice)
+            .filter((item) => item.availability === avabStatus)
+            .filter((item) => (virobS ? item.virobnik === virobS : true))
             .slice(indexOfFirstItem, indexOfLastItem)
             .map((item) => (
               <div className="li_wrapTovar">
@@ -344,22 +386,26 @@ function ListTovar(props) {
             ))}
         </article>
       </div>
-      <ul className="li_buttons">
-        <button onClick={() => paginate(currentPage - 1)}>{" < "}</button>
-        {filteredData.length > itemsPerPage && (
-          <>
-            {Array.from(
-              { length: Math.ceil(filteredData.length / itemsPerPage) },
-              (_, i) => (
-                <button key={i} onClick={() => paginate(i + 1)}>
-                  {i + 1}
-                </button>
-              )
-            )}
-            <button onClick={() => paginate(currentPage + 1)}>{">"}</button>
-          </>
-        )}
-      </ul>
+      {filteredData.length >= 13 ? (
+        <ul className="li_buttons">
+          <button onClick={() => paginate(currentPage - 1)}>{" < "}</button>
+          {filteredData.length > itemsPerPage && (
+            <>
+              {Array.from(
+                { length: Math.ceil(filteredData.length / itemsPerPage) },
+                (_, i) => (
+                  <button key={i} onClick={() => paginate(i + 1)}>
+                    {i + 1}
+                  </button>
+                )
+              )}
+              <button onClick={() => paginate(currentPage + 1)}>{">"}</button>
+            </>
+          )}
+        </ul>
+      ) : (
+        <div></div>
+      )}
     </main>
   );
 }

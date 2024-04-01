@@ -200,43 +200,6 @@ function MainMenu(props) {
           src={arRight}
           onClick={() => handleCoef(1)}
         ></img>
-        <ul className="m_elipse">
-          <li>
-            <div
-              style={{
-                backgroundColor: Coef === 0 ? `rgb(255, 188, 87)` : "white",
-              }}
-            ></div>
-          </li>
-          <li>
-            <div
-              style={{
-                backgroundColor: Coef === 1 ? `rgb(255, 188, 87)` : "white",
-              }}
-            ></div>
-          </li>
-          <li>
-            <div
-              style={{
-                backgroundColor: Coef === 2 ? `rgb(255, 188, 87)` : "white",
-              }}
-            ></div>
-          </li>
-          <li>
-            <div
-              style={{
-                backgroundColor: Coef === 3 ? `rgb(255, 188, 87)` : "white",
-              }}
-            ></div>
-          </li>
-          <li>
-            <div
-              style={{
-                backgroundColor: Coef === 4 ? `rgb(255, 188, 87)` : "white",
-              }}
-            ></div>
-          </li>
-        </ul>
       </article>
       <article className="m_hotKat">
         <h1>Популярні товари</h1>
@@ -317,7 +280,7 @@ function MainMenu(props) {
         </div>
       </article>
       <article className="m_akcii">
-        <div>
+        <div className="m_contAkc">
           <h1>Акції</h1>
           <div>
             <h5>Дивитись далі</h5>
@@ -361,44 +324,7 @@ function MainMenu(props) {
           </section>
         ))}
       </article>
-      <article className="m_blog">
-        <div>
-          <h1>Свіжі статті та останні новини</h1>
-          <div>
-            <h5 onClick={() => props.setThisPage(5)}>Читать блог</h5>
-            <img src={arrowUp}></img>
-          </div>
-        </div>
-        <div className="m_listBlog">
-          <section className="m_thisBlog">
-            <div>
-              <img src={blog1}></img>
-              <h3>Новий дизайн. Чи підійде вам новий стиль?</h3>
-              <h5 onClick={() => props.setThisPage(101)}>
-                Детальніше <img className="b_arrow" src={arrowUp}></img>
-              </h5>
-            </div>
-          </section>
-          <section className="m_thisBlog">
-            <div>
-              <img src={blog2}></img>
-              <h3>Диван ваших мрій. Чи потрібен він вам?</h3>
-              <h5 onClick={() => props.setThisPage(102)}>
-                Детальніше <img className="b_arrow" src={arrowUp}></img>
-              </h5>
-            </div>
-          </section>
-          <section className="m_thisBlog">
-            <div>
-              <img src={blog3}></img>
-              <h3>Естетика. Чи підійдуть вам додаткові елементи?</h3>
-              <h5 onClick={() => props.setThisPage(103)}>
-                Детальніше <img className="b_arrow" src={arrowUp}></img>
-              </h5>
-            </div>
-          </section>
-        </div>
-      </article>
+
       <article className="m_KrovatoIs">
         <h1>KROVATO - коли потрібні якісні меблі за доступною ціною!</h1>
         <p>

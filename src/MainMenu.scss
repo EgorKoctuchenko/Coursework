@@ -4,67 +4,57 @@
   margin-top: 25px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 70px;
   .m_reklama {
-    height: 420px;
+    display: flex;
+    width: 67.17vw;
+    height: 100%;
     display: flex;
     overflow: hidden;
     animation: 0.4s;
     .m_Reklama2 {
       width: 100%;
-      height: 100%;
+      height: auto;
       border-radius: 10px;
       transition: transform 0.4s ease-in-out;
     }
     .m_Righty {
+      filter: drop-shadow(0px 0px 3px black);
       cursor: pointer;
-      top: 420px;
-      right: 330px;
+      top: 50%;
+      right: 18%;
       position: absolute;
       width: 60px;
       height: 60px;
       z-index: 5;
     }
     .m_Lefty {
+      filter: drop-shadow(0px 0px 3px black);
       cursor: pointer;
-      top: 420px;
-      left: 330px;
+      top: 50%;
+      left: 18%;
       position: absolute;
       width: 60px;
       height: 60px;
       z-index: 5;
     }
-    .m_elipse {
-      top: 640px;
-      left: 920px;
-      display: flex;
-      gap: 5px;
-      position: absolute;
-      li {
-        background-color: white;
-        width: 15px;
-        height: 15px;
-        border-radius: 10px;
-        padding: 3px;
-        div {
-          border-radius: 10px;
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
   }
   .m_hotKat {
     display: flex;
     flex-direction: column;
+    width: 100%;
     font-size: 4em;
     h1 {
       margin-bottom: 40px;
+      text-align: center;
+      font-weight: 600;
     }
     .m_Tovar {
+      padding: 0 200px;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-evenly;
       width: 100%;
       flex-direction: row;
     }
@@ -72,8 +62,10 @@
 }
 
 .m_akcii {
-  div {
+  .m_contAkc {
+    width: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 30px;
     h1 {
@@ -94,32 +86,12 @@
   section {
     margin-top: 45px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    gap: 50px;
     img {
-      width: 410px;
-      height: 280px;
+      width: 25vw;
+      height: 100%;
       border-radius: 10px;
-    }
-  }
-}
-
-.m_blog {
-  div {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    h1 {
-      font-size: 4rem;
-      font-weight: 600;
-    }
-    div {
-      gap: 10px;
-      h5 {
-        color: rgb(255, 188, 87);
-        cursor: pointer;
-        font-size: 1.9em;
-        font-weight: 600;
-      }
     }
   }
 }
@@ -132,7 +104,7 @@
     font-size: 4em;
     font-weight: 600;
     text-align: center;
-    max-width: 1000px;
+    max-width: 1300px;
     line-height: 48px;
   }
   p {
@@ -142,54 +114,6 @@
     margin: 0 90px;
     margin-top: 30px;
   }
-}
-
-.m_listBlog {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 70px;
-}
-
-.m_thisBlog {
-  margin-top: 40px;
-  width: 410px;
-  height: 475px;
-  background-color: rgb(51, 24, 24);
-  border-radius: 10px;
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    background-color: white;
-    border-radius: 10px;
-    height: 475px;
-    img {
-      border-radius: 10px;
-    }
-    h3 {
-      margin: 0px 25px 0 25px;
-      font-size: 2.6em;
-      font-weight: 600;
-      line-height: 34px;
-    }
-    h5 {
-      margin: 00px 25px 25px 25px;
-      font-size: 1.9em;
-      font-weight: 600;
-      color: rgb(255, 188, 87);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-    }
-  }
-}
-
-.m_vidgyki {
-  height: 570px;
-  background: rgb(233, 233, 233);
-  margin-bottom: 75px;
 }
 
 .m_Img {
@@ -241,7 +165,7 @@
   border-radius: 10px;
   border: 1px solid rgb(227, 226, 226);
   padding: 20px;
-  width: 300px;
+  width: 305px;
   height: auto;
   margin-bottom: 25px;
   box-shadow: -3px 4px 15px 0px rgba(0, 0, 0, 0.06);
@@ -276,13 +200,18 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
 ////
+
 .m_vidgyki {
-  padding: 30px;
+  padding: 30px 270px;
   overflow-x: scroll;
-  width: 100%;
+  width: 99vw;
   display: flex;
   align-items: center;
+  height: 570px;
+  background: rgb(233, 233, 233);
+  margin-bottom: 75px;
   gap: 30px;
   .v_thisComment {
     height: 370px;
@@ -329,6 +258,8 @@
 }
 
 .m_conteinerH {
+  justify-content: center;
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -337,6 +268,7 @@
 .m_h1Vid {
   font-size: 4em;
   font-weight: 600;
+  text-align: start;
 }
 
 .m_daliVid {
@@ -359,3 +291,154 @@
 }
 
 ///
+
+@media (max-width: 1100px) {
+  .m_wrap {
+    .m_reklama {
+      .m_Righty {
+        filter: drop-shadow(0px 0px 3px black);
+        cursor: pointer;
+        top: 87%;
+        right: 18%;
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        z-index: 5;
+      }
+      .m_Lefty {
+        filter: drop-shadow(0px 0px 3px black);
+        cursor: pointer;
+        top: 87%;
+        left: 18%;
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        z-index: 5;
+      }
+    }
+    .m_hotKat {
+      .m_Tovar {
+        gap: 10px;
+        padding: 0 25px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+        flex-direction: row;
+      }
+    }
+  }
+}
+///
+@media (max-width: 800px) {
+  .m_wrap {
+    .m_reklama {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      overflow: hidden;
+      animation: 0.4s;
+      .m_Righty {
+        filter: drop-shadow(0px 0px 3px black);
+        cursor: pointer;
+        top: 87%;
+        right: 5%;
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        z-index: 5;
+      }
+      .m_Lefty {
+        filter: drop-shadow(0px 0px 3px black);
+        cursor: pointer;
+        top: 87%;
+        left: 5%;
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        z-index: 5;
+      }
+    }
+    .m_hotKat {
+      .m_Tovar {
+        gap: 10px;
+        padding: 0 25px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+        flex-direction: row;
+      }
+    }
+  }
+  .m_akcii {
+    .m_contAkc {
+    }
+    section {
+      margin-top: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      img {
+        width: 70vw;
+        height: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .m_wrap {
+    .m_reklama {
+      overflow-x: scroll;
+      display: flex;
+      width: 100%;
+      height: 100%;
+
+      .m_Righty {
+        display: none;
+      }
+      .m_Lefty {
+        display: none;
+      }
+    }
+    .m_hotKat {
+      .m_Tovar {
+        gap: 10px;
+        padding: 0 25px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+        flex-direction: row;
+      }
+    }
+  }
+  .m_akcii {
+    .m_contAkc {
+    }
+    section {
+      margin-top: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      img {
+        width: 70vw;
+        height: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+  .m_vidgyki {
+    padding: 30px 0px;
+    overflow-y: scroll;
+    width: 99vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+    margin-bottom: 75px;
+    gap: 30px;
+  }
+}

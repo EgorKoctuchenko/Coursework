@@ -67,6 +67,10 @@ nav li {
   list-style: none;
   cursor: pointer;
 }
+section li {
+  list-style: none;
+  cursor: pointer;
+}
 img {
   vertical-align: top;
 }
@@ -249,5 +253,103 @@ body {
         font-weight: 600;
       }
     }
+  }
+}
+
+.bd_kont {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 100px 0 0;
+  .bd_tovarInfo {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid rgb(189, 189, 189);
+    margin: 0 40px 0 0;
+    li {
+      border-right: 3px solid rgb(189, 189, 189);
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      font-size: 1.3em;
+      min-height: 50px;
+      height: 100%;
+      width: 100%;
+      padding: 5px;
+    }
+  }
+  .bd_wrawpo {
+    display: flex;
+    width: 100%;
+    .bd_tovar {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      border: 1px solid rgb(189, 189, 189);
+      li {
+        border-right: 3px solid rgb(189, 189, 189);
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        font-size: 1.3em;
+        min-height: 50px;
+        height: 100%;
+        width: 100%;
+        padding: 5px;
+      }
+      input {
+        border-right: 3px solid rgb(189, 189, 189);
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        font-size: 1.3em;
+        min-height: 50px;
+        height: 100%;
+        width: 100%;
+        padding: 5px;
+      }
+    }
+    .bd_close {
+      cursor: pointer;
+      margin-top: 13px;
+      margin-left: 15px;
+      background: rgb(255, 188, 87);
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      color: white;
+      filter: drop-shadow(0px 0px 2px black);
+    }
+  }
+}
+
+.bd_wrapBut {
+  width: 100%;
+  margin-top: 25px;
+  display: flex;
+  gap: 25px;
+  .bd_but {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 208px;
+    height: 50px;
+    border-radius: 10px;
+    background: rgb(255, 188, 87);
+    font-size: 1.9em;
+    font-weight: 600;
+    color: white;
   }
 }

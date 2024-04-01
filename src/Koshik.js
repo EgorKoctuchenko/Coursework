@@ -12,18 +12,9 @@ import Sposobi from "./Sposobi";
 import "./index.css";
 
 function Koshik(props) {
-  const [formData, setFormData] = useState({
-    id_zamov: 2,
-    fio: "",
-    email: "",
-    tel: "",
-    dostavka: "",
-    sposobOplata: "",
-    comment: "",
-    tovar: "",
-    inshaLudina: "",
-    price: 0,
-  });
+  const [idZam, setIdZam] = useState([]);
+  const [fullP, setFullP] = useState(0);
+  const [fullName, setFullName] = useState(0);
 
   //Обчислення суми
   const summing = () => {
@@ -33,8 +24,16 @@ function Koshik(props) {
       }
       return acc;
     }, 0);
-
     return totalPrice;
+  };
+  const summingN = () => {
+    const totalName = data.reduce((acc, item) => {
+      if (item.korzina === 1) {
+        return acc + item.name;
+      }
+      return acc;
+    }, 0);
+    return totalName;
   };
 
   // Стейтмент для кожного інпута
@@ -60,7 +59,16 @@ function Koshik(props) {
 
   useEffect(() => {
     fetchData();
+    fetchData2();
   }, []);
+  useEffect(() => {
+    const totaly = summing();
+    setFullP(totaly);
+  }, [data]);
+  useEffect(() => {
+    const totaly = summingN();
+    setFullName(totaly);
+  }, [data]);
 
   //Дані для "вибор оплати":
   const oplataMethod = () => {
@@ -89,8 +97,8 @@ function Koshik(props) {
   };
 
   //Відправка даних
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    console.log("asdasd");
     try {
       const response = await fetch("http://localhost:3001/api/addOrder", {
         method: "POST",
@@ -98,7 +106,7 @@ function Koshik(props) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          id_zamov: 2,
+          id_zamov: idZam.length + 1,
           fio: fio2,
           email: email2,
           tel: tel2,
@@ -110,9 +118,9 @@ function Koshik(props) {
               : "Самовивіз із магазину",
           sposobOplata: oplataMethod(),
           comment: comment2,
-          tovar: "asd",
+          tovar: fullName,
           inshaLudina: insha2,
-          price: 100,
+          price: fullP,
         }),
       });
       if (!response.ok) {
@@ -150,6 +158,23 @@ function Koshik(props) {
       console.error("Ошибка при запросе:", error.message);
     }
   };
+
+  //Отримання даних з MySQl
+  const fetchData2 = async () => {
+    try {
+      const response = await fetch("http://localhost:3001/api/Zamov");
+
+      if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+      }
+
+      const jsonData = await response.json();
+      setIdZam(jsonData);
+    } catch (error) {
+      console.error("Ошибка при запросе:", error.message);
+    }
+  };
+
   //Зміна даних щодо корзини (якщо прибрали)
   const handleIsKorzina = async (name, currentKorz) => {
     console.log("asdasd = " + name);
@@ -328,6 +353,9 @@ function Koshik(props) {
               onChange={handleCommentChange}
             ></textarea>
           </section>
+          <button className="k_butPost" type="submit">
+            ОФОРМИТИ ЗАМОВЛЕННЯ
+          </button>
         </form>
         <section className="k_right">
           <div className="k_upp">
@@ -437,9 +465,6 @@ function Koshik(props) {
               <p>{summing().toLocaleString()} грн.</p>
             </div>
           </div>
-          <button className="k_butPost" type="submit">
-            ОФОРМИТИ ЗАМОВЛЕННЯ
-          </button>
         </section>
       </article>
 

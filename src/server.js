@@ -75,7 +75,9 @@ app.post("/api/addOrder", (req, res) => {
 // Обработка POST-запроса для удаление данных в базу данных
 app.post("/api/deleteData", (req, res) => {
   const { id } = req.body;
-  const query = "DELETE FROM test WHERE id = ?";
+
+  // Запрос на удаление данных из базы данных
+  const query = "DELETE FROM zamov WHERE id_zamov = ?";
   pool.query(query, [id], (err, results) => {
     if (err) {
       console.error("Ошибка выполнения SQL-запроса:", err); // Выводим ошибку в консоль
@@ -164,6 +166,66 @@ app.get("/api/vidg", (req, res) => {
       res.json(AllVigk);
     }
   });
+});
+//Замовлення
+app.get("/api/Zamov", (req, res) => {
+  const query = "SELECT * FROM zamov";
+
+  pool.query(query, (err, results) => {
+    if (err) {
+      console.error("Ошибка выполнения SQL-запроса:", err);
+      res.status(500).send("Ошибка сервера");
+    } else {
+      const AllZamov = results.map((item_vid) => ({
+        id_zamov: item_vid.id_zamov,
+        fio: item_vid.fio,
+        email: item_vid.email,
+        tel: item_vid.tel,
+        dostavka: item_vid.dostavka,
+        sposobOplata: item_vid.sposobOplata,
+        comment: item_vid.comment,
+        tovar: item_vid.tovar,
+        inshaLudina: item_vid.inshaLudina,
+        price: item_vid.price,
+      }));
+      res.json(AllZamov);
+    }
+  });
+});
+//
+//Час
+const getCurrentDateTime = () => {
+  const now = new Date();
+  const year = now.getFullYear();
+  let month = now.getMonth() + 1;
+  let day = now.getDate();
+
+  // Добавляем ведущий ноль для одиночных цифр
+  month = month < 10 ? `0${month}` : month;
+  day = day < 10 ? `0${day}` : day;
+
+  return `${year}-${month}-${day}`;
+};
+// POST-запит для додаваня відгуку в бд
+app.post("/api/addVidg", (req, res) => {
+  const { idvid, fio, datakom, komment, grade, vidg_type } = req.body;
+  datakom2 = getCurrentDateTime();
+  // Выполнение операции вставки данных в базу данных
+  const query =
+    "INSERT INTO vidgyk (idvid, fio, datakom, komment, grade, vidg_type) VALUES (?, ?, ?, ?, ?, ?)";
+  pool.query(
+    query,
+    [idvid, fio, datakom2, komment, grade, vidg_type],
+    (err, results) => {
+      if (err) {
+        console.error("Ошибка выполнения SQL-запроса:", err);
+        res.status(500).send("Ошибка сервера");
+      } else {
+        console.log("Данные успешно добавлены в базу данных");
+        res.status(200).send("Данные успешно добавлены в базу данных");
+      }
+    }
+  );
 });
 
 const PORT = process.env.PORT || 3001;

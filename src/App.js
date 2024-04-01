@@ -21,6 +21,7 @@ import Blog4 from "./Blogs/Blog4";
 import Blog5 from "./Blogs/Blog5";
 import Blog6 from "./Blogs/Blog6";
 import Buf from "./Buf";
+import BD from "./BD";
 
 function App() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -40,7 +41,7 @@ function App() {
   }, []);
   ///
 
-  const [thisPage, setThisPage] = useState(0);
+  const [thisPage, setThisPage] = useState(10);
   const [Categ, setCateg] = useState(false);
   const [Likese, setLikese] = useState(false);
   const [typee, setTypee] = useState("Ліжко");
@@ -128,6 +129,7 @@ function App() {
           ></InfoTovar>
         )}
         {thisPage === 9 && <Koshik setThisPage={handlePageChange}></Koshik>}
+        {thisPage === 10 && <BD setThisPage={handlePageChange}></BD>}
         {Likese === true && (
           <Likes
             handleInfoMassiv={handleInfoMassiv}

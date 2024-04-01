@@ -12,6 +12,11 @@ function Vidgyki(props) {
   ///
   const [vidg, setVidg] = useState([]);
   const [thisType, setThisType] = useState("allvidg");
+  //
+  const [fio, setFio] = useState("");
+  const [comment, setComment] = useState("");
+  const [yourGrade, setYourGrade] = useState(5);
+
   const handleThisType = (bufing) => {
     setThisType(bufing);
   };
@@ -41,6 +46,34 @@ function Vidgyki(props) {
     }
   };
 
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch("http://localhost:3001/api/addVidg", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          idvid: vidg.length + 1,
+          fio: fio,
+          datakom: new Date().toISOString(), // Дата комментария
+          komment: comment,
+          grade: yourGrade,
+          vidg_type: "allvidg", // Можно изменить тип отзыва по вашему усмотрению
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+      }
+
+      console.log("Отзыв успешно отправлен");
+      // Можно добавить дополнительные действия после успешной отправки отзыва, например, очистить поля формы
+    } catch (error) {
+      console.error("Ошибка при отправке отзыва:", error.message);
+    }
+  };
+
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 7;
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -52,7 +85,7 @@ function Vidgyki(props) {
   const filteredData = vidg.filter((item) => item.type === props.typee);
 
   return (
-    <main>
+    <main className="v_wrap">
       <section className="this_choice">
         <span onClick={() => props.setThisPage(0)} className="golovna">
           Головна
@@ -177,20 +210,29 @@ function Vidgyki(props) {
                 <h6>Базовано на відгуках: {vidg.length}</h6>
               </div>
             </div>
-            <form className="v_form">
+            <form className="v_form" onSubmit={handleSubmit}>
               <h2>Залишіть свій відгук про магазин</h2>
-              <input type="text" placeholder="Ваше ім'я прізвище"></input>
-              <input type="text" placeholder="Ваше ім'я прізвище"></input>
-              <textarea placeholder="Ваше ім'я прізвище"></textarea>
+              <input
+                onChange={(e) => setFio(e.target.value)}
+                type="text"
+                placeholder="Ваше ім'я прізвище"
+              ></input>
+              <textarea
+                onChange={(e) => setComment(e.target.value)}
+                placeholder="Ваш коментар"
+              ></textarea>
               <h5>Ваша оцінка:</h5>
               <div>
-                <img src={StarNoFill} />
-                <img src={StarNoFill} />
-                <img src={StarNoFill} />
-                <img src={StarNoFill} />
-                <img src={StarNoFill} />
+                <div>
+                  {Array.from({ length: 5 - yourGrade }, (_, i) => (
+                    <img key={i} src={StarFill} />
+                  ))}
+                  {Array.from({ length: yourGrade }, (_, i) => (
+                    <img key={i} src={StarNoFill} />
+                  ))}
+                </div>
               </div>
-              <button>Залишити відгук</button>
+              <button type="submit">Залишити відгук</button>
             </form>
           </div>
         </div>
