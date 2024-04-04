@@ -182,4 +182,113 @@
       color: white;
     }
   }
+  .it_upp {
+    flex-direction: column;
+    &_foto {
+    }
+    &_right {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      h1 {
+        text-align: center;
+      }
+    }
+  }
+}
+@media (max-width: 700px) {
+  .it_buy {
+    &_kolvo {
+      p {
+        cursor: pointer;
+      }
+    }
+    button {
+    }
+  }
+  .it_upp {
+    &_foto {
+      width: 480px;
+      height: 400px;
+    }
+    &_right {
+      h1 {
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .it_buy {
+    flex-direction: column;
+    gap: 15px;
+    &_kolvo {
+      p {
+        cursor: pointer;
+      }
+    }
+    button {
+    }
+  }
+  .it_buy {
+    &_kolvo {
+      p {
+        cursor: pointer;
+      }
+    }
+    button {
+    }
+  }
+  .it_upp {
+    &_foto {
+      width: 280px;
+      height: 200px;
+    }
+    &_right {
+      h1 {
+        font-size: 2.5em;
+      }
+      &_line {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        h6 {
+          margin-top: 5px;
+          font-size: 1.3rem;
+          font-weight: 400;
+        }
+      }
+      &_btm {
+        padding: 20px;
+        &1 {
+          flex-direction: column;
+          gap: 15px;
+          h2 {
+            font-size: 2.6em;
+            font-weight: 600;
+          }
+          &_like {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            h5 {
+              font-size: 1.9em;
+              font-weight: 600;
+            }
+          }
+        }
+        &2 {
+          h2 {
+            font-size: 2.5em;
+          }
+          div {
+            h5 {
+              font-size: 1.5em;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
 }

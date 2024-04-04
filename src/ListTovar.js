@@ -224,12 +224,14 @@ function ListTovar(props) {
                     <input
                       onChange={(e) => setMinPrice(parseInt(e.target.value))}
                       type="number"
-                      placeholder={minPrice}
+                      placeholder={minPrice ? minPrice : 0}
+                      value={minPrice}
                     ></input>
                     <input
                       onChange={(e) => setMaxPrice(parseInt(e.target.value))}
                       type="number"
-                      placeholder={maxPrice}
+                      placeholder={maxPrice ? maxPrice : 0}
+                      value={maxPrice}
                     ></input>
                   </div>
                 </div>
@@ -291,6 +293,7 @@ function ListTovar(props) {
                         {virobnik}
                       </div>
                     ))}
+                    <div onClick={() => handleVirobn("")}>Очистити</div>
                   </div>
                 </div>
               </li>
@@ -304,6 +307,7 @@ function ListTovar(props) {
           {data
             .filter((item) => item.type === props.typee)
             .filter((item) => item.price >= minPrice)
+            .filter((item) => item.price <= maxPrice)
             .filter((item) => item.availability === avabStatus)
             .filter((item) => (virobS ? item.virobnik === virobS : true))
             .slice(indexOfFirstItem, indexOfLastItem)

@@ -63,3 +63,36 @@
     cursor: pointer;
   }
 }
+
+@media (max-width: 700px) {
+  .like_wrap {
+    .like_menu {
+      width: 400px;
+      height: 700px;
+    }
+  }
+  .like_thisTovar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .like_Img {
+      display: none;
+    }
+  }
+}
+@media (max-width: 450px) {
+  .like_wrap {
+    .like_menu {
+      width: 300px;
+      height: 700px;
+    }
+  }
+  .like_thisTovar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .like_Img {
+      display: none;
+    }
+  }
+}

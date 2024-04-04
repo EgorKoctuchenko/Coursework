@@ -372,69 +372,70 @@ function Koshik(props) {
               .map((item) => (
                 <div className="like_wrapTovar">
                   <section key={item.id} className="k_thisTovar">
-                    {item.imageUrl && (
-                      <img
-                        className="k_Img"
-                        onClick={() => {
-                          props.setLikese(false);
-                          props.setThisPage(8);
-                          props.handleInfoMassiv(
-                            item.id,
-                            item.price,
-                            item.kolvo,
-                            item.name,
-                            item.photo,
-                            item.virobnik,
-                            item.type,
-                            item.korzina,
-                            item.like,
-                            item.sizes,
-                            item.availability
-                          );
-                        }}
-                        src={require("./Image_Storage/" +
-                          item.imageUrl.replace("http://localhost:3001", ""))}
-                      />
-                    )}
-                    <div>
-                      <div
-                        onClick={() => {
-                          props.setLikese(false);
-                          props.setThisPage(8);
-                          props.handleInfoMassiv(
-                            item.id,
-                            item.price,
-                            item.kolvo,
-                            item.name,
-                            item.photo,
-                            item.virobnik,
-                            item.type,
-                            item.korzina,
-                            item.like,
-                            item.sizes,
-                            item.availability
-                          );
-                        }}
-                      >
-                        <p className="m_Rozmir">Розміри: {item.sizes}</p>
-                        <h5 className="m_Name">{item.name}</h5>
-                        {item.availability === "В наявності" ? (
-                          <div className="m_Avab">
-                            <img src={YesAv}></img>
-                            <p className="m_Nayav">В наявності</p>
-                          </div>
-                        ) : (
-                          <div className="m_Avab">
-                            <img src={NoAv}></img>
-                            <p className="m_Nayav">Немає в наявності</p>
-                          </div>
-                        )}
-                      </div>
-                      <div className="li_linee"></div>
-                      <div className="m_BottomLikes">
-                        <p className="m_Price">
-                          {item.price.toLocaleString()} грн.
-                        </p>
+                    <div className="k_thisTovar_Left">
+                      {item.imageUrl && (
+                        <img
+                          className="k_Img"
+                          onClick={() => {
+                            props.setThisPage(8);
+                            props.handleInfoMassiv(
+                              item.id,
+                              item.price,
+                              item.kolvo,
+                              item.name,
+                              item.photo,
+                              item.virobnik,
+                              item.type,
+                              item.korzina,
+                              item.like,
+                              item.sizes,
+                              item.availability
+                            );
+                          }}
+                          src={require("./Image_Storage/" +
+                            item.imageUrl.replace("http://localhost:3001", ""))}
+                        />
+                      )}
+                      <div>
+                        <div
+                          onClick={() => {
+                            props.setLikese(false);
+                            props.setThisPage(8);
+                            props.handleInfoMassiv(
+                              item.id,
+                              item.price,
+                              item.kolvo,
+                              item.name,
+                              item.photo,
+                              item.virobnik,
+                              item.type,
+                              item.korzina,
+                              item.like,
+                              item.sizes,
+                              item.availability
+                            );
+                          }}
+                        >
+                          <p className="m_Rozmir">Розміри: {item.sizes}</p>
+                          <h5 className="m_Name">{item.name}</h5>
+                          {item.availability === "В наявності" ? (
+                            <div className="m_Avab">
+                              <img src={YesAv}></img>
+                              <p className="m_Nayav">В наявності</p>
+                            </div>
+                          ) : (
+                            <div className="m_Avab">
+                              <img src={NoAv}></img>
+                              <p className="m_Nayav">Немає в наявності</p>
+                            </div>
+                          )}
+                        </div>
+                        <div className="li_linee"></div>
+                        <div className="m_BottomLikes">
+                          <p className="m_Price">
+                            {item.price.toLocaleString()} грн.
+                          </p>
+                        </div>
                       </div>
                     </div>
                     <div
@@ -458,7 +459,7 @@ function Koshik(props) {
             </div>
             <div className="k_infor">
               <p>Вартість доставки:</p>
-              <p>За тарифами оператора</p>
+              <p className="k_tarifOperator">За тарифами оператора</p>
             </div>
             <div className="k_infor">
               <p>До оплати:</p>

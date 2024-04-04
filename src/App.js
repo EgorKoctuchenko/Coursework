@@ -41,7 +41,7 @@ function App() {
   }, []);
   ///
 
-  const [thisPage, setThisPage] = useState(10);
+  const [thisPage, setThisPage] = useState(7);
   const [Categ, setCateg] = useState(false);
   const [Likese, setLikese] = useState(false);
   const [typee, setTypee] = useState("Ліжко");
@@ -128,7 +128,12 @@ function App() {
             setThisPage={setThisPage}
           ></InfoTovar>
         )}
-        {thisPage === 9 && <Koshik setThisPage={handlePageChange}></Koshik>}
+        {thisPage === 9 && (
+          <Koshik
+            handleInfoMassiv={handleInfoMassiv}
+            setThisPage={handlePageChange}
+          ></Koshik>
+        )}
         {thisPage === 10 && <BD setThisPage={handlePageChange}></BD>}
         {thisPage === 11 && <Buf setThisPage={handlePageChange}></Buf>}
         {Likese === true && (

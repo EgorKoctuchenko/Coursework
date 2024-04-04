@@ -222,9 +222,16 @@
     border-radius: 10px;
   }
   .k_thisTovar {
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 20px;
+  }
+  .k_thisTovar_Left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
   }
   .k_exit {
     cursor: pointer;
@@ -236,5 +243,172 @@
     font-size: 2em;
     padding: 0px 5px;
     margin-bottom: 140px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .k_h1 {
+    text-align: center;
+    font-size: 3.5em;
+  }
+  .k_form {
+    width: 90%;
+    .k_sec4 {
+      &_area {
+        width: 100%;
+      }
+    }
+  }
+  .k_content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    .k_right {
+      width: 90%;
+      height: 950px;
+    }
+  }
+  .k_bottom {
+    overflow-y: scroll;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 650px;
+    gap: 20px;
+    .k_Img {
+      width: 150px;
+      height: 100px;
+      border-radius: 10px;
+    }
+    .k_thisTovar {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      width: 100%;
+      gap: 20px;
+    }
+    .k_exit {
+      cursor: pointer;
+      display: flex;
+      align-items: start;
+      border: 2px solid rgb(255, 188, 87);
+      border-radius: 50%;
+      font-size: 2em;
+      padding: 0px 5px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .k_lastBottom {
+    .k_tarifOperator {
+      text-align: end;
+    }
+  }
+  .m_Name {
+    font-size: 1.5rem;
+  }
+  .k_form {
+    width: 90%;
+    display: flex;
+    .k_sec1 {
+      border-radius: 10px;
+      padding: 30px;
+      background-color: white;
+      &_head {
+        justify-content: center;
+        gap: 15px;
+        h3 {
+          text-align: center;
+          font-size: 2em;
+        }
+        img {
+          display: none;
+        }
+      }
+      &_cont {
+        justify-content: center;
+        gap: 25px;
+        input {
+          width: 100%;
+        }
+      }
+      &_insha {
+        justify-content: center;
+      }
+    }
+    .k_sec2 {
+      &_head {
+        justify-content: center;
+        h3 {
+          text-align: center;
+          font-size: 2em;
+        }
+        img {
+          display: none;
+        }
+      }
+      &_metodDost {
+        align-items: center;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        &_Dost {
+          width: 100%;
+          h5 {
+            font-size: 1.6em;
+          }
+          h6 {
+            font-size: 1.5em;
+            color: rgb(83, 83, 83);
+          }
+        }
+      }
+    }
+    .k_sec3 {
+      &_head {
+        justify-content: center;
+        gap: 15px;
+        h3 {
+          text-align: center;
+          font-size: 2em;
+        }
+        img {
+          display: none;
+        }
+      }
+    }
+    .k_sec4 {
+      border-radius: 10px;
+      background-color: white;
+      padding: 30px;
+      &_head {
+        justify-content: center;
+        gap: 15px;
+        h3 {
+          text-align: center;
+          font-size: 2em;
+        }
+        img {
+          display: none;
+        }
+      }
+      &_area {
+        width: 100%;
+      }
+    }
+  }
+  .k_selected {
+    width: 100%;
+  }
+  .k_butPost {
+    height: 70px;
+  }
+  .k_bottom {
+    .k_Img {
+      display: none;
+    }
   }
 }

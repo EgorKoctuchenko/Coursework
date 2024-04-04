@@ -3,7 +3,7 @@
   z-index: 999;
   position: absolute;
   filter: blur;
-  top: 180px;
+  top: 170px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -15,7 +15,7 @@
     background-color: white;
     border-radius: 8px;
     margin-top: 10px;
-    margin-left: 500px;
+    margin-left: 25%;
     padding: 10px 0;
     li {
       cursor: pointer;
@@ -29,6 +29,106 @@
       h4 {
         font-size: 2em;
         font-weight: 600;
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .kat_wrap {
+    top: 400px;
+    right: 0px;
+
+    .kat_menu {
+      margin-left: 67%;
+
+      li {
+        &:hover {
+        }
+        h4 {
+        }
+      }
+    }
+  }
+}
+@media (max-width: 980px) {
+  .kat_wrap {
+    top: 446px;
+    right: 0px;
+
+    .kat_menu {
+      margin-left: 4%;
+
+      li {
+        &:hover {
+        }
+        h4 {
+        }
+      }
+    }
+  }
+}
+@media (max-width: 700px) {
+  .kat_wrap {
+    top: 424px;
+    right: 0px;
+
+    .kat_menu {
+      margin-left: 4%;
+
+      li {
+        &:hover {
+        }
+        h4 {
+        }
+      }
+    }
+  }
+}
+@media (max-width: 700px) {
+  .kat_wrap {
+    top: 424px;
+    right: 0px;
+    .kat_menu {
+      display: flex;
+      justify-content: center;
+      li {
+        &:hover {
+        }
+        h4 {
+        }
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .kat_wrap {
+    top: 400px;
+    right: 0px;
+    .kat_menu {
+      display: flex;
+      justify-content: center;
+      li {
+        &:hover {
+        }
+        h4 {
+        }
+      }
+    }
+  }
+}
+@media (max-width: 370px) {
+  .kat_wrap {
+    top: 370px;
+    right: 0px;
+    .kat_menu {
+      display: flex;
+      justify-content: center;
+      li {
+        &:hover {
+        }
+        h4 {
+        }
       }
     }
   }
