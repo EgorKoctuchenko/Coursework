@@ -6,24 +6,32 @@
   -ms-grid-rows: 1fr 30px 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 30px;
-}.b_wrap > *:nth-child(1) {
+}
+.b_wrap > *:nth-child(1) {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-}.b_wrap > *:nth-child(2) {
+}
+.b_wrap > *:nth-child(2) {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
-}.b_wrap > *:nth-child(3) {
+}
+.b_wrap > *:nth-child(3) {
   -ms-grid-row: 1;
   -ms-grid-column: 5;
-}.b_wrap > *:nth-child(4) {
+}
+.b_wrap > *:nth-child(4) {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
-}.b_wrap > *:nth-child(5) {
+}
+.b_wrap > *:nth-child(5) {
   -ms-grid-row: 3;
   -ms-grid-column: 3;
-}.b_wrap > *:nth-child(6) {
+}
+.b_wrap > *:nth-child(6) {
   -ms-grid-row: 3;
   -ms-grid-column: 5;
+}
+.b_wrap {
 }
 .b_wrap section {
   display: -webkit-box;
@@ -31,11 +39,11 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   background-color: white;
   border-radius: 10px;
   height: 475px;
@@ -59,8 +67,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 10px;
 }
 .b_wrap section h5:hover {
@@ -83,8 +91,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   text-align: center;
 }
 .b_Buttons .b1_isActive {
@@ -92,8 +100,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 20px;
   border-radius: 8px;
   background: rgb(255, 188, 87);
@@ -109,8 +117,8 @@
   display: flex;
   visibility: hidden;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 20px;
   border-radius: 8px;
   background: rgb(255, 188, 87);
@@ -127,11 +135,11 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 .b3_info .b1_Foto {
   width: 1100px;
@@ -144,11 +152,11 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   gap: 10px;
   border-radius: 10px;
 }
@@ -158,15 +166,15 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  -ms-flex-align: start;
+  align-items: start;
 }
 .b3_info .fixingParag div img {
   width: 20px;
 }
 .b3_info .fixingParag div p {
   -webkit-transform: translateY(-4px);
-          transform: translateY(-4px);
+  transform: translateY(-4px);
   font-size: 1.6em;
   font-weight: 400;
   line-height: 30px;
@@ -190,8 +198,8 @@
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 .b1_wrap .b1_info .b1_Foto {
   width: 500px;
@@ -204,11 +212,11 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   gap: 10px;
   border-radius: 10px;
 }
@@ -218,15 +226,15 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  -ms-flex-align: start;
+  align-items: start;
 }
 .b1_wrap .b1_info .fixingParag div img {
   width: 20px;
 }
 .b1_wrap .b1_info .fixingParag div p {
   -webkit-transform: translateY(-4px);
-          transform: translateY(-4px);
+  transform: translateY(-4px);
   font-size: 1.6em;
   font-weight: 400;
   line-height: 30px;
