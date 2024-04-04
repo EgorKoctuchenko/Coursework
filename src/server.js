@@ -4,7 +4,7 @@ const cors = require("cors");
 const multer = require("multer"); // Модуль для обработки файлов
 const fs = require("fs"); // модуль для работы с файловой системой Node.js
 
-const uploadDirectory = "./Image_Storage"; // Директория, куда будут сохраняться загруженные файлы
+const uploadDirectory = "./Image_Storage/"; // Директория, куда будут сохраняться загруженные файлы
 
 if (!fs.existsSync(uploadDirectory)) {
   fs.mkdirSync(uploadDirectory);
@@ -27,56 +27,13 @@ const pool = mysql.createPool({
 
 const path = require("path");
 
-// POST-запит для додаваня даних у бд
-app.post("/api/addOrder", (req, res) => {
-  const {
-    id_zamov,
-    fio,
-    email,
-    tel,
-    dostavka,
-    sposobOplata,
-    comment,
-    tovar,
-    inshaLudina,
-    price,
-  } = req.body;
-
-  // Далее выполните операцию вставки данных в вашу базу данных
-  // Пример:
-  const query =
-    "INSERT INTO zamov (id_zamov, fio, email, tel, dostavka, sposobOplata, comment, tovar, inshaLudina, price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-  pool.query(
-    query,
-    [
-      id_zamov,
-      fio,
-      email,
-      tel,
-      dostavka,
-      sposobOplata,
-      comment,
-      tovar,
-      inshaLudina,
-      price,
-    ],
-    (err, results) => {
-      if (err) {
-        console.error("Ошибка выполнения SQL-запроса:", err);
-        res.status(500).send("Ошибка сервера");
-      } else {
-        console.log("Данные успешно добавлены в базу данных");
-        res.status(200).send("Данные успешно добавлены в базу данных");
-      }
-    }
-  );
-});
-
-// Обработка POST-запроса для удаление данных в базу данных
+//
+// ВИДАЛЕННЯ
+//
+//Замовлення
 app.post("/api/deleteData", (req, res) => {
   const { id } = req.body;
 
-  // Запрос на удаление данных из базы данных
   const query = "DELETE FROM zamov WHERE id_zamov = ?";
   pool.query(query, [id], (err, results) => {
     if (err) {
@@ -88,8 +45,39 @@ app.post("/api/deleteData", (req, res) => {
     }
   });
 });
+//Відгук
+app.post("/api/deleteVidg", (req, res) => {
+  const { id } = req.body;
 
-// Обработка POST-запроса для переименования данных в базе данных
+  const query = "DELETE FROM vidgyk WHERE idvid = ?";
+  pool.query(query, [id], (err, results) => {
+    if (err) {
+      console.error("Ошибка выполнения SQL-запроса:", err); // Выводим ошибку в консоль
+      res.status(500).send("Ошибка сервера");
+    } else {
+      console.log("Данные успешно удалены из базы данных");
+      res.status(200).send("Данные успешно удалены из базы данных");
+    }
+  });
+});
+//Товар
+app.post("/api/deleteTovar", (req, res) => {
+  const { id } = req.body;
+
+  const query = "DELETE FROM tovar WHERE id_tovar = ?";
+  pool.query(query, [id], (err, results) => {
+    if (err) {
+      console.error("Ошибка выполнения SQL-запроса:", err); // Выводим ошибку в консоль
+      res.status(500).send("Ошибка сервера");
+    } else {
+      console.log("Данные успешно удалены из базы данных");
+      res.status(200).send("Данные успешно удалены из базы данных");
+    }
+  });
+});
+//
+//Заміна (лайк + корзина)
+//
 //Лайк
 app.post("/api/renameData", (req, res) => {
   const { name, newLike } = req.body;
@@ -118,7 +106,30 @@ app.post("/api/renameKorzina", (req, res) => {
     }
   });
 });
+//
+//ОТРИМАННЯ
+//
+//Отримання даних для відгуків
+app.get("/api/vidg", (req, res) => {
+  const query = "SELECT * FROM vidgyk";
 
+  pool.query(query, (err, results) => {
+    if (err) {
+      console.error("Ошибка выполнения SQL-запроса:", err);
+      res.status(500).send("Ошибка сервера");
+    } else {
+      const AllVigk = results.map((item_vid) => ({
+        idvid: item_vid.idvid,
+        fio: item_vid.fio,
+        datakom: item_vid.datakom,
+        komment: item_vid.komment,
+        grade: item_vid.grade,
+        vidg_type: item_vid.vidg_type,
+      }));
+      res.json(AllVigk);
+    }
+  });
+});
 //Отримання даних для товарів
 app.get("/api/data", (req, res) => {
   const query = "SELECT * FROM tovar";
@@ -145,28 +156,33 @@ app.get("/api/data", (req, res) => {
     }
   });
 });
-
-//Отримання даних для відгуків
-app.get("/api/vidg", (req, res) => {
-  const query = "SELECT * FROM vidgyk";
+//Отримання даних для товарів2
+app.get("/api/data2", (req, res) => {
+  const query = "SELECT * FROM tovar";
 
   pool.query(query, (err, results) => {
     if (err) {
       console.error("Ошибка выполнения SQL-запроса:", err);
       res.status(500).send("Ошибка сервера");
     } else {
-      const AllVigk = results.map((item_vid) => ({
-        idvid: item_vid.idvid,
-        fio: item_vid.fio,
-        datakom: item_vid.datakom,
-        komment: item_vid.komment,
-        grade: item_vid.grade,
-        vidg_type: item_vid.vidg_type,
+      const AllData = results.map((item) => ({
+        id_tovar: item.id_tovar,
+        price: item.price,
+        kolvo: item.kolvo,
+        name: item.name,
+        imageUrl: item.photo ? `${item.photo}` : null,
+        virobnik: item.virobnik,
+        type: item.type,
+        korzina: item.korzina,
+        like: item.like,
+        sizes: item.sizes,
+        availability: item.availability,
       }));
-      res.json(AllVigk);
+      res.json(AllData);
     }
   });
 });
+
 //Замовлення
 app.get("/api/Zamov", (req, res) => {
   const query = "SELECT * FROM zamov";
@@ -200,17 +216,18 @@ const getCurrentDateTime = () => {
   let month = now.getMonth() + 1;
   let day = now.getDate();
 
-  // Добавляем ведущий ноль для одиночных цифр
   month = month < 10 ? `0${month}` : month;
   day = day < 10 ? `0${day}` : day;
 
   return `${year}-${month}-${day}`;
 };
-// POST-запит для додаваня відгуку в бд
+//
+//ДОДАВАННЯ
+//
+//ВІДГУК
 app.post("/api/addVidg", (req, res) => {
   const { idvid, fio, datakom, komment, grade, vidg_type } = req.body;
   datakom2 = getCurrentDateTime();
-  // Выполнение операции вставки данных в базу данных
   const query =
     "INSERT INTO vidgyk (idvid, fio, datakom, komment, grade, vidg_type) VALUES (?, ?, ?, ?, ?, ?)";
   pool.query(
@@ -223,6 +240,177 @@ app.post("/api/addVidg", (req, res) => {
       } else {
         console.log("Данные успешно добавлены в базу данных");
         res.status(200).send("Данные успешно добавлены в базу данных");
+      }
+    }
+  );
+});
+//Замовлення
+app.post("/api/addOrder", (req, res) => {
+  const {
+    id_zamov,
+    fio,
+    email,
+    tel,
+    dostavka,
+    sposobOplata,
+    comment,
+    tovar,
+    inshaLudina,
+    price,
+  } = req.body;
+
+  const query =
+    "INSERT INTO zamov (id_zamov, fio, email, tel, dostavka, sposobOplata, comment, tovar, inshaLudina, price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+  pool.query(
+    query,
+    [
+      id_zamov,
+      fio,
+      email,
+      tel,
+      dostavka,
+      sposobOplata,
+      comment,
+      tovar,
+      inshaLudina,
+      price,
+    ],
+    (err, results) => {
+      if (err) {
+        console.error("Ошибка выполнения SQL-запроса:", err);
+        res.status(500).send("Ошибка сервера");
+      } else {
+        console.log("Данные успешно добавлены в базу данных");
+        res.status(200).send("Данные успешно добавлены в базу данных");
+      }
+    }
+  );
+});
+//СЕРВЕРНА ЧАСТИНА: ТОВАР
+app.post("/api/addData", upload.single("photo"), (req, res) => {
+  const { id_tovar, price, kolvo, name, virobnik, type, sizes, availability } =
+    req.body;
+  const photo = req.file ? req.file.path : null;
+  const query =
+    "INSERT INTO tovar (id_tovar, price, kolvo, name, photo, virobnik, type, korzina, `like`, sizes, availability) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+  pool.query(
+    query,
+    [
+      id_tovar,
+      price,
+      kolvo,
+      name,
+      photo,
+      virobnik,
+      type,
+      0,
+      0,
+      sizes,
+      availability,
+    ],
+    (err, results) => {
+      if (err) {
+        console.error("Ошибка выполнения SQL-запроса:", err);
+        res.status(500).send("Ошибка сервера");
+      } else {
+        console.log("Данные успешно добавлены в базу данных");
+        res.status(200).send("Данные успешно добавлены в базу данных");
+      }
+    }
+  );
+});
+
+//
+//ЗАМІНА
+//
+//Замовлення
+app.post("/api/updateZam", (req, res) => {
+  const {
+    id_zamov,
+    fio,
+    email,
+    tel,
+    dostavka,
+    sposobOplata,
+    comment,
+    tovar,
+    inshaLudina,
+    price,
+  } = req.body;
+
+  const query =
+    "UPDATE zamov SET fio = ?, email = ?, tel = ?, dostavka = ?, sposobOplata = ?, comment = ?, tovar = ?, inshaLudina = ?, price = ? WHERE id_zamov = ?";
+  pool.query(
+    query,
+    [
+      fio,
+      email,
+      tel,
+      dostavka,
+      sposobOplata,
+      comment,
+      tovar,
+      inshaLudina,
+      price,
+      id_zamov,
+    ],
+    (err, results) => {
+      if (err) {
+        console.error("Ошибка выполнения SQL-запроса:", err);
+        res.status(500).send("Ошибка сервера");
+      } else {
+        console.log("Данные успешно обновлены в базе данных");
+        res.status(200).send("Данные успешно обновлены в базе данных");
+      }
+    }
+  );
+});
+//Товари
+app.post("/api/updateTov", (req, res) => {
+  const {
+    id_tovar,
+    price,
+    kolvo,
+    name,
+    photo,
+    virobnik,
+    type,
+    sizes,
+    availability,
+  } = req.body;
+
+  const query =
+    "UPDATE tovar SET price = ?, kolvo = ?, name = ?, photo = ?, virobnik = ?, type = ?, sizes = ?, availability = ? WHERE id_tovar = ?";
+  pool.query(
+    query,
+    [price, kolvo, name, photo, virobnik, type, sizes, availability, id_tovar],
+    (err, results) => {
+      if (err) {
+        console.error("Ошибка выполнения SQL-запроса:", err);
+        res.status(500).send("Ошибка сервера");
+      } else {
+        console.log("Данные успешно обновлены в базе данных");
+        res.status(200).send("Данные успешно обновлены в базе данных");
+      }
+    }
+  );
+});
+//Коменти
+app.post("/api/updateKom", (req, res) => {
+  const { idvid, fio, datakom, komment, grade, vidg_type } = req.body;
+
+  const query =
+    "UPDATE vidgyk SET fio = ?, datakom = ?, komment = ?, grade = ?, vidg_type = ? WHERE idvid = ?";
+  pool.query(
+    query,
+    [fio, datakom, komment, grade, vidg_type, idvid],
+    (err, results) => {
+      if (err) {
+        console.error("Ошибка выполнения SQL-запроса:", err);
+        res.status(500).send("Ошибка сервера");
+      } else {
+        console.log("Данные успешно обновлены в базе данных");
+        res.status(200).send("Данные успешно обновлены в базе данных");
       }
     }
   );

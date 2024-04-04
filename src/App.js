@@ -130,6 +130,7 @@ function App() {
         )}
         {thisPage === 9 && <Koshik setThisPage={handlePageChange}></Koshik>}
         {thisPage === 10 && <BD setThisPage={handlePageChange}></BD>}
+        {thisPage === 11 && <Buf setThisPage={handlePageChange}></Buf>}
         {Likese === true && (
           <Likes
             handleInfoMassiv={handleInfoMassiv}
